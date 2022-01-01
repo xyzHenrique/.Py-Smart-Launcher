@@ -1,10 +1,12 @@
-### S2S-Launcher
-Wide Digital - S2S Launcher
+# S2SLauncher
 
-## LIBS
-pip install pyautogui
-pip install selenium
-pip install keyboard
+### REQUIREMENTS
+```
+pip3 install pyautogui
+pip3 install selenium
+pip3 install keyboard
 pause
 exit
+```
+
 
