@@ -1,5 +1,7 @@
 # S2SLauncher
 
+### Created by: Henrique R. Pereira
+
 ### REQUIREMENTS
 ```
 pip3 install pyautogui
