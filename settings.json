@@ -1,0 +1,31 @@
+{
+	"monitors": {
+		"monitor-1": {
+			"enabled": true,
+			"coordsx": 0,
+			"coordsy": 0,
+			"DIR": "C:/WIDE/S2S/monitor1"
+		},
+
+		"monitor-2": {
+			"enabled": true,
+			"coordsx": 1280,
+			"coordsy": 0,
+			"DIR": "C:/WIDE/S2S/monitor2"
+		},
+
+		"monitor-3": {
+			"enabled": true,
+			"coordsx": 2560,
+			"coordsy": 0,
+			"DIR": "C:/WIDE/S2S/monitor3"
+		},
+
+		"monitor-4": {
+			"enabled": true,
+			"coordsx": 3840,
+			"coordsy": 0,
+			"DIR": "C:/WIDE/S2S/monitor4"
+		}
+	}
+}
