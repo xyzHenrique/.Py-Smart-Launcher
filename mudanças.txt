@@ -1,0 +1,34 @@
+mudanças na versão 3.5 -- update para corrigir e melhorar a versão 3.0
+
+--correções--
+
+código
+PENDENTE
+
+software não detectando a página ( chrome://whats-new/?auto=true )
+PENDENTE
+
+--melhorias--
+
+construção de janelas
+PENDENTE
+
+sistema de logs
+PENDENTE
+
+sistema de configurações
+PENDENTE
+
+agilidade total
+PENDENTE
+
+código mais inteligente
+PENDENTE
+
+--novidades--
+
+software para configuração dinâmica
+PENDENTE
+
+mais permissões na janela de configuração
+PENDENTE
