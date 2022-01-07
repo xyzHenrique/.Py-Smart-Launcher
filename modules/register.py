@@ -10,16 +10,16 @@
 #
 # Created by: Henrique R. Pereira <https://github.com/RIick-013>
 #
-# S2SLogger.py > module script
+# register.py > module script
 #
-# v3.0
+# v3.5
 # ----------------------------------------------------------------------------------------------
 
 import datetime, time, os
 
 ### LEVELS: INFO, WARNING, ERROR, CRITICAL and DEBUG
 
-class S2SLogger:
+class ApplicationRegister:
     def __init__(self):
         self.now = [datetime.date.today().strftime("%d/%m/%Y"), datetime.datetime.now().strftime("%H:%M:%S")]
         
@@ -27,14 +27,16 @@ class S2SLogger:
 
         self.levels = ["INFO", "WARNING", "ERROR", "CRITICAL", "DEBUG"]
 
+        self.logs_path = "../system/logs/"
+
     def setup(self):
             exist = False
 
-            if os.path.exists(f"logs/{self.logname}.txt"):
+            if os.path.exists(f"{self.logs_path}{self.logname}.txt"):
                 exist = True
             else:
                 try:
-                    f = open(f"logs/{self.logname}.txt", "w+")
+                    f = open(f"{self.logs_path}{self.logname}.txt", "w+")
                     
                     time.sleep(0.5)
 
@@ -50,7 +52,7 @@ class S2SLogger:
 
     def write(self, msg):
         if self.setup():
-            f = open(f"logs/{self.logname}.txt", "a")
+            f = open(f"{self.logs_path}{self.logname}.txt", "a")
             
             if msg[0] == self.levels[0]:
                 m = f"[{self.now[0]} | {self.now[1]}] - INFO - {msg[1]}\n"

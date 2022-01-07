@@ -10,16 +10,16 @@
 #
 # Created by: Henrique R. Pereira <https://github.com/RIick-013>
 #
-# S2SSettings.py > module script
+# settings.py > module script
 #
-# v3.0
+# v3.5
 # ----------------------------------------------------------------------------------------------
 
 import json
 
-def settingsloader():
+def ApplicationSettingsLoader():
     try:
-        data = json.load(open("settings.json"))
+        data = json.load(open("../system/settings/settings.json"))
 
         return data
     except Exception as err:

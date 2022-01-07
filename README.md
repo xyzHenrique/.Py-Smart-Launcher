@@ -1,4 +1,4 @@
-# S2SLauncher 3.5b
+# S2SLauncher 3.5c
 
 ### Created by: Henrique R. Pereira
 

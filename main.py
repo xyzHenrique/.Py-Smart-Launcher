@@ -24,8 +24,8 @@ try:
     from selenium import webdriver
     from selenium.webdriver.chrome.options import Options
 
-    from S2SSettings import settingsloader
-    from S2SLogger import S2SLogger
+    from modules.settings import ApplicationSettingsLoader
+    from modules.register import ApplicationRegister
 
 except ImportError as err:
     errors.append(err)
@@ -42,60 +42,25 @@ class S2SLauncher:
                 time.sleep(10.0)
             self.restart()
 
-        self.logger = S2SLogger()
+        self.register = ApplicationRegister()
+        self.settings = ApplicationSettingsLoader()
+        
+        """ SETTINGS PROPERTIES """
+        self.monitors = self.settings["properties"]["monitors"]
+        self.URL = self.settings["properties"]["URL"]
 
-        """ SETTINGS """
-        self.settings = settingsloader()
+        """ SETTINGS SYSTEM """
+        self.combination = self.settings["system"]["combination"]
+        
+        """ DICT """
+        self.monitors_dict = dict() 
 
-        ### --- monitors settings
-        self.monitor_1_settings = {
-                                   "enabled": self.settings["monitors"]["monitor-1"]["enabled"],
-                                   "coordsx": self.settings["monitors"]["monitor-1"]["coordsx"],
-                                   "coordsy": self.settings["monitors"]["monitor-1"]["coordsy"],
-                                   "DIR": self.settings["monitors"]["monitor-1"]["DIR"]
-                                   }
-
-        self.monitor_2_settings = {
-                                   "enabled": self.settings["monitors"]["monitor-2"]["enabled"],
-                                   "coordsx": self.settings["monitors"]["monitor-2"]["coordsx"],
-                                   "coordsy": self.settings["monitors"]["monitor-2"]["coordsy"],
-                                   "DIR": self.settings["monitors"]["monitor-2"]["DIR"]
-                                   }
-
-        self.monitor_3_settings = {
-                                   "enabled": self.settings["monitors"]["monitor-3"]["enabled"],
-                                   "coordsx": self.settings["monitors"]["monitor-3"]["coordsx"],
-                                   "coordsy": self.settings["monitors"]["monitor-3"]["coordsy"],
-                                   "DIR": self.settings["monitors"]["monitor-3"]["DIR"]
-                                   }
-
-        self.monitor_4_settings = {
-                                   "enabled": self.settings["monitors"]["monitor-4"]["enabled"],
-                                   "coordsx": self.settings["monitors"]["monitor-4"]["coordsx"],
-                                   "coordsy": self.settings["monitors"]["monitor-4"]["coordsy"],
-                                   "DIR": self.settings["monitors"]["monitor-4"]["DIR"]
-                                   }
-
-        """ DICTS """
-        self.monitors_dict = {
-                              "monitor-1": {"driver": None, "name": "monitor-1", "thread": None, "PID": None},
-                              "monitor-2": {"driver": None, "name": "monitor-2", "thread": None, "PID": None},
-                              "monitor-3": {"driver": None, "name": "monitor-3", "thread": None, "PID": None},
-                              "monitor-4": {"driver": None, "name": "monitor-4", "thread": None, "PID": None}
-                             }
-
-        """ LISTS """   
+        """ LIST """
         self.threads = list()
 
-        """ VARIABLES """
-        self.URL = "https://s2s.widedigital.com.br/S2S/Player.html"
-
-        """ THREAD INTERNAL """
-        self.combination = "ctrl+alt+p"
-
-        self.force = True
-
-        internal_thread = threading.Thread(target=self.exit_command)
+        ### self.monitors_dict = {"monitor-1": {"driver": None, "name": "monitor-1", "thread": None, "PID": None}}
+        
+        internal_thread = threading.Thread(target=self.combination_command)
         internal_thread.start()
 
         """ FUNCTIONS """
@@ -103,7 +68,7 @@ class S2SLauncher:
 
         self.monitors_setup()
         
-    def exit_command(self):
+    def combination_command(self):
         while True:
             command = keyboard.is_pressed(f"{self.combination}")
             if command:
@@ -120,7 +85,7 @@ class S2SLauncher:
     def restart(self):
         if self.force == True:
             try: 
-                self.logger.write(["CRITICAL", f"restarting...\n\n\n"])
+                self.logger.write(["CRITICAL", f"restarting...\n\n"])
 
                 time.sleep(2.5)
 
