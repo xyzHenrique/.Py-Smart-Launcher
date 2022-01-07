@@ -1,9 +1,42 @@
 {
 	"properties": {
-		"monitors": 4,
+		"monitors": {
+			"1": {
+				"enabled": true, 
+				"xy": [0,0], 
+				"size": {"enabled": false, "value": [0,0]}
+			},
+
+			"2": {
+				"enabled": true, 
+				"xy": [1280,0], 
+				"size": {"enabled": false, "value": [0,0]}
+			},
+
+			"3": {
+				"enabled": true, 
+				"xy": [1280,0], 
+				"size": {"enabled": false, "value": [0,0]}
+			},
+
+			"4": {
+				"enabled": true, 
+				"xy": [3840,0], 
+				"size": {"enabled": false, "value": [0,0]}
+			},
+
+			"5": {
+				"enabled": true, 
+				"xy": [5120,0], 
+				"size": {"enabled": false, "value": [0,0]}
+			}
+		},
+		
 		"URL": "https://s2s.widedigital.com.br/S2S/Player.html",
 		"DIR": "c:/WIDE/S2S/"
+		
 	},
+	
 	"system": {
 		"combination": "alt+f4"
 	}

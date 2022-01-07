@@ -32,41 +32,41 @@ except ImportError as err:
 
 class S2SLauncher:
     def __init__(self):
-        os.system("taskkill /F /IM chrome* /T >nul 2>&1")
-
-        if errors:
-            i = 0
-            for e in errors:
-                i += 1
-                print(f"TOTAL: ({i}) - ERROR: ({e})\n") 
-                time.sleep(10.0)
-            self.restart()
+        ### os.system("taskkill /F /IM chrome* /T >nul 2>&1")
 
         self.register = ApplicationRegister()
         self.settings = ApplicationSettingsLoader()
         
         """ SETTINGS PROPERTIES """
-        self.monitors = self.settings["properties"]["monitors"]
-        self.URL = self.settings["properties"]["URL"]
+        self.monitors_dict = dict() 
+
+        for key,item in self.settings["properties"]["monitors"].items():
+            self.monitors_dict[key] = {
+                "driver": None,
+                "thread": None,
+                "name": f"monitor-{key}",
+                "xy": item["xy"],
+                "size": item["size"]
+            }
 
         """ SETTINGS SYSTEM """
         self.combination = self.settings["system"]["combination"]
         
         """ DICT """
-        self.monitors_dict = dict() 
+        
 
         """ LIST """
         self.threads = list()
 
         ### self.monitors_dict = {"monitor-1": {"driver": None, "name": "monitor-1", "thread": None, "PID": None}}
         
-        internal_thread = threading.Thread(target=self.combination_command)
-        internal_thread.start()
+        ### internal_thread = threading.Thread(target=self.combination_command)
+        ### internal_thread.start()
 
         """ FUNCTIONS """
-        self.logger.write(["DEBUG", f"initializing monitors please wait, to exit press keys combination: [ {self.combination} ]"])
+        ### self.logger.write(["DEBUG", f"initializing monitors please wait, to exit press keys combination: [ {self.combination} ]"])
 
-        self.monitors_setup()
+        ### self.monitors_setup()
         
     def combination_command(self):
         while True:
@@ -204,33 +204,18 @@ class S2SLauncher:
 
     def monitors_setup(self):
         """ SETUP FOR WEBDRIVER """
-        # ----------------------------------------------------------------------------------------------
-        self.m1_options, self.m2_options, self.m3_options, self.m4_options = webdriver.ChromeOptions(), webdriver.ChromeOptions(), webdriver.ChromeOptions(), webdriver.ChromeOptions()
-        
-        for driver in [self.m1_options, self.m2_options, self.m3_options, self.m4_options]:
-            #--- disable the automation banners and logging messages ---#
+        for monitor in self.monitors:
+            driver = webdriver.ChromeOptions()
+
+            name = f"monitor{monitor}"
+
             driver.add_experimental_option("useAutomationExtension", False)
             driver.add_experimental_option("excludeSwitches",["enable-automation", "enable-logging"])
 
-            ### options for webdriver monitor 1
             if driver == self.m1_options:
                 driver.add_argument("--user-data-dir={}".format(self.monitor_1_settings['DIR']))
                 driver.add_argument("--window-position={},{}".format(self.monitor_1_settings['coordsx'], self.monitor_1_settings['coordsy']))
-            
-            ### options for webdriver monitor 2
-            if driver == self.m2_options:
-                driver.add_argument("--user-data-dir={}".format(self.monitor_2_settings['DIR']))
-                driver.add_argument("--window-position={},{}".format(self.monitor_2_settings['coordsx'], self.monitor_2_settings['coordsy']))
-            
-            ### options for webdriver monitor 3
-            if driver == self.m3_options:
-                driver.add_argument("--user-data-dir={}".format(self.monitor_3_settings['DIR']))
-                driver.add_argument("--window-position={},{}".format(self.monitor_3_settings['coordsx'], self.monitor_3_settings['coordsy']))
-            
-            ### options for webdriver monitor 4
-            if driver == self.m4_options:
-                driver.add_argument("--user-data-dir={}".format(self.monitor_4_settings['DIR']))
-                driver.add_argument("--window-position={},{}".format(self.monitor_4_settings['coordsx'], self.monitor_4_settings['coordsy']))
+        
 
             ### options for all webdriver monitors
             driver.add_argument("--test-type")

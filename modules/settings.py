@@ -19,7 +19,7 @@ import json
 
 def ApplicationSettingsLoader():
     try:
-        data = json.load(open("../system/settings/settings.json"))
+        data = json.load(open("./system/settings/settings.json"))
 
         return data
     except Exception as err:
