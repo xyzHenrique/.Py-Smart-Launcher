@@ -37,36 +37,39 @@ class S2SLauncher:
         self.register = ApplicationRegister()
         self.settings = ApplicationSettingsLoader()
         
-        """ SETTINGS PROPERTIES """
-        self.monitors_dict = dict() 
+        """ SETTINGS MONITORS """
+        self.monitors = dict() 
 
         for key,item in self.settings["properties"]["monitors"].items():
-            self.monitors_dict[key] = {
+            self.monitors[key] = {
                 "driver": None,
                 "thread": None,
-                "name": f"monitor-{key}",
-                "xy": item["xy"],
-                "size": item["size"]
+                "name": f"monitor{key}",
+                "enabled": item["enabled"],
+                "position-x": item["position"][0],
+                "position-y": item["position"][1],
+                "size-enabled": item["size"]["enabled"],
+                "size-value-1": item["size"]["value"][0],
+                "size-value-2": item["size"]["value"][1]
             }
+        
+        self.URL = self.settings["properties"]["URL"]
+        self.DIR = self.settings["properties"]["DIR"]
 
         """ SETTINGS SYSTEM """
         self.combination = self.settings["system"]["combination"]
-        
-        """ DICT """
-        
 
-        """ LIST """
+        """ ... """
         self.threads = list()
 
-        ### self.monitors_dict = {"monitor-1": {"driver": None, "name": "monitor-1", "thread": None, "PID": None}}
-        
-        ### internal_thread = threading.Thread(target=self.combination_command)
-        ### internal_thread.start()
+        """ ... """
+        #command_thread = threading.Thread(target=self.combination_command)
+        #command_thread.start()
 
-        """ FUNCTIONS """
+        """ ...  """
         ### self.logger.write(["DEBUG", f"initializing monitors please wait, to exit press keys combination: [ {self.combination} ]"])
 
-        ### self.monitors_setup()
+        self.monitors_setup()
         
     def combination_command(self):
         while True:
@@ -75,12 +78,11 @@ class S2SLauncher:
                 self.force = False
                 for i in self.monitors_dict.values():
                     if i["driver"] != None:
-                       self.logger.write(["DEBUG", f"({i['name']}): closing..."])
+                       self.register.write(["DEBUG", f"({i['name']}): closing..."])
                     
                        i["driver"].quit()
 
-                self.logger.write(["DEBUG", f"finishing, please wait..."])
-                sys.exit()
+                sys.exit()                
  
     def restart(self):
         if self.force == True:
@@ -204,87 +206,44 @@ class S2SLauncher:
 
     def monitors_setup(self):
         """ SETUP FOR WEBDRIVER """
-        for monitor in self.monitors:
-            driver = webdriver.ChromeOptions()
+        for monitor in self.monitors.items():
+            monitor["driver"] = webdriver.ChromeOptions()
 
-            name = f"monitor{monitor}"
+            ### ...
+            monitor["driver"].add_experimental_option("useAutomationExtension", False)
+            monitor["driver"].add_experimental_option("excludeSwitches",["enable-automation", "enable-logging"])
 
-            driver.add_experimental_option("useAutomationExtension", False)
-            driver.add_experimental_option("excludeSwitches",["enable-automation", "enable-logging"])
-
-            if driver == self.m1_options:
-                driver.add_argument("--user-data-dir={}".format(self.monitor_1_settings['DIR']))
-                driver.add_argument("--window-position={},{}".format(self.monitor_1_settings['coordsx'], self.monitor_1_settings['coordsy']))
+            ### ...
+            monitor["driver"].add_argument(f"--user-data-dir={self.DIR}{monitor['name']}")
+            monitor["driver"].add_argument(f"--window-position={monitor['position-x']},{monitor['position-y']}")
         
+            ### ...
+            monitor["driver"].add_argument("--test-type")
+            monitor["driver"].add_argument("--new-window")
+            monitor["driver"].add_argument("--unlimited-storage")
+            monitor["driver"].add_argument("--autoplay-policy=no-user-gesture-required")
+            monitor["driver"].add_argument("--start-fullscreen")
+            monitor["driver"].add_argument("--kiosk")
+            monitor["driver"].add_argument("--disable-notifications")
+            monitor["driver"].add_argument("--disable-extensions")
+            monitor["driver"].add_argument("--disable-infobars")
 
-            ### options for all webdriver monitors
-            driver.add_argument("--test-type")
-            driver.add_argument("--new-window")
-            driver.add_argument("--unlimited-storage")
-            driver.add_argument("--autoplay-policy=no-user-gesture-required")
-            driver.add_argument("--start-fullscreen")
-            driver.add_argument("--kiosk")
-            driver.add_argument("--disable-notifications")
-            driver.add_argument("--disable-extensions")
-            driver.add_argument("--disable-infobars")
+        ### ...
+        if monitor["enabled"]: 
+            print("y")
 
-        # ----------------------------------------------------------------------------------------------
-        m1_t, m2_t, m3_t, m4_t = None, None, None, None
+            #m1_t = threading.Thread(name=f"thread-{self.monitors_dict['monitor-1']['name']}", target=self.monitor_1)
+            #m1_t.start()
 
-        ### monitor-1 thread and config
-        if self.monitor_1_settings["enabled"]: 
-            self.monitors_dict["monitor-1"]["driver"] = webdriver.Chrome(options=self.m1_options,)
-            self.monitors_dict["monitor-1"]["PID"] = self.monitors_dict["monitor-1"]["driver"].service.process.pid
-
-            m1_t = threading.Thread(name=f"thread-{self.monitors_dict['monitor-1']['name']}", target=self.monitor_1)
-            m1_t.start()
-
-            self.monitors_dict["monitor-1"]["thread"] = m1_t
+            #self.monitors_dict["monitor-1"]["thread"] = m1_t
 
         else:
-            self.logger.write(["WARNING", f"{self.monitors_dict['monitor-1']['name']}: disabled!"])
+            print("n")
+            ## self.logger.write(["WARNING", f"{self.monitors_dict['monitor-1']['name']}: disabled!"])
 
-        ### monitor-2 thread and config
-        if self.monitor_2_settings["enabled"]: 
-            self.monitors_dict["monitor-2"]["driver"] = webdriver.Chrome(options=self.m2_options,)
-            self.monitors_dict["monitor-2"]["PID"] = self.monitors_dict["monitor-2"]["driver"].service.process.pid
-
-            m2_t = threading.Thread(name=f"thread-{self.monitors_dict['monitor-2']['name']}", target=self.monitor_2)
-            m2_t.start()
-
-            self.monitors_dict["monitor-2"]["thread"] = m2_t
-
-        else:
-            self.logger.write(["WARNING", f"{self.monitors_dict['monitor-2']['name']}: disabled!"])
-
-        ### monitor-3 thread and config
-        if self.monitor_3_settings["enabled"]: 
-            self.monitors_dict["monitor-3"]["driver"] = webdriver.Chrome(options=self.m3_options,)
-            self.monitors_dict["monitor-3"]["PID"] = self.monitors_dict["monitor-3"]["driver"].service.process.pid
-
-            m3_t = threading.Thread(name=f"thread-{self.monitors_dict['monitor-3']['name']}", target=self.monitor_3)
-            m3_t.start()
-
-            self.monitors_dict["monitor-3"]["thread"] = m3_t
-
-        else:
-            self.logger.write(["WARNING", f"{self.monitors_dict['monitor-3']['name']}: disabled!"])
-
-        ### monitor-4 thread and config
-        if self.monitor_4_settings["enabled"]: 
-            self.monitors_dict["monitor-4"]["driver"] = webdriver.Chrome(options=self.m4_options,)
-            self.monitors_dict["monitor-4"]["PID"] = self.monitors_dict["monitor-4"]["driver"].service.process.pid
-
-            m4_t = threading.Thread(name=f"thread-{self.monitors_dict['monitor-4']['name']}", target=self.monitor_4)
-            m4_t.start()
-
-            self.monitors_dict["monitor-4"]["thread"] = m4_t
-
-        else:
-            self.logger.write(["WARNING", f"{self.monitors_dict['monitor-4']['name']}: disabled!"])
-
-        for thread in [m1_t, m2_t, m3_t, m4_t]:
-            self.threads.append(thread)    
+     
+        #for thread in [m1_t, m2_t, m3_t, m4_t]:
+            #self.threads.append(thread)    
 
 if __name__ == "__main__":
     application = S2SLauncher()

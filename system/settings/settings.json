@@ -2,32 +2,32 @@
 	"properties": {
 		"monitors": {
 			"1": {
-				"enabled": true, 
-				"xy": [0,0], 
+				"enabled": true,
+				"position": [0,0], 
 				"size": {"enabled": false, "value": [0,0]}
 			},
 
 			"2": {
 				"enabled": true, 
-				"xy": [1280,0], 
+				"position": [1280,0], 
 				"size": {"enabled": false, "value": [0,0]}
 			},
 
 			"3": {
 				"enabled": true, 
-				"xy": [1280,0], 
+				"position": [1280,0], 
 				"size": {"enabled": false, "value": [0,0]}
 			},
 
 			"4": {
 				"enabled": true, 
-				"xy": [3840,0], 
+				"position": [3840,0], 
 				"size": {"enabled": false, "value": [0,0]}
 			},
 
 			"5": {
 				"enabled": true, 
-				"xy": [5120,0], 
+				"position": [5120,0], 
 				"size": {"enabled": false, "value": [0,0]}
 			}
 		},
