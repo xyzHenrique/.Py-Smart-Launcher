@@ -43,8 +43,9 @@ class S2SLauncher:
         for key,item in self.settings["properties"]["monitors"].items():
             self.monitors[key] = {
                 "driver": None,
+                "PID": None,
                 "thread": None,
-                "name": f"monitor{key}",
+                "name": f"{key}",
                 "enabled": item["enabled"],
                 "position-x": item["position"][0],
                 "position-y": item["position"][1],
@@ -204,9 +205,18 @@ class S2SLauncher:
 
         self.restart()
 
+    def monitors_manager(self, name):
+        for monitor in self.monitors.keys():
+            if name == monitor:
+                self.monitors[name]["PID"] = self.monitors[name]["driver"].service.process.pid
+
+                print(self.monitrs[name]["PID"])
+
+
     def monitors_setup(self):
         """ SETUP FOR WEBDRIVER """
-        for monitor in self.monitors.items():
+        for monitor in self.monitors.values():
+            ### ...
             monitor["driver"] = webdriver.ChromeOptions()
 
             ### ...
@@ -228,22 +238,17 @@ class S2SLauncher:
             monitor["driver"].add_argument("--disable-extensions")
             monitor["driver"].add_argument("--disable-infobars")
 
-        ### ...
-        if monitor["enabled"]: 
-            print("y")
+            ### ...
+            if monitor["enabled"]: 
+                ### print(f"{monitor['name']} enabled!")
+                
+                t = threading.Thread(name=f"{monitor['name']}", target=self.monitors_manager, args=(monitor["name"]))
+                self.threads.append(t)
+                t.start()
 
-            #m1_t = threading.Thread(name=f"thread-{self.monitors_dict['monitor-1']['name']}", target=self.monitor_1)
-            #m1_t.start()
-
-            #self.monitors_dict["monitor-1"]["thread"] = m1_t
-
-        else:
-            print("n")
-            ## self.logger.write(["WARNING", f"{self.monitors_dict['monitor-1']['name']}: disabled!"])
-
-     
-        #for thread in [m1_t, m2_t, m3_t, m4_t]:
-            #self.threads.append(thread)    
+            else:
+                print(f"{monitor['name']} disabled!")
+                ### self.logger.write(["WARNING", f"{self.monitors_dict['monitor-1']['name']}: disabled!"])
 
 if __name__ == "__main__":
     application = S2SLauncher()
