@@ -18,6 +18,8 @@
 errors = []
 
 import sys, os, time, threading
+
+from selenium.webdriver.chrome import options
 try:
     import pyautogui, keyboard
 
@@ -208,43 +210,48 @@ class S2SLauncher:
     def monitors_manager(self, name):
         for monitor in self.monitors.keys():
             if name == monitor:
-                self.monitors[name]["PID"] = self.monitors[name]["driver"].service.process.pid
+                driver = self.monitors[name]["driver"]
 
-                print(self.monitrs[name]["PID"])
+                driver.get(self.URL)
+                pass
+                ### self.monitors[name]["PID"] = self.monitors[name]["driver"].service.process.pid
+
+                ### print(self.monitors[name]["PID"])
 
 
     def monitors_setup(self):
         """ SETUP FOR WEBDRIVER """
         for monitor in self.monitors.values():
-            ### ...
-            monitor["driver"] = webdriver.ChromeOptions()
-
-            ### ...
-            monitor["driver"].add_experimental_option("useAutomationExtension", False)
-            monitor["driver"].add_experimental_option("excludeSwitches",["enable-automation", "enable-logging"])
-
-            ### ...
-            monitor["driver"].add_argument(f"--user-data-dir={self.DIR}{monitor['name']}")
-            monitor["driver"].add_argument(f"--window-position={monitor['position-x']},{monitor['position-y']}")
-        
-            ### ...
-            monitor["driver"].add_argument("--test-type")
-            monitor["driver"].add_argument("--new-window")
-            monitor["driver"].add_argument("--unlimited-storage")
-            monitor["driver"].add_argument("--autoplay-policy=no-user-gesture-required")
-            monitor["driver"].add_argument("--start-fullscreen")
-            monitor["driver"].add_argument("--kiosk")
-            monitor["driver"].add_argument("--disable-notifications")
-            monitor["driver"].add_argument("--disable-extensions")
-            monitor["driver"].add_argument("--disable-infobars")
-
-            ### ...
             if monitor["enabled"]: 
-                ### print(f"{monitor['name']} enabled!")
+                print(f"{monitor['name']} enabled!")
+
+                ### ...
+                driver = webdriver.ChromeOptions()
+
+                ### ...
+                driver.add_experimental_option("useAutomationExtension", False)
+                driver.add_experimental_option("excludeSwitches",["enable-automation", "enable-logging"])
+
+                ### ...
+                driver.add_argument(f"--user-data-dir={self.DIR}{monitor['name']}")
+                driver.add_argument(f"--window-position={monitor['position-x']},{monitor['position-y']}")
+            
+                ### ...
+                driver.add_argument("--test-type")
+                driver.add_argument("--new-window")
+                driver.add_argument("--unlimited-storage")
+                driver.add_argument("--autoplay-policy=no-user-gesture-required")
+                driver.add_argument("--start-fullscreen")
+                driver.add_argument("--kiosk")
+                driver.add_argument("--disable-notifications")
+                driver.add_argument("--disable-extensions")
+                driver.add_argument("--disable-infobars")
+
+                monitor["driver"] = webdriver.Chrome(options=driver)
+
+                thread = threading.Thread(name=f"{monitor['name']}", target=self.monitors_manager, args=(monitor["name"])).start()
                 
-                t = threading.Thread(name=f"{monitor['name']}", target=self.monitors_manager, args=(monitor["name"]))
-                self.threads.append(t)
-                t.start()
+                self.threads.append(thread)
 
             else:
                 print(f"{monitor['name']} disabled!")

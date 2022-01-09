@@ -2,7 +2,7 @@
 	"properties": {
 		"monitors": {
 			"1": {
-				"enabled": true,
+				"enabled": false,
 				"position": [0,0], 
 				"size": {"enabled": false, "value": [0,0]}
 			},
@@ -14,13 +14,13 @@
 			},
 
 			"3": {
-				"enabled": true, 
+				"enabled": false, 
 				"position": [1280,0], 
 				"size": {"enabled": false, "value": [0,0]}
 			},
 
 			"4": {
-				"enabled": true, 
+				"enabled": false, 
 				"position": [3840,0], 
 				"size": {"enabled": false, "value": [0,0]}
 			},
