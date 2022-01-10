@@ -5,6 +5,7 @@
 				"enabled": true,
 				"position": [-5,-25], 
 				"size": {"enabled": true, "value": [2560,750]}
+
 			},
 
 			"2": {
@@ -29,6 +30,7 @@
 				"enabled": false, 
 				"position": [5120,0], 
 				"size": {"enabled": false, "value": [0,0]}
+				
 			}
 		},
 		
@@ -39,7 +41,7 @@
 	
 	"system": {
 		"combination": "alt+f4",
-		"timer": 0.3,
+		"delay": 0.3,
 		"attempts": 3
 	},
 	

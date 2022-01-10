@@ -89,6 +89,7 @@ class Launcher:
 
                 sys.exit()                
 
+
     def restart(self):
         if self.force == True:
             try: 

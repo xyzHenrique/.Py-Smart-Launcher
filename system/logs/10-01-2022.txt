@@ -351,3 +351,92 @@ Backtrace:
 	RtlGetAppContainerNamedObjectPath [0x77157A9E+286]
 	RtlGetAppContainerNamedObjectPath [0x77157A6E+238]
 )
+[10/01/2022 | 02:06:21] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 02:08:31] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 02:08:31] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 02:08:31] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 02:08:31] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 02:08:31] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 02:08:31] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 02:08:31] - INFO - monitor 1 (15028) criado com sucesso!
+[10/01/2022 | 02:10:10] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 02:10:10] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 02:10:10] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 02:10:10] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 02:10:10] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 02:10:10] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 02:10:10] - INFO - monitor 1 (240) criado com sucesso!
+[10/01/2022 | 02:10:10] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 02:10:10] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00996903+2517251]
+	Ordinal0 [0x0092F8E1+2095329]
+	Ordinal0 [0x00832710+1058576]
+	Ordinal0 [0x0085248D+1189005]
+	Ordinal0 [0x00853609+1193481]
+	GetHandleVerifier [0x00B25904+1577972]
+	GetHandleVerifier [0x00BD0B97+2279047]
+	GetHandleVerifier [0x00A26D09+534521]
+	GetHandleVerifier [0x00A25DB9+530601]
+	Ordinal0 [0x00934FF9+2117625]
+	Ordinal0 [0x009398A8+2136232]
+	Ordinal0 [0x009399E2+2136546]
+	Ordinal0 [0x00943541+2176321]
+	BaseThreadInitThunk [0x7606FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77157A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77157A6E+238]
+)
+[10/01/2022 | 02:21:28] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 02:21:38] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 02:22:17] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 02:22:17] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 02:22:17] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 02:22:17] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 02:22:17] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 02:22:17] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 02:22:17] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 02:22:17] - INFO - monitor 1 (5888) criado com sucesso!
+[10/01/2022 | 02:22:34] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 02:22:34] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 02:22:34] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 02:22:34] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 02:22:34] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 02:22:34] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 02:22:34] - INFO - monitor 1 (8876) criado com sucesso!
+[10/01/2022 | 02:22:34] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 02:22:44] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 02:22:44] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 02:22:44] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 02:22:44] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 02:22:44] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 02:22:44] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 02:22:44] - INFO - monitor 1 (6208) criado com sucesso!
+[10/01/2022 | 02:23:09] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 02:23:09] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 02:23:09] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 02:23:09] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 02:23:09] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 02:23:09] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 02:23:09] - INFO - monitor 1 (244) criado com sucesso!
+[10/01/2022 | 02:23:09] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 02:23:09] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00996903+2517251]
+	Ordinal0 [0x0092F8E1+2095329]
+	Ordinal0 [0x00832710+1058576]
+	Ordinal0 [0x0085248D+1189005]
+	Ordinal0 [0x00853609+1193481]
+	GetHandleVerifier [0x00B25904+1577972]
+	GetHandleVerifier [0x00BD0B97+2279047]
+	GetHandleVerifier [0x00A26D09+534521]
+	GetHandleVerifier [0x00A25DB9+530601]
+	Ordinal0 [0x00934FF9+2117625]
+	Ordinal0 [0x009398A8+2136232]
+	Ordinal0 [0x009399E2+2136546]
+	Ordinal0 [0x00943541+2176321]
+	BaseThreadInitThunk [0x7606FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77157A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77157A6E+238]
+)
