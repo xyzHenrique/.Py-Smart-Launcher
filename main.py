@@ -19,7 +19,6 @@ errors = []
 
 import sys, os, time, threading
 
-from selenium.webdriver.chrome import options
 try:
     import pyautogui, keyboard
 
@@ -30,9 +29,9 @@ try:
     from modules.register import ApplicationRegister
 
 except ImportError as err:
-    errors.append(err)
+    print(err)
 
-class S2SLauncher:
+class Launcher:
     def __init__(self):
         self.register = ApplicationRegister()
         self.settings = ApplicationSettingsLoader()
@@ -59,6 +58,7 @@ class S2SLauncher:
         
         self.combination = self.settings["system"]["combination"]
         self.timer = self.settings["system"]["timer"]
+        self.attempts = self.settings["system"]["attempts"]
 
         self.BLOCKED = self.settings["blocked"]
 
@@ -67,30 +67,28 @@ class S2SLauncher:
         time.sleep(self.timer)
 
         """ ... """
-        self.threads = list()
-
-        """ ... """
-        combination_t = threading.Thread(target=self.combination)
+        combination_t = threading.Thread(target=self.combination_command)
         combination_t.start()
 
         """ ... """
-        self.register.write(["DEBUG", f"inicializando, para encerrar a aplicação pressione ({self.combination})"])
+        self.register.write(["DEBUG", f"inicializando, para encerrar a aplicação corretamente pressione ({self.combination})"])
 
-        self.setup(None)
+        self.setup()
         
-    def combination(self):
+    def combination_command(self):
         while True:
             command = keyboard.is_pressed(f"{self.combination}")
             if command:
-                self.force = False
-                for i in self.monitors_dict.values():
-                    if i["driver"] != None:
-                       self.register.write(["DEBUG", f"({i['name']}): closing..."])
+                for monitor in self.monitors.values():
+                    if monitor["driver"] != None:
+                       
+                       self.register.write(["DEBUG", f"encerrando monitor {monitor['name']}, por favor aguarde..."])
                     
-                       i["driver"].quit()
+                       monitor["driver"].quit()
+                       monitor["thread"].join()
 
                 sys.exit()                
- 
+
     def restart(self):
         if self.force == True:
             try: 
@@ -111,12 +109,15 @@ class S2SLauncher:
         pyautogui.press("esc")
             
     def manager(self, name):
+        PID = None
         try:
             for monitor in self.monitors.keys():
                 if name == monitor:
+                    
                     attempts = 0
 
                     driver = self.monitors[name]["driver"]
+                    PID = driver.service.process.pid
 
                     driver.get(self.URL)
 
@@ -124,12 +125,15 @@ class S2SLauncher:
 
                     driver.execute_script(f'document.title = "monitor {name}"')
 
+                    self.register.write(["INFO", f"monitor {self.monitors[name]['name']} ({PID}) criado com sucesso!"])
+                    
                     while True:
+                        
                         for blocked in self.BLOCKED:
                             if driver.current_url == blocked or not driver.current_url == self.URL:
                                 attempts += 1
 
-                                self.register.write(["WARNING", f"ULR inválida está sendo executada ({driver.current_url}) , número de tentativas: ({attempts})"])
+                                self.register.write(["WARNING", f"uma ULR inválida está sendo executada ({driver.current_url}), número de tentativas: ({attempts})"])
 
                                 driver.get(self.URL)
                             
@@ -137,54 +141,58 @@ class S2SLauncher:
 
                                 driver.execute_script(f'document.title = "monitor {name}"')
 
-                            if attempts > 2:
-                                self.register.write(["WARNING", f"após ({3}) tentativas a aplicação não conseguiu resumir o conteúdo, a thread será reiniciada."])
+                            if attempts >= 1:
+                                self.register.write(["WARNING", f"o número máximo de tentativas foi atingido ({attempts}), o monitor {name} será reiniciado!"])
+                                    
+                                driver.quit()
 
-                        if keyboard.is_pressed("alt+p"):
-                            driver.get("chrome://whats-new/?auto=true")
-                        
-                    ### self.monitors[name]["PID"] = self.monitors[name]["driver"].service.process.pid
+                                sys.exit()
 
-        except:
-            pass
+                        if keyboard.is_pressed("p"):
+                            driver.get("chrome://whats-new/?auto=true")        
+        except Exception as err:
+            os.system(f"taskkill /F /PID {PID} /T >nul 2>&1")
 
-
-    def setup(self, this):
-        if this != None:
-            print("")
-        else:
-            print("S")
+            self.register.write(["DEBUG", f"monitor {self.monitors[name]['name']} encerrado! ({err})"])
+        
+    def setup(self):
         for monitor in self.monitors.values():
             if monitor["enabled"]: 
                 driver = webdriver.ChromeOptions()
 
-                ### ...
+                """ ... """
                 driver.add_experimental_option("useAutomationExtension", False)
                 driver.add_experimental_option("excludeSwitches",["enable-automation", "enable-logging"])
 
-                ### ...
+                """ ... """
                 driver.add_argument(f"--user-data-dir={self.DIR}{monitor['name']}")
                 driver.add_argument(f"--window-position={monitor['position-x']},{monitor['position-y']}")
 
+                driver.add_argument("--window-size=2560,750")
+                
+
+                """ ... """
                 driver.add_argument("--test-type")
                 driver.add_argument("--new-window")
                 driver.add_argument("--unlimited-storage")
                 driver.add_argument("--autoplay-policy=no-user-gesture-required")
-                driver.add_argument("--start-fullscreen")
-                driver.add_argument("--kiosk")
+                #driver.add_argument("--start-fullscreen")
+                #driver.add_argument("--kiosk")
                 driver.add_argument("--disable-notifications")
                 driver.add_argument("--disable-extensions")
-                driver.add_argument("--disable-infobars")
-                driver.add_argument('--disable-blink-features=AutomationControlled')
-
+                driver.add_argument('--ignore-certificate-errors')
+            
                 monitor["driver"] = webdriver.Chrome(options=driver)
 
-                thread = threading.Thread(name=f"{monitor['name']}", target=self.manager, args=(monitor["name"])).start()
+                self.register.write(["INFO", f"argumentos adicionadas ao monitor {monitor['name']}"])
+        
+                thread = threading.Thread(target=self.manager, args=(monitor["name"]))
                 
                 monitor["thread"] = thread
-
+                
+                thread.start()
             else:
-                self.register.write(["WARNING", f"{monitor['name']} desabilitado!"])
+                self.register.write(["WARNING", f"monitor {monitor['name']} está desabilitado!"])
 
 if __name__ == "__main__":
-    application = S2SLauncher()
+    application = Launcher()

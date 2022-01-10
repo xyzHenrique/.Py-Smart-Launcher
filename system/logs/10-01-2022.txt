@@ -1,0 +1,353 @@
+[10/01/2022 | 01:23:07] - DEBUG - arquivo (10-01-2022.txt) criado com sucesso!
+
+[10/01/2022 | 01:23:07] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:23:07] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:23:07] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:23:07] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:23:07] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:23:07] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:23:07] - INFO - monitor 1 (864) criado com sucesso!
+[10/01/2022 | 01:23:07] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:23:23] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:23:23] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:23:23] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:23:23] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:23:23] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:23:23] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:23:23] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:23:23] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:25:11] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:25:28] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:25:28] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:25:28] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:25:28] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:25:28] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:25:28] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:25:28] - INFO - monitor 1 (3352) criado com sucesso!
+[10/01/2022 | 01:25:28] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:25:28] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:25:48] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:25:48] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:25:48] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:25:48] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:25:48] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:25:48] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:25:48] - INFO - monitor 1 (13648) criado com sucesso!
+[10/01/2022 | 01:25:48] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:26:04] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:26:04] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:26:04] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:26:04] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:26:04] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:26:04] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:26:04] - INFO - monitor 1 (9672) criado com sucesso!
+[10/01/2022 | 01:26:04] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:26:04] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:26:50] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:26:50] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:26:50] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:26:50] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:26:50] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:26:50] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:26:50] - INFO - monitor 1 (11824) criado com sucesso!
+[10/01/2022 | 01:26:50] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:26:50] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:27:51] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:27:51] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:27:51] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:27:51] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:27:51] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:27:51] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:27:51] - INFO - monitor 1 (9416) criado com sucesso!
+[10/01/2022 | 01:27:51] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:27:51] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:29:27] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:29:57] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:29:57] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:29:57] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:29:57] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:29:57] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:29:57] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:29:57] - INFO - monitor 1 (12804) criado com sucesso!
+[10/01/2022 | 01:29:57] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:29:57] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:30:33] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:30:33] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:30:33] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:30:33] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:30:33] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:30:33] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:30:33] - INFO - monitor 1 (4712) criado com sucesso!
+[10/01/2022 | 01:30:33] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:30:52] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:30:52] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:30:52] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:30:52] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:30:52] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:30:52] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:30:52] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:30:52] - INFO - monitor 1 (1212) criado com sucesso!
+[10/01/2022 | 01:30:52] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:32:22] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:32:22] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:32:22] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:32:22] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:32:22] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:32:22] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:32:22] - INFO - monitor 1 (2760) criado com sucesso!
+[10/01/2022 | 01:32:22] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:32:39] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:32:39] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:32:39] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:32:39] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:32:39] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:32:39] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:32:39] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:32:39] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:32:50] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:32:50] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:32:50] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:32:50] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:32:50] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:32:50] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:32:50] - INFO - monitor 1 (13908) criado com sucesso!
+[10/01/2022 | 01:32:50] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:33:03] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:33:03] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:33:03] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:33:03] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:33:03] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:33:03] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:33:03] - INFO - monitor 1 (13320) criado com sucesso!
+[10/01/2022 | 01:33:03] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:33:16] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:33:16] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:33:16] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:33:16] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:33:16] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:33:16] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:33:16] - INFO - monitor 1 (14436) criado com sucesso!
+[10/01/2022 | 01:33:16] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:33:29] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:33:29] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:33:29] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:33:29] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:33:29] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:33:29] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:33:29] - INFO - monitor 1 (3624) criado com sucesso!
+[10/01/2022 | 01:33:29] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:33:43] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:33:43] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:33:43] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:33:43] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:33:43] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:33:43] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:33:43] - INFO - monitor 1 (4052) criado com sucesso!
+[10/01/2022 | 01:33:43] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:33:43] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:36:08] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:36:08] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:36:08] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:36:08] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:36:08] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:36:08] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:36:08] - INFO - monitor 1 (10008) criado com sucesso!
+[10/01/2022 | 01:36:08] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:36:08] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:36:30] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:36:30] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:36:30] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:36:30] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:36:30] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:36:30] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:36:30] - INFO - monitor 1 (14244) criado com sucesso!
+[10/01/2022 | 01:36:30] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:36:30] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:36:57] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:36:57] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:36:57] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:36:57] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:36:57] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:36:57] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:36:57] - INFO - monitor 1 (10512) criado com sucesso!
+[10/01/2022 | 01:37:09] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:37:09] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:37:09] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:37:09] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:37:09] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:37:09] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:37:09] - INFO - monitor 1 (972) criado com sucesso!
+[10/01/2022 | 01:37:09] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:37:09] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:38:26] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:38:26] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:38:26] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:38:26] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:38:26] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:38:26] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:38:26] - INFO - monitor 1 (8780) criado com sucesso!
+[10/01/2022 | 01:38:26] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:38:38] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:38:38] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:38:38] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:38:38] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:38:38] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:38:38] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:38:38] - INFO - monitor 1 (2524) criado com sucesso!
+[10/01/2022 | 01:38:38] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:38:38] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:44:01] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:44:01] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:44:01] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:44:01] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:44:01] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:44:01] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:44:01] - INFO - monitor 1 (9328) criado com sucesso!
+[10/01/2022 | 01:44:01] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:44:01] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:51:39] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:51:39] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:51:39] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:51:39] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:51:39] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:51:39] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:51:39] - INFO - monitor 1 (8392) criado com sucesso!
+[10/01/2022 | 01:51:39] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:51:39] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:53:24] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:53:24] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:53:24] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:53:24] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:53:24] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:53:24] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:53:24] - INFO - monitor 1 (13292) criado com sucesso!
+[10/01/2022 | 01:53:24] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:53:45] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:53:45] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:53:45] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:53:45] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:53:45] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:53:45] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:53:45] - INFO - monitor 1 (11920) criado com sucesso!
+[10/01/2022 | 01:53:45] - DEBUG - monitor 1 encerrado!
+[10/01/2022 | 01:54:18] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:54:18] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:54:18] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:54:18] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:54:18] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:54:18] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:54:18] - INFO - monitor 1 (12168) criado com sucesso!
+[10/01/2022 | 01:54:18] - DEBUG - monitor 1 encerrado! ('WebDriver' object has no attribute 'add_argument')
+[10/01/2022 | 01:57:01] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:57:01] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:57:01] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:57:01] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:57:01] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:57:01] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:57:01] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 01:57:01] - INFO - monitor 1 (11188) criado com sucesso!
+[10/01/2022 | 01:57:09] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:57:09] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:57:09] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:57:09] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:57:09] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:57:09] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:59:52] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 01:59:52] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 01:59:52] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 01:59:52] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 01:59:52] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 01:59:52] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 01:59:52] - INFO - monitor 1 (10892) criado com sucesso!
+[10/01/2022 | 01:59:52] - DEBUG - monitor 1 encerrado! (Message: chrome not reachable
+  (Session info: chrome=97.0.4692.71)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00996903+2517251]
+	Ordinal0 [0x0092F8E1+2095329]
+	Ordinal0 [0x00832710+1058576]
+	Ordinal0 [0x008276A4+1013412]
+	Ordinal0 [0x00827EA8+1015464]
+	Ordinal0 [0x00829695+1021589]
+	Ordinal0 [0x00823686+996998]
+	Ordinal0 [0x00833A60+1063520]
+	Ordinal0 [0x00885382+1397634]
+	Ordinal0 [0x0087639B+1336219]
+	Ordinal0 [0x008527A7+1189799]
+	Ordinal0 [0x00853609+1193481]
+	GetHandleVerifier [0x00B25904+1577972]
+	GetHandleVerifier [0x00BD0B97+2279047]
+	GetHandleVerifier [0x00A26D09+534521]
+	GetHandleVerifier [0x00A25DB9+530601]
+	Ordinal0 [0x00934FF9+2117625]
+	Ordinal0 [0x009398A8+2136232]
+	Ordinal0 [0x009399E2+2136546]
+	Ordinal0 [0x00943541+2176321]
+	BaseThreadInitThunk [0x7606FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77157A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77157A6E+238]
+)
+[10/01/2022 | 02:00:49] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 02:00:49] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 02:00:49] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 02:00:49] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 02:00:49] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 02:00:49] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 02:00:49] - INFO - monitor 1 (15376) criado com sucesso!
+[10/01/2022 | 02:00:49] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 02:00:49] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00996903+2517251]
+	Ordinal0 [0x0092F8E1+2095329]
+	Ordinal0 [0x00832710+1058576]
+	Ordinal0 [0x0085248D+1189005]
+	Ordinal0 [0x00853609+1193481]
+	GetHandleVerifier [0x00B25904+1577972]
+	GetHandleVerifier [0x00BD0B97+2279047]
+	GetHandleVerifier [0x00A26D09+534521]
+	GetHandleVerifier [0x00A25DB9+530601]
+	Ordinal0 [0x00934FF9+2117625]
+	Ordinal0 [0x009398A8+2136232]
+	Ordinal0 [0x009399E2+2136546]
+	Ordinal0 [0x00943541+2176321]
+	BaseThreadInitThunk [0x7606FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77157A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77157A6E+238]
+)
+[10/01/2022 | 02:01:47] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 02:01:47] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 02:01:47] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 02:01:47] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 02:01:47] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 02:01:47] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 02:01:47] - INFO - monitor 1 (10876) criado com sucesso!
+[10/01/2022 | 02:01:47] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 02:02:10] - DEBUG - inicializando, para encerrar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 02:02:10] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 02:02:10] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 02:02:10] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 02:02:10] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 02:02:10] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 02:02:10] - INFO - monitor 1 (9036) criado com sucesso!
+[10/01/2022 | 02:02:10] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 02:02:10] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00996903+2517251]
+	Ordinal0 [0x0092F8E1+2095329]
+	Ordinal0 [0x00832710+1058576]
+	Ordinal0 [0x0085248D+1189005]
+	Ordinal0 [0x00853609+1193481]
+	GetHandleVerifier [0x00B25904+1577972]
+	GetHandleVerifier [0x00BD0B97+2279047]
+	GetHandleVerifier [0x00A26D09+534521]
+	GetHandleVerifier [0x00A25DB9+530601]
+	Ordinal0 [0x00934FF9+2117625]
+	Ordinal0 [0x009398A8+2136232]
+	Ordinal0 [0x009399E2+2136546]
+	Ordinal0 [0x00943541+2176321]
+	BaseThreadInitThunk [0x7606FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77157A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77157A6E+238]
+)
