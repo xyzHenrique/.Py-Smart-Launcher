@@ -1,14 +1,17 @@
 import pyautogui
 from PIL import ImageGrab
+import glob
 from functools import partial
 ImageGrab.grab = partial(ImageGrab.grab, all_screens=True)
 
-icon_pos = pyautogui.locateOnScreen('system/images/minidb/restore_1.png')
+for file in glob.glob("./system/images/minidb/*.png"):
+    img = pyautogui.locateOnScreen(file)
 
-if icon_pos:
-    print(icon_pos)
-    print("yes, exists")
-    pyautogui.moveTo(icon_pos)
-    pyautogui.click()
-else:
-    print("no, exists")
+    if img:
+        print(img)
+        print("yes")
+        
+        pyautogui.moveTo(img)
+        pyautogui.click()
+    else:
+        print("no")

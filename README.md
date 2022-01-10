@@ -8,6 +8,7 @@ pip3 install pyautogui
 pip3 install selenium
 pip3 install keyboard
 pip3 install Image
+pip3 install opencv-python
 pause
 exit
 ```

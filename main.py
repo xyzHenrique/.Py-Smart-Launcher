@@ -23,7 +23,10 @@ try:
     import pyautogui, keyboard
 
     from selenium import webdriver
-    from selenium.webdriver.chrome.options import Options
+
+    from PIL import ImageGrab
+    import glob
+    from functools import partial
 
     from modules.settings import ApplicationSettingsLoader
     from modules.register import ApplicationRegister
@@ -38,23 +41,24 @@ class Launcher:
         
         """ ... """
         self.monitors = dict() 
-
+            
         for key,item in self.settings["properties"]["monitors"].items():
             self.monitors[key] = {
                 "driver": None,
                 "PID": None,
                 "thread": None,
                 "name": f"{key}",
-                "enabled": item["enabled"],
-                "position-x": item["position"][0],
-                "position-y": item["position"][1],
-                "size-enabled": item["size"]["enabled"],
-                "size-value-1": item["size"]["value"][0],
-                "size-value-2": item["size"]["value"][1]
+
+                "monitor-enabled": item["enabled"],
+                "monitor-position-x": item["xy"][0],
+                "monitor-position-y": item["xy"][1],
+                "monitor-size": item["size"]["enabled"],
+                "monitor-size-x": item["size"]["xy"][0],
+                "monitor-size-y": item["size"]["xy"][1],
+                "DIR": item["DIR"]
             }
         
         self.URL = self.settings["properties"]["URL"]
-        self.DIR = self.settings["properties"]["DIR"]
         
         self.combination = self.settings["system"]["combination"]
         self.timer = self.settings["system"]["timer"]
