@@ -27,7 +27,7 @@ class ApplicationRegister:
 
         self.levels = ["INFO", "WARNING", "ERROR", "CRITICAL", "DEBUG"]
 
-        self.logs_path = "../system/logs/"
+        self.logs_path = "./system/logs/"
 
     def setup(self):
             exist = False
@@ -40,11 +40,11 @@ class ApplicationRegister:
                     
                     time.sleep(0.5)
 
-                    self.write(["DEBUG", f"LOG ({self.logname}.txt) file created and started!\n"])
+                    self.write(["DEBUG", f"arquivo ({self.logname}.txt) criado com sucesso!\n"])
                     
                     exist = True
                 except:
-                    print(f"[{self.now[0]} | {self.now[1]}] - ERROR - could not create LOG (logs/{self.logname}.txt) file!")
+                    print(f"[{self.now[0]} | {self.now[1]}] - ERROR - não foi possível criar o arquivo (logs/{self.logname}.txt)!")
 
                     exist = False
 

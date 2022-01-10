@@ -34,12 +34,10 @@ except ImportError as err:
 
 class S2SLauncher:
     def __init__(self):
-        ### os.system("taskkill /F /IM chrome* /T >nul 2>&1")
-
         self.register = ApplicationRegister()
         self.settings = ApplicationSettingsLoader()
         
-        """ SETTINGS MONITORS """
+        """ ... """
         self.monitors = dict() 
 
         for key,item in self.settings["properties"]["monitors"].items():
@@ -58,23 +56,29 @@ class S2SLauncher:
         
         self.URL = self.settings["properties"]["URL"]
         self.DIR = self.settings["properties"]["DIR"]
-
-        """ SETTINGS SYSTEM """
+        
         self.combination = self.settings["system"]["combination"]
+        self.timer = self.settings["system"]["timer"]
+
+        self.BLOCKED = self.settings["blocked"]
+
+        """ ... """
+        os.system("taskkill /F /IM chrome* /T >nul 2>&1")
+        time.sleep(self.timer)
 
         """ ... """
         self.threads = list()
 
         """ ... """
-        #command_thread = threading.Thread(target=self.combination_command)
-        #command_thread.start()
+        combination_t = threading.Thread(target=self.combination)
+        combination_t.start()
 
-        """ ...  """
-        ### self.logger.write(["DEBUG", f"initializing monitors please wait, to exit press keys combination: [ {self.combination} ]"])
+        """ ... """
+        self.register.write(["DEBUG", f"inicializando, para encerrar a aplicação pressione ({self.combination})"])
 
-        self.monitors_setup()
+        self.setup(None)
         
-    def combination_command(self):
+    def combination(self):
         while True:
             command = keyboard.is_pressed(f"{self.combination}")
             if command:
@@ -99,133 +103,59 @@ class S2SLauncher:
                 self.logger.write(["ERROR", f"{err}"])
                 quit()
        
-    def monitors_autocommands(self, driver, name):
-        """ AUTO COMMANDS """
+    def commands(self):
         pyautogui.press("f5")
-        time.sleep(0.5)
         
-        driver.get(self.URL)
-        time.sleep(0.5)
-        
-        driver.execute_script(f'document.title = "S2S - {name}"')
+        time.sleep(0.3)
         
         pyautogui.press("esc")
             
-    def monitor_1(self):
-        """ MANAGER MONITOR 1 """
-        mydriver, myname, mypid = self.monitors_dict["monitor-1"]["driver"], self.monitors_dict["monitor-1"]["name"], self.monitors_dict["monitor-1"]["PID"]
+    def manager(self, name):
+        try:
+            for monitor in self.monitors.keys():
+                if name == monitor:
+                    attempts = 0
 
-        self.logger.write(["INFO", f"({myname}): started with PID ({mypid})"])
+                    driver = self.monitors[name]["driver"]
 
-        self.monitors_autocommands(mydriver, myname)
+                    driver.get(self.URL)
 
-        while True:
-            try:
-                time.sleep(0.5)
+                    self.commands()
 
-                if mydriver.current_url == self.URL:
-                    pass
-                else:
-                    self.logger.write(["WARNING", f"({myname}): invalid URL ({mydriver.current_url})"])
-                    break
+                    driver.execute_script(f'document.title = "monitor {name}"')
 
-            except Exception as err: 
-                self.logger.write(["CRITICAL", f"({myname}): ERROR [{err}]"])
-                break
+                    while True:
+                        for blocked in self.BLOCKED:
+                            if driver.current_url == blocked or not driver.current_url == self.URL:
+                                attempts += 1
 
-        self.restart()
+                                self.register.write(["WARNING", f"ULR inválida está sendo executada ({driver.current_url}) , número de tentativas: ({attempts})"])
 
-    def monitor_2(self):
-        """ MANAGER MONITOR 2 """
-        mydriver, myname, mypid = self.monitors_dict["monitor-2"]["driver"], self.monitors_dict["monitor-2"]["name"], self.monitors_dict["monitor-2"]["PID"]
+                                driver.get(self.URL)
+                            
+                                self.commands()
 
-        self.logger.write(["INFO", f"({myname}): started with PID ({mypid})"])
+                                driver.execute_script(f'document.title = "monitor {name}"')
 
-        self.monitors_autocommands(mydriver, myname)
-        
-        while True:
-            try:
-                time.sleep(0.5)
+                            if attempts > 2:
+                                self.register.write(["WARNING", f"após ({3}) tentativas a aplicação não conseguiu resumir o conteúdo, a thread será reiniciada."])
 
-                if mydriver.current_url == self.URL:
-                    pass
-                else:
-                    self.logger.write(["WARNING", f"({myname}): invalid URL ({mydriver.current_url})"])
-                    break
+                        if keyboard.is_pressed("alt+p"):
+                            driver.get("chrome://whats-new/?auto=true")
+                        
+                    ### self.monitors[name]["PID"] = self.monitors[name]["driver"].service.process.pid
 
-            except Exception as err: 
-                self.logger.write(["CRITICAL", f"({myname}): ERROR [{err}]"])
-                break
-
-        self.restart()
-
-    def monitor_3(self):
-        """ MANAGER MONITOR 3 """
-        mydriver, myname, mypid = self.monitors_dict["monitor-3"]["driver"], self.monitors_dict["monitor-3"]["name"], self.monitors_dict["monitor-3"]["PID"]
-
-        self.logger.write(["INFO", f"({myname}): started with PID ({mypid})"])
-
-        self.monitors_autocommands(mydriver, myname)
-        
-        while True:
-            try:
-                time.sleep(0.5)
-
-                if mydriver.current_url == self.URL:
-                    pass
-                else:
-                    self.logger.write(["WARNING", f"({myname}): invalid URL ({mydriver.current_url})"])
-                    break
-
-            except Exception as err: 
-                self.logger.write(["CRITICAL", f"({myname}): ERROR [{err}]"])
-                break
-
-        self.restart()
-
-    def monitor_4(self):
-        """ MANAGER MONITOR 4 """
-        mydriver, myname, mypid = self.monitors_dict["monitor-4"]["driver"], self.monitors_dict["monitor-4"]["name"], self.monitors_dict["monitor-4"]["PID"]
-
-        self.logger.write(["INFO", f"({myname}): started with PID ({mypid})"])
-
-        self.monitors_autocommands(mydriver, myname)
-        
-        while True:
-            try:
-                time.sleep(0.5)
-
-                if mydriver.current_url == self.URL:
-                    pass
-                else:
-                    self.logger.write(["WARNING", f"({myname}): invalid URL ({mydriver.current_url})"])
-                    break
-
-            except Exception as err: 
-                self.logger.write(["CRITICAL", f"({myname}): ERROR [{err}]"])
-                break
-
-        self.restart()
-
-    def monitors_manager(self, name):
-        for monitor in self.monitors.keys():
-            if name == monitor:
-                driver = self.monitors[name]["driver"]
-
-                driver.get(self.URL)
-                pass
-                ### self.monitors[name]["PID"] = self.monitors[name]["driver"].service.process.pid
-
-                ### print(self.monitors[name]["PID"])
+        except:
+            pass
 
 
-    def monitors_setup(self):
-        """ SETUP FOR WEBDRIVER """
+    def setup(self, this):
+        if this != None:
+            print("")
+        else:
+            print("S")
         for monitor in self.monitors.values():
             if monitor["enabled"]: 
-                print(f"{monitor['name']} enabled!")
-
-                ### ...
                 driver = webdriver.ChromeOptions()
 
                 ### ...
@@ -235,8 +165,7 @@ class S2SLauncher:
                 ### ...
                 driver.add_argument(f"--user-data-dir={self.DIR}{monitor['name']}")
                 driver.add_argument(f"--window-position={monitor['position-x']},{monitor['position-y']}")
-            
-                ### ...
+
                 driver.add_argument("--test-type")
                 driver.add_argument("--new-window")
                 driver.add_argument("--unlimited-storage")
@@ -246,16 +175,16 @@ class S2SLauncher:
                 driver.add_argument("--disable-notifications")
                 driver.add_argument("--disable-extensions")
                 driver.add_argument("--disable-infobars")
+                driver.add_argument('--disable-blink-features=AutomationControlled')
 
                 monitor["driver"] = webdriver.Chrome(options=driver)
 
-                thread = threading.Thread(name=f"{monitor['name']}", target=self.monitors_manager, args=(monitor["name"])).start()
+                thread = threading.Thread(name=f"{monitor['name']}", target=self.manager, args=(monitor["name"])).start()
                 
-                self.threads.append(thread)
+                monitor["thread"] = thread
 
             else:
-                print(f"{monitor['name']} disabled!")
-                ### self.logger.write(["WARNING", f"{self.monitors_dict['monitor-1']['name']}: disabled!"])
+                self.register.write(["WARNING", f"{monitor['name']} desabilitado!"])
 
 if __name__ == "__main__":
     application = S2SLauncher()

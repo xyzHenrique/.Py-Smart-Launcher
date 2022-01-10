@@ -38,6 +38,13 @@
 	},
 	
 	"system": {
-		"combination": "alt+f4"
-	}
+		"combination": "alt+f4",
+		"timer": 0.3
+	},
+	
+	"blocked": [
+		"chrome://whats-new/?auto=true", 
+		"https://www.google.com/", 
+		"https://www.google.com.br/"
+	]
 }
