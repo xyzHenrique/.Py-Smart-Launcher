@@ -96,6 +96,12 @@ class Launcher:
         combination_t.start()
 
         """ ... """
+        print("#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#\n")
+        print("~ Versão atual: 3.5c\n""")
+        print("#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#\n\n\n")
+
+        time.sleep(3.0)
+        
         self.register.write(["DEBUG", f"inicializando, para finalizar a aplicação corretamente pressione ({self.keys_combination})"])
 
         self.setup()
@@ -116,14 +122,20 @@ class Launcher:
 
             time.sleep(1.5)
 
-            os.system(f"start {os.getcwd()}\main.py")
+            ### ...
+            path = os.getcwd()
+            
+            if os.path.isfile(f"{path}/launcher.exe"):
+                os.system(f"start {path}\launcher.exe")
+            else:
+                os.system(f"start {path}\main.py")
 
             os._exit(0)
 
         except Exception as err:
             self.register.write(["ERROR", f"{err}"])
             
-            sys.exit()
+            os._exit(0)
     
     def auto_click_commands(self):
         if self.auto_click_enabled:
@@ -179,7 +191,6 @@ class Launcher:
                         
                         self.auto_click_commands()
 
-                        time.sleep(1.5)
                         for blocked in self.blocked:
                             if driver.current_url == blocked or not driver.current_url == self.URL:
                                 attempts += 1
@@ -191,7 +202,7 @@ class Launcher:
                                 self.auto_keyboard_commands()
 
                                 driver.execute_script(f'document.title = "monitor {name}"')
-
+                            
                             if attempts >= self.fix_attempts:
                                 self.register.write(["WARNING", f"o número máximo de tentativas foi atingido ({attempts})!"])
                                     
@@ -205,6 +216,7 @@ class Launcher:
                             if keyboard.is_pressed(self.simulate_test_key):
                                 driver.get(self.simulate_test_url)
 
+                        time.sleep(1.5)
         except Exception as err:
             self.register.write(["WARNING", f"monitor {self.monitors[name]['name']} ({err})"])
 
@@ -249,7 +261,8 @@ class Launcher:
                     
                     monitor["thread"] = thread
                     
-                    time.sleep(0.1)
+                    time.sleep(0.3)
+
                     thread.start()
                 else:
                     self.register.write(["WARNING", f"monitor {monitor['name']} está desabilitado!"])

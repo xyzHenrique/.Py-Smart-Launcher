@@ -18,7 +18,7 @@
 	},
 	
 	"system": {
-		"keys-combination": "alt+f4",
+		"keys-combination": "alt+m",
 		"fix-attempts": 3,
 		"start-cleaning": true
 	},

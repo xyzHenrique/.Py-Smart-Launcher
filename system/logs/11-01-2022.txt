@@ -10,3 +10,43 @@
 [11/01/2022 | 02:22:31] - CRITICAL - reiniciando aplicação...
 
 [11/01/2022 | 02:23:57] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (ctrl+m)
+[11/01/2022 | 02:28:18] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[11/01/2022 | 02:28:18] - INFO - monitor 1 (32) criado com sucesso!
+[11/01/2022 | 02:28:18] - INFO - finalizando, por favor aguarde...
+[11/01/2022 | 02:29:00] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (crtl+m)
+[11/01/2022 | 02:29:00] - INFO - monitor 1 (6980) criado com sucesso!
+[11/01/2022 | 02:29:17] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (ctrl+m)
+[11/01/2022 | 02:29:17] - INFO - monitor 1 (15800) criado com sucesso!
+[11/01/2022 | 02:29:17] - WARNING - uma ULR inválida está sendo executada no monitor 1 - (https://www.youtube.com/), número de tentativas: (1)
+[11/01/2022 | 02:29:17] - WARNING - uma ULR inválida está sendo executada no monitor 1 - (https://www.youtube.com/), número de tentativas: (2)
+[11/01/2022 | 02:29:17] - WARNING - uma ULR inválida está sendo executada no monitor 1 - (https://www.youtube.com/), número de tentativas: (3)
+[11/01/2022 | 02:29:17] - WARNING - o número máximo de tentativas foi atingido (3)!
+[11/01/2022 | 02:29:17] - WARNING - monitor 1 (HTTPConnectionPool(host='localhost', port=55433): Max retries exceeded with url: /session/a0db3ad5c27c8f5219043bf06352a637/execute/sync (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019463BE47C0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')))
+[11/01/2022 | 02:29:17] - CRITICAL - reiniciando aplicação...
+
+[11/01/2022 | 02:30:25] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (ctrl+m)
+[11/01/2022 | 02:30:25] - INFO - monitor 1 (17204) criado com sucesso!
+[11/01/2022 | 02:36:01] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+m)
+[11/01/2022 | 02:36:01] - INFO - monitor 1 (2560) criado com sucesso!
+[11/01/2022 | 02:36:18] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+m)
+[11/01/2022 | 02:37:22] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+m)
+[11/01/2022 | 02:37:50] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+m)
+[11/01/2022 | 02:37:50] - INFO - monitor 1 (16980) criado com sucesso!
+[11/01/2022 | 02:38:04] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+m)
+[11/01/2022 | 02:38:04] - INFO - monitor 1 (15884) criado com sucesso!
+[11/01/2022 | 02:40:19] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+m)
+[11/01/2022 | 02:42:22] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+m)
+[11/01/2022 | 02:42:22] - INFO - monitor 1 (14236) criado com sucesso!
+[11/01/2022 | 02:43:08] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+m)
+[11/01/2022 | 02:43:24] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+m)
+[11/01/2022 | 02:43:24] - INFO - monitor 1 (2252) criado com sucesso!
+[11/01/2022 | 02:43:24] - INFO - finalizando, por favor aguarde...
+[11/01/2022 | 02:43:24] - INFO - finalizando, por favor aguarde...
+[11/01/2022 | 02:43:24] - INFO - finalizando, por favor aguarde...
+[11/01/2022 | 02:43:24] - INFO - finalizando, por favor aguarde...
+[11/01/2022 | 02:43:24] - WARNING - monitor 1 (HTTPConnectionPool(host='localhost', port=56497): Max retries exceeded with url: /session/351a416fc601d386f1cd5e76f441dbbe/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000027778DFCA30>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')))
+[11/01/2022 | 02:43:24] - CRITICAL - reiniciando aplicação...
+
+[11/01/2022 | 02:44:22] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+m)
+[11/01/2022 | 02:44:22] - INFO - monitor 1 (10512) criado com sucesso!
+[11/01/2022 | 02:45:01] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+m)
