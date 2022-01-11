@@ -10,12 +10,10 @@
 #
 # Created by: Henrique R. Pereira <https://github.com/RIick-013>
 #
-# S2SLauncher.py main script
+# main.py main script
 #
-# v3.5
+# v3.5c
 # ----------------------------------------------------------------------------------------------
-
-errors = []
 
 import sys, os, time, threading
 
@@ -87,7 +85,7 @@ class Launcher:
         self.simulate_test_key = self.settings["simulate-test"]["key"]
         self.simulate_test_url = self.settings["simulate-test"]["URL"]
 
-        """ ... """
+        ### ...
         if self.start_cleaning:
             os.system("taskkill /F /IM chrome* /T >nul 2>&1")
 
@@ -107,7 +105,7 @@ class Launcher:
                 for monitor in self.monitors.values():
                     if monitor["driver"] != None:
                        
-                       self.register.write(["DEBUG", f"encerrando o monitor {monitor['name']}, por favor aguarde..."])
+                       self.register.write(["INFO", f"encerrando o monitor {monitor['name']}, por favor aguarde..."])
                     
                        monitor["driver"].quit()
                        monitor["thread"].join()
@@ -116,6 +114,14 @@ class Launcher:
 
     def restart(self):
         try: 
+            for monitor in self.monitors.values():
+                if monitor["driver"] != None:
+                    
+                    self.register.write(["WARNING", f"finalizando o monitor {monitor['name']}, por favor aguarde..."])
+                
+                    monitor["driver"].quit()
+                    monitor["thread"].join()
+
             self.register.write(["CRITICAL", f"reiniciando aplicação...\n"])
 
             time.sleep(2.5)
@@ -155,15 +161,14 @@ class Launcher:
                     self.register.write(["INFO", f"AUTO-KEYBOARD-MODULE: '{key}' pressed!"])
 
                     time.sleep(0.3)
+
             except Exception as err:
                 self.register.write(["ERROR", f"AUTO-KEYBOARD-MODULE: {err}"])
 
     def manager(self, name):
-        PID = None
         try:
             for monitor in self.monitors.keys():
                 if name == monitor:
-                    
                     attempts = 0
 
                     driver = self.monitors[name]["driver"]
@@ -193,62 +198,71 @@ class Launcher:
 
                                 driver.execute_script(f'document.title = "monitor {name}"')
 
-                            if attempts >= 1: #### IMPORTANTE
+                            if attempts >= self.fix_attempts:
                                 self.register.write(["WARNING", f"o número máximo de tentativas foi atingido ({attempts}), o monitor {name} será reiniciado!"])
                                     
                                 driver.quit()
 
-                                sys.exit()
+                                self.restart()
 
                         if self.simulate_test_enabled:
+                            driver.execute_script(f'document.title = "(! SIMULATE TEST !) - monitor {name}"')
+
                             if keyboard.is_pressed(self.simulate_test_key):
                                 driver.get(self.simulate_test_url)
 
         except Exception as err:
-            os.system(f"taskkill /F /PID {PID} /T >nul 2>&1")
+            self.register.write(["DEBUG", f"monitor {self.monitors[name]['name']} finalizado! ({err})"])
 
-            self.register.write(["DEBUG", f"monitor {self.monitors[name]['name']} encerrado! ({err})"])
+            self.restart()
         
     def setup(self):
-        for monitor in self.monitors.values():
-            if monitor["monitor-enabled"]: 
-                driver = webdriver.ChromeOptions()
+        try:
+            for monitor in self.monitors.values():
+                if monitor["monitor-enabled"]: 
+                    driver = webdriver.ChromeOptions()
 
-                """ ... """
-                driver.add_experimental_option("useAutomationExtension", False)
-                driver.add_experimental_option("excludeSwitches",["enable-automation", "enable-logging"])
+                    ### ...
+                    driver.add_experimental_option("useAutomationExtension", False)
+                    driver.add_experimental_option("excludeSwitches",["enable-automation", "enable-logging"])
 
-                """ ... """
-                driver.add_argument(f"--user-data-dir={monitor['DIR']}")
-                driver.add_argument(f"--window-position={monitor['monitor-position-x']},{monitor['monitor-position-y']}")
+                    ### ...
+                    driver.add_argument(f"--user-data-dir={monitor['DIR']}")
+                    driver.add_argument(f"--window-position={monitor['monitor-position-x']},{monitor['monitor-position-y']}")
 
-                if monitor["monitor-size-enabled"]:
-                    driver.add_argument(f"--app={self.URL}")
-                    driver.add_argument(f"--window-size={monitor['monitor-size-x']},{monitor['monitor-size-y']}")
-                else:
-                    ### driver.add_argument("--start-fullscreen")
-                    driver.add_argument("--kiosk")
+                    ### ...
+                    if monitor["monitor-size-enabled"]:
+                        driver.add_argument(f"--app={self.URL}")
+                        driver.add_argument(f"--window-size={monitor['monitor-size-x']},{monitor['monitor-size-y']}")
+                    else:
+                        ### driver.add_argument("--start-fullscreen") ###
+                        driver.add_argument("--kiosk")
+                    
+                    ### ...
+                    driver.add_argument("--test-type")
+                    driver.add_argument("--new-window")
+                    driver.add_argument("--unlimited-storage")
+                    driver.add_argument("--disable-extensions")                
+                    driver.add_argument("--disable-notifications")
+                    driver.add_argument("--ignore-certificate-errors")
+                    driver.add_argument("--autoplay-policy=no-user-gesture-required")
                 
-                """ ... """
-                #driver.add_argument("--test-type")
-                driver.add_argument("--new-window")
-                driver.add_argument("--unlimited-storage")
-                driver.add_argument("--autoplay-policy=no-user-gesture-required")
-                #driver.add_argument("--disable-notifications")
-                driver.add_argument("--disable-extensions")
-                #driver.add_argument('--ignore-certificate-errors')
+                    monitor["driver"] = webdriver.Chrome(options=driver)
+
+                    self.register.write(["INFO", f"argumentos adicionadas ao monitor {monitor['name']}"])
             
-                monitor["driver"] = webdriver.Chrome(options=driver)
-
-                self.register.write(["INFO", f"argumentos adicionadas ao monitor {monitor['name']}"])
+                    thread = threading.Thread(target=self.manager, args=(monitor["name"]))
+                    
+                    monitor["thread"] = thread
+                    
+                    thread.start()
+                else:
+                    self.register.write(["WARNING", f"monitor {monitor['name']} está desabilitado!"])
         
-                thread = threading.Thread(target=self.manager, args=(monitor["name"]))
-                
-                monitor["thread"] = thread
-                
-                thread.start()
-            else:
-                self.register.write(["WARNING", f"monitor {monitor['name']} está desabilitado!"])
+        except Exception as err:
+            self.register.write(["CRITICAL", f"{err}"])
+
+            self.restart()
 
 if __name__ == "__main__":
     application = Launcher()

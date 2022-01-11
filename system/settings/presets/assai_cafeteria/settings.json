@@ -1,57 +1,33 @@
 {
 	"properties": {
 		"monitors": {
-			"1": {
+			"1e2": {
 				"monitor-enabled": true,
-				"monitor-position-xy": [0,0], 
+				"monitor-position-xy": [-5,-25], 
 				
 				"monitor-size": {
-					"monitor-size-enabled": false, 
-					"monitor-size-xy": [0,0] 
+					"monitor-size-enabled": true, 
+					"monitor-size-xy": [2560,750] 
 				},
 				
 				"DIR": "c:/WIDE/S2S/monitor1"
 			},
 
-			"2": {
-				"monitor-enabled": false,
-				"monitor-position-xy": [0,0], 
+			"3e4": {
+				"monitor-enabled": true,
+				"monitor-position-xy": [2560,-25], 
 				
 				"monitor-size": {
-					"monitor-size-enabled": false, 
-					"monitor-size-xy": [0,0]
+					"monitor-size-enabled": true, 
+					"monitor-size-xy": [2560,750]
 				},
 				
 				"DIR": "c:/WIDE/S2S/monitor2"
 			},
 
-			"3": {
-				"monitor-enabled": false,
-				"monitor-position-xy": [0,0], 
-				
-				"monitor-size": {
-					"monitor-size-enabled": false, 
-					"monitor-size-xy": [0,0]
-				},
-				
-				"DIR": "c:/WIDE/S2S/monitor3"
-			},
-
-			"4": {
-				"monitor-enabled": false,
-				"monitor-position-xy": [0,0], 
-				
-				"monitor-size": {
-					"monitor-size-enabled": false, 
-					"monitor-size-xy": [0,0]
-				},
-				
-				"DIR": "c:/WIDE/S2S/monitor4"
-			},
-
 			"5": {
-				"monitor-enabled": false,
-				"monitor-position-xy": [0,0], 
+				"monitor-enabled": true,
+				"monitor-position-xy": [5120,0], 
 				
 				"monitor-size": {
 					"monitor-size-enabled": false, 
@@ -59,7 +35,7 @@
 				},
 				
 				"DIR": "c:/WIDE/S2S/monitor5"
-			}
+			},
 		},
 
 		"application-URL": "https://s2s.widedigital.com.br/S2S/Player.html"	

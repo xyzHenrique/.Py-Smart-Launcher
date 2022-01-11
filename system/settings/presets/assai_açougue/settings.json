@@ -14,7 +14,7 @@
 			},
 
 			"2": {
-				"monitor-enabled": false,
+				"monitor-enabled": true,
 				"monitor-position-xy": [0,0], 
 				
 				"monitor-size": {
@@ -26,7 +26,7 @@
 			},
 
 			"3": {
-				"monitor-enabled": false,
+				"monitor-enabled": true,
 				"monitor-position-xy": [0,0], 
 				
 				"monitor-size": {
@@ -38,7 +38,7 @@
 			},
 
 			"4": {
-				"monitor-enabled": false,
+				"monitor-enabled": true,
 				"monitor-position-xy": [0,0], 
 				
 				"monitor-size": {
@@ -48,18 +48,6 @@
 				
 				"DIR": "c:/WIDE/S2S/monitor4"
 			},
-
-			"5": {
-				"monitor-enabled": false,
-				"monitor-position-xy": [0,0], 
-				
-				"monitor-size": {
-					"monitor-size-enabled": false, 
-					"monitor-size-xy": [0,0]
-				},
-				
-				"DIR": "c:/WIDE/S2S/monitor5"
-			}
 		},
 
 		"application-URL": "https://s2s.widedigital.com.br/S2S/Player.html"	
