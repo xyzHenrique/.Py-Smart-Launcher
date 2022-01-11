@@ -1,6 +1,4 @@
-# S2SLauncher 3.5c
-
-### Created by: Henrique R. Pereira
+## Created by: Henrique R. Pereira
 
 ### REQUIREMENTS
 https://www.python.org/downloads/release/python-3101/
