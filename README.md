@@ -13,4 +13,8 @@ pause
 exit
 ```
 
+### COMPILER
+```
+pip install -U nuitka
+
 
