@@ -440,3 +440,709 @@ Backtrace:
 	RtlGetAppContainerNamedObjectPath [0x77157A9E+286]
 	RtlGetAppContainerNamedObjectPath [0x77157A6E+238]
 )
+[10/01/2022 | 12:21:20] - CRITICAL - reiniciando aplicação...
+
+[10/01/2022 | 12:21:42] - CRITICAL - reiniciando aplicação...
+
+[10/01/2022 | 12:21:46] - CRITICAL - reiniciando aplicação...
+
+[10/01/2022 | 12:21:49] - CRITICAL - reiniciando aplicação...
+
+[10/01/2022 | 12:21:52] - CRITICAL - reiniciando aplicação...
+
+[10/01/2022 | 22:38:39] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:39:08] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:42:10] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:43:04] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:43:20] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:43:20] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 22:43:20] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 22:43:20] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 22:43:20] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 22:43:20] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 22:43:20] - INFO - monitor 1 (7240) criado com sucesso!
+[10/01/2022 | 22:43:20] - DEBUG - monitor 1 encerrado! ('Launcher' object has no attribute 'BLOCKED')
+[10/01/2022 | 22:43:49] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:43:49] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 22:43:49] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 22:43:49] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 22:43:49] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 22:43:49] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 22:43:49] - INFO - monitor 1 (960) criado com sucesso!
+[10/01/2022 | 22:43:49] - DEBUG - monitor 1 encerrado! ('Launcher' object has no attribute 'BLOCKED')
+[10/01/2022 | 22:44:39] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:44:39] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 22:44:39] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 22:44:39] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 22:44:39] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 22:44:39] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 22:44:39] - INFO - monitor 1 (12908) criado com sucesso!
+[10/01/2022 | 22:44:39] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 22:44:39] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2710+1058576]
+	Ordinal0 [0x00BF248D+1189005]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 22:45:25] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:45:25] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 22:45:25] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 22:45:25] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 22:45:25] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 22:45:25] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 22:45:25] - INFO - monitor 1 (5172) criado com sucesso!
+[10/01/2022 | 22:45:25] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 22:45:25] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2710+1058576]
+	Ordinal0 [0x00BF248D+1189005]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 22:45:57] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:45:57] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 22:45:57] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 22:45:57] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 22:45:57] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 22:45:57] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 22:45:57] - INFO - monitor 1 (7120) criado com sucesso!
+[10/01/2022 | 22:45:57] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 22:45:57] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2710+1058576]
+	Ordinal0 [0x00BF248D+1189005]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 22:46:26] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:46:26] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 22:46:26] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 22:46:26] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 22:46:26] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 22:46:26] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 22:46:26] - INFO - monitor 1 (13056) criado com sucesso!
+[10/01/2022 | 22:46:26] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 22:46:26] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2710+1058576]
+	Ordinal0 [0x00BF248D+1189005]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 22:46:56] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:46:56] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 22:46:56] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 22:46:56] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 22:46:56] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 22:46:56] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 22:46:56] - INFO - monitor 1 (4472) criado com sucesso!
+[10/01/2022 | 22:46:56] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 22:47:07] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:47:07] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 22:47:07] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 22:47:07] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 22:47:07] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 22:47:07] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 22:47:07] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 22:47:16] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:47:16] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 22:47:16] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 22:47:16] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 22:47:16] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 22:47:16] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 22:47:16] - INFO - monitor 1 (5368) criado com sucesso!
+[10/01/2022 | 22:47:16] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 22:47:16] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2710+1058576]
+	Ordinal0 [0x00BF248D+1189005]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 22:54:26] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:54:26] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 22:54:26] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 22:54:26] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 22:54:26] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 22:54:26] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 22:54:26] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 22:54:26] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 22:54:26] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 22:54:26] - INFO - monitor 1 (7684) criado com sucesso!
+[10/01/2022 | 22:54:56] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:54:56] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 22:54:56] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 22:54:56] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 22:54:56] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 22:54:56] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 22:54:56] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 22:54:56] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 22:54:56] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 22:54:56] - INFO - monitor 1 (9392) criado com sucesso!
+[10/01/2022 | 22:54:56] - INFO - AUTO-CLICK-MODULE: 'Box(left=2432, top=201, width=105, height=45)' click!
+[10/01/2022 | 22:57:55] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 22:57:55] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 22:57:55] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 22:57:55] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 22:57:55] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 22:57:55] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 22:57:55] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 22:57:55] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 22:57:55] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 22:57:55] - INFO - monitor 1 (7044) criado com sucesso!
+[10/01/2022 | 22:57:55] - INFO - AUTO-CLICK-MODULE: 'Box(left=2432, top=201, width=105, height=45)' click!
+[10/01/2022 | 22:57:55] - WARNING - uma ULR inválida está sendo executada (https://www.youtube.com/), número de tentativas: (1)
+[10/01/2022 | 22:57:55] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 22:57:55] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 22:57:55] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 22:57:55] - WARNING - o número máximo de tentativas foi atingido (1), o monitor 1 será reiniciado!
+[10/01/2022 | 23:01:53] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:02:06] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:02:06] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:02:06] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:02:06] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:02:06] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:02:06] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:02:06] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:02:06] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:02:06] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:02:06] - INFO - monitor 1 (12208) criado com sucesso!
+[10/01/2022 | 23:02:06] - DEBUG - encerrando monitor 1, por favor aguarde...
+[10/01/2022 | 23:02:06] - DEBUG - monitor 1 encerrado! (HTTPConnectionPool(host='localhost', port=63964): Max retries exceeded with url: /session/32caf90121e2378047234e84de4e0224/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002D1D5301120>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')))
+[10/01/2022 | 23:03:02] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:03:02] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:03:02] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:03:02] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:03:02] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:03:02] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:03:02] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:03:02] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:03:02] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:03:02] - INFO - monitor 1 (14096) criado com sucesso!
+[10/01/2022 | 23:03:02] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:03:02] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2710+1058576]
+	Ordinal0 [0x00BF248D+1189005]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 23:03:31] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:03:31] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:03:31] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:03:31] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:03:31] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:03:31] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:03:31] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:03:31] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:03:31] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:03:31] - INFO - monitor 1 (7120) criado com sucesso!
+[10/01/2022 | 23:03:31] - DEBUG - monitor 1 encerrado! (Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=97.0.4692.71)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2848+1058888]
+	Ordinal0 [0x00BBBF90+966544]
+	Ordinal0 [0x00C18999+1345945]
+	Ordinal0 [0x00C25342+1397570]
+	Ordinal0 [0x00C1639B+1336219]
+	Ordinal0 [0x00BF27A7+1189799]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 23:05:36] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:05:36] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:05:36] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:05:36] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:05:36] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:05:36] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:05:36] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:05:36] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:05:36] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:05:36] - INFO - monitor 1 (376) criado com sucesso!
+[10/01/2022 | 23:05:53] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:05:53] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:05:53] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:05:53] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:05:53] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:05:53] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:05:53] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:05:53] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:05:53] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:05:53] - INFO - monitor 1 (3240) criado com sucesso!
+[10/01/2022 | 23:07:04] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:07:04] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:07:04] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:07:04] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:07:04] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:07:04] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:07:04] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:07:04] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:07:04] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:07:04] - INFO - monitor 1 (15056) criado com sucesso!
+[10/01/2022 | 23:07:04] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:07:34] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:07:34] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:07:34] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:07:34] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:07:34] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:07:34] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:07:34] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:07:34] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:07:34] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:07:34] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:07:34] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2710+1058576]
+	Ordinal0 [0x00BF248D+1189005]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 23:09:04] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:09:04] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:09:04] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:09:04] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:09:04] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:09:04] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:09:04] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:09:04] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:09:04] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:09:04] - INFO - monitor 1 (14260) criado com sucesso!
+[10/01/2022 | 23:09:04] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:10:42] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:10:42] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:10:42] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:10:42] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:10:42] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:10:42] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:10:42] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:10:42] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:10:42] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:10:42] - INFO - monitor 1 (5540) criado com sucesso!
+[10/01/2022 | 23:10:42] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:10:42] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2710+1058576]
+	Ordinal0 [0x00BF248D+1189005]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 23:12:13] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:12:13] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:12:13] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:12:13] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:12:13] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:12:13] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:12:13] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:12:13] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:12:13] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:12:13] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:12:13] - DEBUG - monitor 1 encerrado! (HTTPConnectionPool(host='localhost', port=49184): Max retries exceeded with url: /session/fd86c31d06b24f09f10d21c491a335f7/execute/sync (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D7D8BA9030>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')))
+[10/01/2022 | 23:13:06] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:13:06] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:13:06] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:13:06] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:13:06] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:13:06] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:13:06] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:13:06] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:13:06] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:13:06] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:13:06] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2710+1058576]
+	Ordinal0 [0x00BF248D+1189005]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 23:13:43] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:13:43] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:13:43] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:13:43] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:13:43] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:13:43] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:13:43] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:13:43] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:13:43] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:13:43] - INFO - monitor 1 (9360) criado com sucesso!
+[10/01/2022 | 23:13:43] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:14:04] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:14:04] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:14:04] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:14:04] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:14:04] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:14:04] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:14:04] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:14:04] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:14:04] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:14:04] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:14:04] - DEBUG - monitor 1 encerrado! (HTTPConnectionPool(host='localhost', port=49398): Max retries exceeded with url: /session/7b575ecfd6ae4d45b085eed36c6dd9d8/execute/sync (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CA25C49090>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')))
+[10/01/2022 | 23:17:20] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:17:20] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:17:20] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:17:20] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:17:20] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:17:20] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:17:20] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:17:20] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:17:20] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:17:20] - INFO - monitor 1 (10564) criado com sucesso!
+[10/01/2022 | 23:17:20] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:17:20] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2710+1058576]
+	Ordinal0 [0x00BF248D+1189005]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 23:19:35] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:19:35] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:19:35] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:19:35] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:19:35] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:19:35] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:19:35] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:19:35] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:19:35] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:19:35] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:20:02] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:20:02] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:20:02] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:20:02] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:20:02] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:20:02] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:20:02] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:20:02] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:20:02] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:20:02] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:20:02] - DEBUG - monitor 1 encerrado! (HTTPConnectionPool(host='localhost', port=50848): Max retries exceeded with url: /session/0a165792f530258f896b8977732f9ad7/execute/sync (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020925599060>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')))
+[10/01/2022 | 23:20:33] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:20:54] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:22:00] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:24:15] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:24:15] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:24:15] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:24:15] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:24:15] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:24:15] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:24:15] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:24:15] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:24:15] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:24:15] - INFO - monitor 1 (9564) criado com sucesso!
+[10/01/2022 | 23:24:15] - DEBUG - monitor 1 encerrado! ('WebDriver' object has no attribute 'maximize')
+[10/01/2022 | 23:25:07] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:25:07] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:25:07] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:25:07] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:25:07] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:25:07] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:25:07] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:25:07] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:25:07] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:25:07] - INFO - monitor 1 (12620) criado com sucesso!
+[10/01/2022 | 23:25:26] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:25:26] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:25:26] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:25:26] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:25:26] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:25:26] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:25:26] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:25:26] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:25:26] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:25:26] - INFO - monitor 1 (9784) criado com sucesso!
+[10/01/2022 | 23:25:26] - INFO - AUTO-CLICK-MODULE: 'Box(left=2432, top=201, width=105, height=45)' click!
+[10/01/2022 | 23:25:26] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:25:26] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2710+1058576]
+	Ordinal0 [0x00BF248D+1189005]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 23:28:38] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:28:38] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:28:38] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:28:38] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:28:38] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:28:38] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:28:38] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:28:38] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:28:38] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:28:38] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:28:38] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2710+1058576]
+	Ordinal0 [0x00BF248D+1189005]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 23:28:54] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:28:54] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:28:54] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:28:54] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:28:54] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:28:54] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:28:54] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:28:54] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:28:54] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:28:54] - INFO - monitor 1 (14756) criado com sucesso!
+[10/01/2022 | 23:28:54] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:28:54] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2710+1058576]
+	Ordinal0 [0x00BF248D+1189005]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 23:30:27] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:30:27] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:30:27] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:30:27] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:30:27] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:30:27] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:30:27] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:30:27] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:30:27] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:30:27] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:30:44] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:30:44] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:30:44] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:30:44] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:30:44] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:30:44] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:30:44] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:30:44] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:30:44] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:30:44] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:30:44] - DEBUG - monitor 1 encerrado! (Message: invalid session id
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D36903+2517251]
+	Ordinal0 [0x00CCF8E1+2095329]
+	Ordinal0 [0x00BD2710+1058576]
+	Ordinal0 [0x00BF248D+1189005]
+	Ordinal0 [0x00BF3609+1193481]
+	GetHandleVerifier [0x00EC5904+1577972]
+	GetHandleVerifier [0x00F70B97+2279047]
+	GetHandleVerifier [0x00DC6D09+534521]
+	GetHandleVerifier [0x00DC5DB9+530601]
+	Ordinal0 [0x00CD4FF9+2117625]
+	Ordinal0 [0x00CD98A8+2136232]
+	Ordinal0 [0x00CD99E2+2136546]
+	Ordinal0 [0x00CE3541+2176321]
+	BaseThreadInitThunk [0x7570FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x76F07A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x76F07A6E+238]
+)
+[10/01/2022 | 23:31:40] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:31:40] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:31:40] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:31:40] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:31:40] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:31:40] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:31:40] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:31:40] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:31:40] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:31:40] - INFO - monitor 1 (4952) criado com sucesso!
+[10/01/2022 | 23:31:40] - DEBUG - encerrando o monitor 1, por favor aguarde...
+[10/01/2022 | 23:31:40] - DEBUG - monitor 1 encerrado! (HTTPConnectionPool(host='localhost', port=57675): Max retries exceeded with url: /session/12726e652422e6c9b6fa37ee9bc5f9dd/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E46EB09180>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')))
+[10/01/2022 | 23:33:52] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:33:52] - WARNING - monitor 1 está desabilitado!
+[10/01/2022 | 23:33:52] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:33:52] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:33:52] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:33:52] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:34:05] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (alt+f4)
+[10/01/2022 | 23:34:05] - INFO - argumentos adicionadas ao monitor 1
+[10/01/2022 | 23:34:05] - WARNING - monitor 2 está desabilitado!
+[10/01/2022 | 23:34:05] - WARNING - monitor 3 está desabilitado!
+[10/01/2022 | 23:34:05] - WARNING - monitor 4 está desabilitado!
+[10/01/2022 | 23:34:05] - WARNING - monitor 5 está desabilitado!
+[10/01/2022 | 23:34:05] - INFO - AUTO-KEYBOARD-MODULE: 'f5' pressed!
+[10/01/2022 | 23:34:05] - INFO - AUTO-KEYBOARD-MODULE: 'esc' pressed!
+[10/01/2022 | 23:34:05] - INFO - AUTO-KEYBOARD-MODULE: 'enter' pressed!
+[10/01/2022 | 23:34:05] - INFO - monitor 1 (3144) criado com sucesso!
+[10/01/2022 | 23:34:05] - DEBUG - encerrando o monitor 1, por favor aguarde...
