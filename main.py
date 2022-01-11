@@ -43,6 +43,7 @@ class Launcher:
         
         """ SETTINGS """
         self.monitors = dict() 
+
             
         for key,item in self.settings["properties"]["monitors"].items():
             self.monitors[key] = {
@@ -89,6 +90,7 @@ class Launcher:
         if self.start_cleaning:
             os.system("taskkill /F /IM chrome* /T >nul 2>&1")
 
+
         """ ... """
         combination_t = threading.Thread(target=self.combination_command)
         combination_t.start()
@@ -102,32 +104,22 @@ class Launcher:
         while True:
             command = keyboard.is_pressed(f"{self.keys_combination}")
             if command:
-                for monitor in self.monitors.values():
-                    if monitor["driver"] != None:
-                       
-                       self.register.write(["INFO", f"encerrando o monitor {monitor['name']}, por favor aguarde..."])
-                    
-                       monitor["driver"].quit()
-                       monitor["thread"].join()
+                self.register.write(["INFO", f"finalizando, por favor aguarde..."])
 
-                sys.exit()                
+                os.system("taskkill /F /IM chrome* /T >nul 2>&1")           
 
     def restart(self):
         try: 
-            for monitor in self.monitors.values():
-                if monitor["driver"] != None:
-                    
-                    self.register.write(["WARNING", f"finalizando o monitor {monitor['name']}, por favor aguarde..."])
-                
-                    monitor["driver"].quit()
-                    monitor["thread"].join()
-
             self.register.write(["CRITICAL", f"reiniciando aplicação...\n"])
 
-            time.sleep(2.5)
+            os.system("taskkill /F /IM chrome* /T >nul 2>&1")
 
-            os.execl(sys.executable, os.path.abspath(__file__), *sys.argv) 
-        
+            time.sleep(1.5)
+
+            os.system(f"start {os.getcwd()}\main.py")
+
+            os._exit(0)
+
         except Exception as err:
             self.register.write(["ERROR", f"{err}"])
             
@@ -142,13 +134,14 @@ class Launcher:
                     item = pyautogui.locateOnScreen(img)
 
                     if item:
-                        self.register.write(["INFO", f"AUTO-CLICK-MODULE: '{item}' click!"])
+                        print(f"AUTO-CLICK-MODULE: '{item}' click!")
 
                         pyautogui.moveTo(item)
                         pyautogui.click()
                         
                     else:
                         pass
+
             except Exception as err:
                 self.register.write(["ERROR", f"AUTO-CLICK-MODULE: {err}"])
 
@@ -158,7 +151,7 @@ class Launcher:
                 for key in self.auto_keyboard_keys:
                     pyautogui.press(key)
 
-                    self.register.write(["INFO", f"AUTO-KEYBOARD-MODULE: '{key}' pressed!"])
+                    ### print(f"AUTO-KEYBOARD-MODULE: '{key}' pressed!")
 
                     time.sleep(0.3)
 
@@ -185,12 +178,13 @@ class Launcher:
                     while True:
                         
                         self.auto_click_commands()
-                       
+
+                        time.sleep(1.5)
                         for blocked in self.blocked:
                             if driver.current_url == blocked or not driver.current_url == self.URL:
                                 attempts += 1
 
-                                self.register.write(["WARNING", f"uma ULR inválida está sendo executada ({driver.current_url}), número de tentativas: ({attempts})"])
+                                self.register.write(["WARNING", f"uma ULR inválida está sendo executada no monitor {name} - ({driver.current_url}), número de tentativas: ({attempts})"])
 
                                 driver.get(self.URL)
                             
@@ -199,20 +193,20 @@ class Launcher:
                                 driver.execute_script(f'document.title = "monitor {name}"')
 
                             if attempts >= self.fix_attempts:
-                                self.register.write(["WARNING", f"o número máximo de tentativas foi atingido ({attempts}), o monitor {name} será reiniciado!"])
+                                self.register.write(["WARNING", f"o número máximo de tentativas foi atingido ({attempts})!"])
                                     
                                 driver.quit()
 
-                                self.restart()
+                                break
 
                         if self.simulate_test_enabled:
-                            driver.execute_script(f'document.title = "(! SIMULATE TEST !) - monitor {name}"')
+                            driver.execute_script(f'document.title = "simulate test - monitor {name}"')
 
                             if keyboard.is_pressed(self.simulate_test_key):
                                 driver.get(self.simulate_test_url)
 
         except Exception as err:
-            self.register.write(["DEBUG", f"monitor {self.monitors[name]['name']} finalizado! ({err})"])
+            self.register.write(["WARNING", f"monitor {self.monitors[name]['name']} ({err})"])
 
             self.restart()
         
@@ -249,12 +243,13 @@ class Launcher:
                 
                     monitor["driver"] = webdriver.Chrome(options=driver)
 
-                    self.register.write(["INFO", f"argumentos adicionadas ao monitor {monitor['name']}"])
+                    ### self.register.write(["INFO", f"argumentos adicionadas ao monitor {monitor['name']}"])
             
                     thread = threading.Thread(target=self.manager, args=(monitor["name"]))
                     
                     monitor["thread"] = thread
                     
+                    time.sleep(0.1)
                     thread.start()
                 else:
                     self.register.write(["WARNING", f"monitor {monitor['name']} está desabilitado!"])

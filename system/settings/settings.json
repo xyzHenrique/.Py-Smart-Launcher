@@ -11,54 +11,6 @@
 				},
 				
 				"DIR": "c:/WIDE/S2S/monitor1"
-			},
-
-			"2": {
-				"monitor-enabled": false,
-				"monitor-position-xy": [0,0], 
-				
-				"monitor-size": {
-					"monitor-size-enabled": false, 
-					"monitor-size-xy": [0,0]
-				},
-				
-				"DIR": "c:/WIDE/S2S/monitor2"
-			},
-
-			"3": {
-				"monitor-enabled": false,
-				"monitor-position-xy": [0,0], 
-				
-				"monitor-size": {
-					"monitor-size-enabled": false, 
-					"monitor-size-xy": [0,0]
-				},
-				
-				"DIR": "c:/WIDE/S2S/monitor3"
-			},
-
-			"4": {
-				"monitor-enabled": false,
-				"monitor-position-xy": [0,0], 
-				
-				"monitor-size": {
-					"monitor-size-enabled": false, 
-					"monitor-size-xy": [0,0]
-				},
-				
-				"DIR": "c:/WIDE/S2S/monitor4"
-			},
-
-			"5": {
-				"monitor-enabled": false,
-				"monitor-position-xy": [0,0], 
-				
-				"monitor-size": {
-					"monitor-size-enabled": false, 
-					"monitor-size-xy": [0,0]
-				},
-				
-				"DIR": "c:/WIDE/S2S/monitor5"
 			}
 		},
 

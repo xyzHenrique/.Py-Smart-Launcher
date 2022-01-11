@@ -1,0 +1,12 @@
+[11/01/2022 | 02:22:31] - DEBUG - arquivo (11-01-2022.txt) criado com sucesso!
+
+[11/01/2022 | 02:22:31] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (ctrl+m)
+[11/01/2022 | 02:22:31] - INFO - monitor 1 (7528) criado com sucesso!
+[11/01/2022 | 02:22:31] - INFO - monitor 3 (15932) criado com sucesso!
+[11/01/2022 | 02:22:31] - ERROR - AUTO-KEYBOARD-MODULE: PyAutoGUI fail-safe triggered from mouse moving to a corner of the screen. To disable this fail-safe, set pyautogui.FAILSAFE to False. DISABLING FAIL-SAFE IS NOT RECOMMENDED.
+[11/01/2022 | 02:22:31] - INFO - monitor 5 (16864) criado com sucesso!
+[11/01/2022 | 02:22:31] - INFO - finalizando, por favor aguarde...
+[11/01/2022 | 02:22:31] - WARNING - monitor 5 (HTTPConnectionPool(host='localhost', port=57960): Max retries exceeded with url: /session/1574ca2297c8aa0d5c880000a13065f6/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C32B038FA0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')))
+[11/01/2022 | 02:22:31] - CRITICAL - reiniciando aplicação...
+
+[11/01/2022 | 02:23:57] - DEBUG - inicializando, para finalizar a aplicação corretamente pressione (ctrl+m)
