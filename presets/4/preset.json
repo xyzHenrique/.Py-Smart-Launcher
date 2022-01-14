@@ -1,0 +1,82 @@
+{
+	"properties": {
+		"monitors": {
+			"1": {
+				"monitor-enabled": true,
+				"monitor-position-xy": [0,0], 
+				
+				"monitor-size": {
+					"monitor-size-enabled": false, 
+					"monitor-size-xy": [0,0] 
+				},
+				
+				"DIR": "c:/WIDE/S2S/monitor1"
+			},
+
+			"2": {
+				"monitor-enabled": true,
+				"monitor-position-xy": [1280,0], 
+				
+				"monitor-size": {
+					"monitor-size-enabled": false, 
+					"monitor-size-xy": [0,0]
+				},
+				
+				"DIR": "c:/WIDE/S2S/monitor2"
+			},
+
+			"3": {
+				"monitor-enabled": true,
+				"monitor-position-xy": [2560,0], 
+				
+				"monitor-size": {
+					"monitor-size-enabled": false, 
+					"monitor-size-xy": [0,0]
+				},
+				
+				"DIR": "c:/WIDE/S2S/monitor3"
+			},
+
+			"4": {
+				"monitor-enabled": true,
+				"monitor-position-xy": [3840,0], 
+				
+				"monitor-size": {
+					"monitor-size-enabled": false, 
+					"monitor-size-xy": [0,0]
+				},
+				
+				"DIR": "c:/WIDE/S2S/monitor4"
+			}
+		},
+
+		"application-URL": "https://s2s.widedigital.com.br/S2S/Player.html"	
+	},
+	
+	"system": {
+		"keys-combination": "alt+p",
+		"fix-attempts": 3,
+		"start-cleaning": true
+	},
+
+	"automation": {
+		"auto_click_enabled": true,
+
+		"auto_keyboard_enabled": true,
+		"auto_keyboard_keys": [
+			"f5",
+			"esc",
+			"enter"
+		]
+	},
+	
+	"blocked-URL": [
+		"chrome://whats-new/?auto=true"
+	],
+
+	"simulate-test": {
+		"enabled": false,
+		"key": "h",
+		"URL": ""
+	}
+}
