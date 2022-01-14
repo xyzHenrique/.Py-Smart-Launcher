@@ -1,7 +1,11 @@
 ## Created by: Henrique R. Pereira
 
 ### REQUIREMENTS
+<hr>
+
 python: https://www.python.org/downloads/release/python-3101/
+
+<hr>
 
 ```
 pip3 install pyautogui
