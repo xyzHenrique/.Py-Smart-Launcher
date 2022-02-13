@@ -1,0 +1,19 @@
+{
+    "monitors": {
+        "1": {
+            "monitor": {
+                "enabled": true,
+                "x": 0,
+                "y": 0
+            },
+
+            "size": {
+                "enabled": false, 
+                "x": 0,
+                "y": 0 
+            },
+
+            "DIR": "C:/WIDE/S2S/monitor1"
+        }
+    }
+}

@@ -1,23 +1,8 @@
-# -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------------------------
-# Wide Digital - S2S launcher python automation
-#
-# ~ ----------------------------- LINKS ----------------------------- ~
-# chromedriver: <https://chromedriver.chromium.org/downloads>
-# selenium: <https://selenium-python.readthedocs.io/api.html>
-# pyautogui: <https://pyautogui.readthedocs.io/en/latest/>
-# ~ ----------------------------------------------------------------- ~
-#
 # Created by: Henrique R. Pereira <https://github.com/RIick-013>
-#
-# register.py > module script
-#
-# v3.5
 # ----------------------------------------------------------------------------------------------
 
 import datetime, time, os
-
-### LEVELS: INFO, WARNING, ERROR, CRITICAL and DEBUG
 
 class ApplicationRegister:
     def __init__(self):
@@ -27,7 +12,7 @@ class ApplicationRegister:
 
         self.levels = ["INFO", "WARNING", "ERROR", "CRITICAL", "DEBUG"]
 
-        self.logs_path = "./system/logs/"
+        self.logs_path = "./logs/"
 
     def setup(self):
             exist = False
@@ -36,10 +21,6 @@ class ApplicationRegister:
                 exist = True
             else:
                 try:
-                    f = open(f"{self.logs_path}{self.logname}.txt", "w+")
-                    
-                    time.sleep(0.5)
-
                     self.write(["DEBUG", f"arquivo ({self.logname}.txt) criado com sucesso!\n"])
                     
                     exist = True
@@ -51,6 +32,8 @@ class ApplicationRegister:
             return exist
 
     def write(self, msg):
+        """ INFO, WARNING, ERROR, CRITICAL and DEBUG """
+
         if self.setup():
             f = open(f"{self.logs_path}{self.logname}.txt", "a")
             

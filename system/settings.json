@@ -1,0 +1,28 @@
+{
+	"URL": "https://s2s.widedigital.com.br/S2S/Player.html",
+
+	"system": {
+		"system.exit_keys": "alt+m",
+		"system.start_clean": true,
+		"system.attemps": 3
+	},
+
+	"automation": {
+		"auto-keyboard-enabled": true,
+		"auto-keyboard-keys": [
+			"f5",
+			"esc",
+			"enter"
+		]
+	},
+	
+	"block": [
+		"chrome://whats-new/?auto=true"
+	],
+
+	"simulation": {
+		"enabled": false,
+		"KEY": "",
+		"URL": ""
+	}
+}

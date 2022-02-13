@@ -1,26 +1,24 @@
-# -*- coding: utf-8 -*-
 # ----------------------------------------------------------------------------------------------
-# Wide Digital - S2S launcher python automation
+# Created by: Henrique R. Pereira <https://github.com/RIick-013>
 #
 # ~ ----------------------------- LINKS ----------------------------- ~
-# chromedriver: <https://chromedriver.chromium.org/downloads>
-# selenium: <https://selenium-python.readthedocs.io/api.html>
-# pyautogui: <https://pyautogui.readthedocs.io/en/latest/>
+# https://chromedriver.chromium.org/downloads
+# https://selenium-python.readthedocs.io/api.html
+# https://pyautogui.readthedocs.io/en/latest/
 # ~ ----------------------------------------------------------------- ~
-#
-# Created by: Henrique R. Pereira <https://github.com/RIick-013>
 #
 # settings.py > module script
 #
-# v3.5
+# v3.6
 # ----------------------------------------------------------------------------------------------
 
 import json
 
 def ApplicationSettingsLoader():
     try:
-        data = json.load(open("./system/settings/settings.json"))
+        data_settings = json.load(open("./system/settings.json"))
+        data_monitors = json.load(open("./system/monitors.json"))
 
-        return data
+        return data_settings, data_monitors
     except Exception as err:
         print(err)
