@@ -14,7 +14,7 @@
 
 import json
 
-def ApplicationSettingsLoader():
+def ApplicationSettings():
     try:
         data_settings = json.load(open("./system/settings.json"))
         data_monitors = json.load(open("./system/monitors.json"))

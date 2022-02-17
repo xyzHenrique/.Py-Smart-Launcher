@@ -1,0 +1,38 @@
+{
+	"APPLICATION": "https://s2s.widedigital.com.br/S2S/Player.html",
+
+	"BLOCK": [
+		"chrome://whats-new/?auto=true"
+	],
+
+	"SYSTEM": {
+		".FORCE-URL": true,
+		".SECURE-EXIT": "crtl+alt+p",
+		".SECURE-START": true,
+		".SECURE-RESTART": {
+			"ENABLED": true,
+			"ATTEMPTS": 3
+		},
+		".DATETIME": {
+			"ENABLED": false,
+			"URL": "https://ds.widedigital.com.br/datetime.php",
+			"SSL": true
+		},
+		"SYSTEM.LAUNCHER-MODE": "normal"
+	},
+
+	"AUTOMATION": {
+		".ENABLED": true,
+		".KEYS": [
+			"f5",
+			"esc",
+			"enter"
+		]
+	},
+
+	"DEV": {
+		".ENABLED": false,
+		".KEY": "",
+		".URL": ""
+	}
+}

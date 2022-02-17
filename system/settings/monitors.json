@@ -2,6 +2,7 @@
     "monitors": {
         "1": {
             "monitor": {
+                "description": "",
                 "enabled": true,
                 "x": 0,
                 "y": 0

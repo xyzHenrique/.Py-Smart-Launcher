@@ -5,25 +5,24 @@
 version = "3.6.1"
 
 try:
-    import os, time, threading, pyautogui, keyboard
+    import os,  time, threading, pyautogui, keyboard
 
     from selenium import webdriver
 
     from modules.settings import ApplicationSettingsLoader
-    from modules.register import ApplicationRegister
-    from modules.updater import ApplicationUpdate
+    from modules.logger import ApplicationLogger
+    from update import ApplicationUpdate
 
 except ImportError as err:
     print(err)
 
+application_version = "3.6.2"
+
 class Application:
     def __init__(self):
-        self.register = ApplicationRegister()
+        self.register = ApplicationLogger()
         self.system_settings = ApplicationSettingsLoader()[0]
         self.system_monitors = ApplicationSettingsLoader()[1]
-        self.updater = ApplicationUpdate()
-
-        self.updater.check_version()
         
         """ SETTINGS """
         self.monitors = dict() 
@@ -46,13 +45,44 @@ class Application:
                 "DIR": item["DIR"]
             }
     
-        
 
-        """
-        ### ...
-        self.applicationURL = self.settings["URL"]
+        """SETTINGS.APPLICATION"""
+        self.settings_application = self.system_settings["APPLICATION"]
+
+        """SETTINGS.BLOCK"""
+        self.settings_block = self.system_settings["BLOCK"]
         
-        ### ...
+        """SETTINGS.SYSTEM"""
+        self.settings_system_force_url = self.system_settings["SYSTEM"][".FORCE-URL"]
+        self.settings_system_secure_exit = self.system_settings["SYSTEM"][".SECURE-EXIT"]
+        self.settings_system_secure_start = self.system_settings["SYSTEM"][".SECURE-START"]
+
+        self.settings_system_secure_restart = {
+            "enabled": self.system_settings["SYSTEM"][".SECURE-RESTART"][0],
+            "attempts": self.system_settings["SYSTEM"][".SECURE-RESTART"][1]
+            }
+        
+        self.settings_system_datetime = {
+            "enabled": self.system_settings["SYSTEM"][".DATETIME"][0], 
+            "url": self.system_settings["SYSTEM"][".DATETIME"][1], 
+            "ssl": self.system_settings["SYSTEM"][".DATETIME"][2]
+            }
+        
+        self.settings_system_laumcher_mode = "normal"
+        
+        """SETTINGS.AUTOMATION"""
+        self.settings_automation = {
+            "enabled": self.system_settings["AUTOMATION"][".ENABLED"], 
+            "keys": self.system_settings["AUTOMATION"][".KEYS"]
+            }
+
+        """SETTINGS.DEV"""
+        self.settings_dev = {
+            "enabled": self.system_settings["DEV"][".ENABLED"],
+            "key": self.system_settings["DEV"][".KEY"],
+            "url": self.system_settings["DEV"][".URL"]
+        }
+
         self.exit_keys = self.settings["system"]["exit-keys"]
         self.fix_attempts = self.settings["system"]["fix-attempts"]
        
@@ -226,4 +256,4 @@ class Application:
             self.restart()
 
 if __name__ == "__main__":
-    application = Application()
+    application = ApplicationTray()
