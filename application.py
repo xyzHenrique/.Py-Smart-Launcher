@@ -2,7 +2,7 @@
 # Created by: Henrique R. Pereira <https://github.com/RIick-013>
 # ----------------------------------------------------------------------------------------------
 
-version = "3.6.1"
+application_version = "3.6.2"
 
 try:
     import os,  time, threading, pyautogui, keyboard
@@ -16,15 +16,13 @@ try:
 except ImportError as err:
     print(err)
 
-application_version = "3.6.2"
-
 class Application:
     def __init__(self):
-        self.register = ApplicationLogger()
+        self.logger = ApplicationLogger()
         self.system_settings = ApplicationSettingsLoader()[0]
         self.system_monitors = ApplicationSettingsLoader()[1]
         
-        """ SETTINGS """
+        """MONITORS"""
         self.monitors = dict() 
 
         for key,item in self.system_monitors["monitors"].items():
@@ -45,7 +43,6 @@ class Application:
                 "DIR": item["DIR"]
             }
     
-
         """SETTINGS.APPLICATION"""
         self.settings_application = self.system_settings["APPLICATION"]
 
@@ -83,39 +80,22 @@ class Application:
             "url": self.system_settings["DEV"][".URL"]
         }
 
-        self.exit_keys = self.settings["system"]["exit-keys"]
-        self.fix_attempts = self.settings["system"]["fix-attempts"]
-       
-        ### ...
-        self.auto_keyboard_enabled = self.settings["automation"]["auto-keyboard-enabled"]
-        self.auto_keyboard_keys = self.settings["automation"]["auto-keyboard-keys"]
-
-        ### ...
-        self.blocked = self.settings["blocked-URL"]
-
-        ### ...
-        self.simulate_test_enabled = self.settings["simulate-test"]["enabled"]
-        self.simulate_test_key = self.settings["simulate-test"]["KEY"]
-        self.simulate_test_url = self.settings["simulate-test"]["URL"]
-
-        ### ...
+        
         if self.settings["system"]["clear-start"]:
             os.system("taskkill /F /IM chrome* /T >nul 2>&1")
 
         exit_t = threading.Thread(target=self.exit_command)
         exit_t.start()
 
-        print("#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#\n")
-        print(f"~ Versão atual: {version}\n)
-        print("#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#\n\n\n")
-        time.sleep(2.5)
         
-        self.register.write(["DEBUG", f"inicializando, para finalizar a aplicação corretamente pressione ({self.exit_keys})"])
+        self.register.write(["DEBUG", f"S2SLauncher\n- versão da aplicação: {} - Criado por: ({self.exit_keys})"])
     
         #self.setup()
+    
+    def secure_start(self):
+        if self.settings_system_secure_start:
+            os.system("taskkill /F /IM chrome* /T >nul 2>&1")
 
-        """
-        
     def exit_command(self):
         while True: 
             if keyboard.is_pressed(f"{self.exit_keys}"):
