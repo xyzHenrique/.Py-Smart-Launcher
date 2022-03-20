@@ -1,23 +1,46 @@
-from application import Application
-
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
+from application import Application
 from update import ApplicationUpdate
+
+import sys, time
 
 class ApplicationTray:
     def __init__(self):
         self.app = QApplication([])
-        self.app.setQuitOnLastWindowClosed(False)
+        self.app.setQuitOnLastWindowClosed(False) 
 
         self.update = ApplicationUpdate()
 
         self.tray = QSystemTrayIcon()
         self.tray.setIcon(QIcon("./system/images/logo.png"))
         self.tray.setVisible(True)
-        
+    
         self.tray_run()
     
+    def startup_update(self):
+        """ get update """
+        self.updated, self.versions = self.update.check_version()
+
+        print("conferindo atualização...")
+        time.sleep(1.5)
+
+        if not self.updated:
+            print(f"- atualizado: (c-{self.versions[0]} / l-{self.versions[1]})\n")
+
+            #Application()  
+
+        else:
+            print(f"desatualizado: (c-{self.versions[0]} / l-{self.versions[1]})\n")
+
+            self.update.download(self.versions[1])
+    
+    def startup_path(self):
+        """ get path """
+        with open("./system/session", "w") as file:
+            file.write(sys.argv[0])
+
     def tray_run(self):
         menu = QMenu()  
 
@@ -48,18 +71,9 @@ class ApplicationTray:
 
         self.tray.setContextMenu(menu)
 
-        """ check update """
-        self.updated, self.versions = self.update.check_version()
-
-        if not self.updated:
-            print(f"'chromedriver' está atualizado: (c-{self.versions[0]} / l-{self.versions[1]})")
-
-            Application()  
-
-        else:
-            print(f"'chromedriver' está desatualizado: (c-{self.versions[0]} / l-{self.versions[1]})")
-
-            self.update.download(self.versions[1])
+        """ FUNCTIONS """
+        self.startup_update()
+        self.startup_path()
 
         self.app.exec_()
 

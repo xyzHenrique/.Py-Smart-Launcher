@@ -8,14 +8,14 @@ from modules.logger import ApplicationLogger
 
 from uuid import uuid4
 
-import requests, zipfile, time, os 
+import requests, zipfile, time, os, sys
 
 class ApplicationUpdate:
     def __init__(self):
         self.NAME = uuid4().hex
         self.CACHE = "./cache/"
         self.OUTPUT = "./driver/"
-        self.VERSION = "./version"
+        self.VERSION = "./driver/version"
          
         if not os.path.exists(self.CACHE):
             os.makedirs(self.CACHE)
@@ -32,7 +32,13 @@ class ApplicationUpdate:
             pass
 
     def check_version(self):
-        r = requests.get("https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
+        try:
+            r = requests.get("https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
+        except Exception as err:
+            print(f"[UPDATE-MODULE]: impossível obter atualização, erro: {err}")
+
+            sys.exit()
+
         f = open(self.VERSION, "r")
 
         c_v = f.read()

@@ -16,9 +16,9 @@ import json
 
 def ApplicationSettings():
     try:
-        data_settings = json.load(open("./system/settings.json"))
-        data_monitors = json.load(open("./system/monitors.json"))
+        data_settings_general = json.load(open("./system/settings/general.json"))
+        data_settings_monitors = json.load(open("./system/settings/monitors.json"))
 
-        return data_settings, data_monitors
+        return data_settings_general, data_settings_monitors
     except Exception as err:
         print(err)
