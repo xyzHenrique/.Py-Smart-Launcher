@@ -1,69 +1,48 @@
-# ----------------------------------------------------------------------------------------------
-# Created by: Henrique R. Pereira <https://github.com/RIick-013>
-# ----------------------------------------------------------------------------------------------
-
 import datetime, os
 
 class ApplicationLogger:
     def __init__(self):
-        self.now = [datetime.date.today().strftime("%d/%m/%Y"), datetime.datetime.now().strftime("%H:%M:%S")]
-        
-        self.logname = self.now[0].replace("/", "-")
+        self.file = None
+        self.filename = self.custom_date("%d-%m")
+        self.foldername = self.custom_date("%m-%Y")        
+        self.folderpath = "./logs/"
+
+        self.normal_datetime = [self.custom_date("%d/%m/%Y"), self.custom_time("%H:%M:%S")]
 
         self.levels = ["INFO", "WARNING", "ERROR", "CRITICAL", "DEBUG"]
 
-        self.logs_path = "./logs/"
+        self.create_folder()
 
-    def setup(self):
-            exist = False
+    def custom_date(self, date_format):
+        self.date = datetime.datetime.today().strftime(date_format)
 
-            if os.path.exists(f"{self.logs_path}{self.logname}.txt"):
-                exist = True
-            else:
-                try:
-                    self.write(["DEBUG", f"arquivo ({self.logname}.txt) criado com sucesso!\n"])
-                    
-                    exist = True
-                except:
-                    print(f"[{self.now[0]} | {self.now[1]}] - ERROR - não foi possível criar o arquivo (logs/{self.logname}.txt)!")
-
-                    exist = False
-
-            return exist
-
-    def write(self, msg):
-        if self.setup():
-            f = open(f"{self.logs_path}{self.logname}.txt", "a")
-            
-            if msg[0] == self.levels[0]:
-                m = f"[{self.now[0]} | {self.now[1]}] - {self.levels[0]} - {msg[1]}\n"
-                
-                print(m)
-                f.write(m)
-
-            if msg[0] == self.levels[1]:
-                m = f"[{self.now[0]} | {self.now[1]}] - {self.levels[1]} - {msg[1]}\n"
-                
-                print(m)
-                f.write(m)
-
-            if msg[0] == self.levels[2]:
-                m = f"[{self.now[0]} | {self.now[1]}] - {self.levels[2]} - {msg[1]}\n"
-                
-                print(m)
-                f.write(m)
-
-            if msg[0] == self.levels[3]:
-                m = f"[{self.now[0]} | {self.now[1]}] - {self.levels[3]} - {msg[1]}\n"
-                
-                print(m)
-                f.write(m)
-
-            if msg[0] == self.levels[4]:
-                m = f"[{self.now[0]} | {self.now[1]}] - {self.levels[4]} - {msg[1]}\n"
+        return self.date
         
-                print(m)
-                f.write(m)
+    def custom_time(self, time_format):
+        self.time = datetime.datetime.now().strftime(time_format)
 
+        return self.time
+
+    def create_folder(self):
+        if os.path.exists(f"{self.folderpath}{self.foldername}"):
+            self.create_file()
         else:
-            self.setup()
+            try:
+                os.mkdir(f"{self.folderpath}{self.foldername}")
+
+                self.create_file()
+
+            except Exception as err:
+                print(err)
+
+    def create_file(self):
+        self.file = open(f"{self.folderpath}{self.foldername}/{self.filename}.txt", "a")
+
+        self.file.write(f"\n------------ LOG FILE | {self.normal_datetime[0]} - {self.normal_datetime[1]} ------------\n")
+
+    def write_file(self, content):
+        for level in self.levels:
+            if content[0] == level:
+                self.file.write(f"[{self.normal_datetime[1]}] - {level} - {content[1]}\n")
+                
+                print(f"[{self.normal_datetime[1]}] - {level} - {content[1]}\n")

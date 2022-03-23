@@ -10,7 +10,7 @@ from uuid import uuid4
 
 import requests, zipfile, time, os, sys
 
-class ApplicationUpdate:
+class ApplicationUpdater:
     def __init__(self):
         self.NAME = uuid4().hex
         self.CACHE = "./cache/"
@@ -19,6 +19,8 @@ class ApplicationUpdate:
          
         if not os.path.exists(self.CACHE):
             os.makedirs(self.CACHE)
+
+        self.logger = ApplicationLogger()
         
     def clean_cache(self):
         time.sleep(1.5)
@@ -32,10 +34,12 @@ class ApplicationUpdate:
             pass
 
     def check_version(self):
+        self.logger.write_file(["INFO", "verificando atualização..."])
+
         try:
             r = requests.get("https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
         except Exception as err:
-            print(f"[UPDATE-MODULE]: impossível obter atualização, erro: {err}")
+            self.logger.write_file(["ERROR", f"impossível obter atualização, erro: {err}"])
 
             sys.exit()
 
@@ -62,8 +66,9 @@ class ApplicationUpdate:
                 f.write(r.content)
                 f.close()
 
-                self.install(f.name, l_v)
-            
+                if self.install(f.name, l_v):
+                    return True
+    
     def install(self, name, l_v):
         try:
             with open(name, "rb") as f:
@@ -71,13 +76,15 @@ class ApplicationUpdate:
                 z.extractall(self.OUTPUT)
                 z.close()
 
-                print(f"atualização: ({l_v}) instalada com sucesso!")
+                self.logger.write_file(["INFO", f"atualização: ({l_v}) instalada com sucesso!"])
             
             f = open(f"{self.VERSION}", "w")
             f.write(l_v)
             f.close()
 
-        except Exception as err:
-            print(f"atualização: ({l_v}) não instalada!\n{err}")
+            return True
 
-app = ApplicationUpdate()
+        except Exception as err:
+            self.logger.write_file(["ERROR", f"atualização: ({l_v}) não instalada!\n{err}"])
+
+            return False

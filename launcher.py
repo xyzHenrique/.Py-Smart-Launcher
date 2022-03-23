@@ -1,50 +1,30 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
-from application import Application
-from update import ApplicationUpdate
+from application import Application, version
+from updater import ApplicationUpdater
+from controller import ApplicationController
 
-import sys, time
+import sys, os, time
 
-class ApplicationTray:
+class ApplicationLauncher:
     def __init__(self):
         self.app = QApplication([])
         self.app.setQuitOnLastWindowClosed(False) 
 
-        self.update = ApplicationUpdate()
-
         self.tray = QSystemTrayIcon()
         self.tray.setIcon(QIcon("./system/images/logo.png"))
         self.tray.setVisible(True)
-    
+
+        self.controller = ApplicationController()
+
+        self.check_updates(ApplicationUpdater())
         self.tray_run()
     
-    def startup_update(self):
-        """ get update """
-        self.updated, self.versions = self.update.check_version()
-
-        print("conferindo atualização...")
-        time.sleep(1.5)
-
-        if not self.updated:
-            print(f"- atualizado: (c-{self.versions[0]} / l-{self.versions[1]})\n")
-
-            #Application()  
-
-        else:
-            print(f"desatualizado: (c-{self.versions[0]} / l-{self.versions[1]})\n")
-
-            self.update.download(self.versions[1])
-    
-    def startup_path(self):
-        """ get path """
-        with open("./system/session", "w") as file:
-            file.write(sys.argv[0])
-
     def tray_run(self):
         menu = QMenu()  
 
-        name = QAction(f"S2SLauncher 3.6.2")
+        name = QAction(f"S2SLauncher {version}")
              
         option1 = QAction("minimizar")
         option2 = QAction("maximizar")
@@ -67,14 +47,47 @@ class ApplicationTray:
         menu.addAction(option4)
         menu.addAction(option5)
 
-        option5.triggered.connect(self.app.quit)
+        def click_option3():
+            print("- selecionado: 'verificar atualizações'\n\ruma nova verificação será feita\n\n\n")
+            time.sleep(1)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            self.check_updates(ApplicationUpdater())
+        
+        def click_option4():
+            print("- selecionado: 'reiniciar'\n\ra aplicação será reiniciada\n\n\n")
+            time.sleep(1) 
+            self.controller.restart()
+            
+            
+        def click_option5():
+            print("- selecionado: 'sair'\n\rsaindo da aplicação\n\n\n")
+            time.sleep(1)
+            self.app.quit
+            self.controller.end(onlychrome=False)
+            sys.exit()
+
+        option3.triggered.connect(click_option3)
+        
+        option4.triggered.connect(click_option4)
+
+        option5.triggered.connect(click_option5)
 
         self.tray.setContextMenu(menu)
 
-        """ FUNCTIONS """
-        self.startup_update()
-        self.startup_path()
-
         self.app.exec_()
 
-ApplicationTray()
+    def check_updates(self, updater):
+        updated, versions = updater.check_version()
+
+        if not updated:
+            print(f"- atualizado: (c-{versions[0]} / l-{versions[1]})\n")
+
+            Application()
+        else:
+            print(f"- desatualizado: (c-{versions[0]} / l-{versions[1]})\n")
+
+            if updater.download(versions[1]):
+                Application()
+                pass
+
+ApplicationLauncher()

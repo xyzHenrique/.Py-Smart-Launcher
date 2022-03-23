@@ -2,26 +2,34 @@
 # Created by: Henrique R. Pereira <https://github.com/RIick-013>
 # ----------------------------------------------------------------------------------------------
 
+from importlib.resources import path
+
 version = "3.6.5"
 
 try:
-    import os, time, threading, pyautogui, keyboard
+
+    import os, time, threading, pyautogui, keyboard, pathlib, traceback
 
     from selenium import webdriver
+    from selenium.webdriver.chrome.service import Service
+    from webdriver_manager.chrome import ChromeDriverManager
 
+    
     from modules.settings import ApplicationSettings
     from modules.logger import ApplicationLogger
+    from controller import ApplicationController
 
-except ImportError as err:
-    print(err)
+except ImportError:
+    print(traceback.format_exc())
 
 class Application:
     def __init__(self):
         self.logger = ApplicationLogger()
-        self.settings = ApplicationSettings()
-
-        self.settings_general, self.settings_monitors = self.settings[0], self.settings[1]
+        self.controller = ApplicationController()
         
+        self.settings = ApplicationSettings()
+        self.settings_general, self.settings_monitors = self.settings[0], self.settings[1]
+
         self.monitors = dict() 
         
         for key,item in self.settings_monitors["MONITORS"].items():
@@ -42,7 +50,7 @@ class Application:
                 
                 "DIR": item["PROPERTIES"]["DIR"]
             }
-    
+        
         """APPLICATION"""
         self.settings_general_application = {
             "application": self.settings_general["APPLICATION"]
@@ -56,11 +64,8 @@ class Application:
 
         """BLOCK"""
         self.settings_general_block = {
-            "options": self.settings_general["BLOCK"][".OPTIONS"],
-            "force": {
-                "enabled": self.settings_general["BLOCK"][".FORCE"][".ENABLED"],
-                "url": self.settings_general["BLOCK"][".FORCE"][".URL"],
-            }
+            "enabled": self.settings_general["BLOCK"][".ENABLED"],
+            "url": self.settings_general["BLOCK"][".URL"]
         }
         
         """SYSTEM"""
@@ -71,12 +76,7 @@ class Application:
             },
 
             "secure-start": self.settings_general["SYSTEM"][".SECURE-START"],
-            
-            "secure-restart": {
-                "enabled": self.settings_general["SYSTEM"][".SECURE-RESTART"][".ENABLED"],
-                "attempts": self.settings_general["SYSTEM"][".SECURE-RESTART"][".ATTEMPTS"]   
-            },
-
+        
             "datetime": {
                 "enabled": self.settings_general["SYSTEM"][".DATETIME"][".ENABLED"],
                 "url": self.settings_general["SYSTEM"][".DATETIME"][".URL"],
@@ -88,7 +88,11 @@ class Application:
         self.settings_general_automation = {
             "automation": {
                 "enabled": self.settings_general["AUTOMATION"][".ENABLED"],
-                "timer": self.settings_general["AUTOMATION"][".TIMER"]
+            },
+
+            "timer": {
+                "enabled": self.settings_general["AUTOMATION"][".TIMER"][".ENABLED"],
+                "time": self.settings_general["AUTOMATION"][".TIMER"][".TIME"]
             },
 
             "show": self.settings_general["AUTOMATION"][".TIMER"],
@@ -103,53 +107,37 @@ class Application:
         }
 
         ### STARTUP MESSAGES
-        self.logger.write(["DEBUG", f"S2SLauncher {version} - criado por: Henrique Rodrigues Pereira\n\n\npressione: {self.settings_general_system['secure-exit']['keys']} para sair"])
+        print(f"S2SLauncher {version} - criado por: Henrique Rodrigues Pereira\n\n\npressione: {self.settings_general_system['secure-exit']['keys']} para sair")
         
         ### VARIABLES
         self.threads = []
 
         ### THREADS
-        #threading.Thread(target=self.secure_exit).start()
+        threading.Thread(target=self.secure_exit).start()
 
         ### FUNCTIONS
         #self.secure_start()
-        #self.monitor_setup()
+        self.monitor_setup()
     
     def secure_start(self):
-        if self.settings_system_secure_start:
-            os.system("taskkill /F /IM chrome* /T >nul 2>&1")
+        if self.settings_general_system["secure-start"]:
+            self.controller.end(onlychrome=True)
 
     def secure_exit(self):
-        while True: 
-            if keyboard.is_pressed(f"{self.general_system_secure_exit['keys']}"):
-                self.register.write(["INFO", f"finalizando aplicação"])
+        while self.settings_general_system["secure-exit"]["enabled"]:
+            if keyboard.is_pressed(f"{self.settings_general_system['secure-exit']['keys']}"):
+                self.logger.write_file(["INFO", f"({self.settings_general_system['secure-exit']['keys']}) finalizando a aplicação..."])
 
-                os.system("taskkill /F /IM chrome* /T >nul 2>&1")           
+                time.sleep(1)
 
-    def restart(self):
-        try: 
-            self.register.write(["CRITICAL", f"reiniciando aplicação, aguarde.\n"])
-
-            os.system("taskkill /F /IM chrome* /T >nul 2>&1")
-
-            time.sleep(0.5)
-
-            with open("./system/session", "r") as file:
-                line = file.readline()
-                os.system(f"start {line}")
-            
-            os._exit(0)
-
-        except Exception as err:
-            self.register.write(["ERROR", f"{err}"])
-            
-            os._exit(0)
-    
+                self.controller.end(onlychrome=False)
+                           
     def automation(self):
-        enabled = self.general_automation["enabled"]
-        timer = self.general_automation["timer"] 
-        show = self.general_automation["show"]
-        keys = self.general_automation["keys"]
+        enabled = self.settings_general_automation["automation"]["enabled"]
+        timer_enabled = self.settings_general_automation["timer"]["enabled"]
+        timer_time = self.settings_general_automation["timer"]["time"]
+        show = self.settings_general_automation["show"]
+        keys = self.settings_general_automation["keys"]
         
         if enabled:
             try:
@@ -157,70 +145,78 @@ class Application:
                     pyautogui.press(key)
 
                     if show:
-                        self.logger.write(["DEBUG", f"{key} pressionado!"])
-                        print(f"'{key}' pressed!")
+                        self.logger.write_file(["DEBUG", f"{key} pressionado!"])
+                    if timer_enabled:
+                        time.sleep(timer_time)
 
-                    if timer:
-                        time.sleep(0.1)
-
-            except Exception as err:
-                self.register.write(["ERROR", f"{err}"])
+            except Exception:
+                self.logger.write_file(["ERROR", f"{traceback.format_exc()}"])
 
     def monitor_manager(self, name):
         try:
             for monitor in self.monitors.keys():
                 if name == monitor:
-                    attempts = 0
-
+                    application_url = self.settings_general_application["application"]
+                    block_enabled = self.settings_general_block["enabled"]
+                    block_url = self.settings_general_block["url"]
+                   
                     driver = self.monitors[name]["DRIVER"]
+                  
                     PID = driver.service.process.pid
 
-                    driver.get(self.general_application)
+                    driver.get(application_url)
+                    
+                    ### FIX TASKBAR
+                    pyautogui.keyDown('alt')
+                    time.sleep(.2)
+                    pyautogui.press('tab')
+                    time.sleep(.2)
 
-                    self.auto_keyboard_commands()
+                    self.automation()
 
                     driver.execute_script(f'document.title = "monitor {name}"')
 
-                    self.register.write(["INFO", f"monitor {self.monitors[name]['name']} ({PID}) criado com sucesso!"])
+                    self.logger.write_file(["INFO", f"monitor {self.monitors[name]['NAME']} ({PID}) criado!"])
 
+                    i = 0
                     while True:
-                        for blocked in self.blocked:
-                            if driver.current_url == blocked or not driver.current_url == self.URL:
-                                attempts += 1
+                        if block_enabled:
+                            for blocked in block_url:
+                                if driver.current_url == blocked or not driver.current_url == application_url:
+                                    i += 1
 
-                                self.register.write(["WARNING", f"uma ULR inválida está sendo executada no monitor {name} - ({driver.current_url}), número de tentativas: ({attempts})"])
-
-                                driver.get(self.URL)
-                            
-                                self.auto_keyboard_commands()
-
-                                driver.execute_script(f'document.title = "monitor {name}"')
-                            
-                            if attempts >= self.fix_attempts:
-                                self.register.write(["WARNING", f"o número máximo de tentativas foi atingido ({attempts})!"])
+                                    self.logger.write_file(["WARNING", f"uma ULR inválida está sendo executada no monitor {name} - ({driver.current_url}), tentativas de correção: ({i})"])
                                     
-                                driver.quit()
+                                    pyautogui.press("f5")
+                                    
+                                    driver.get(application_url)
+                                    driver.execute_script(f'document.title = "monitor {name}"')
+                                
+                                if i >= 3:
+                                    self.logger.write_file(["WARNING", f"o número máximo de tentativas de correções foi atingido (3)"])
+                                        
+                                    driver.quit()
 
-                                break
+                                    self.controller.restart()
 
-                        if self.simulate_test_enabled:
-                            driver.execute_script(f'document.title = "simulate test - monitor {name}"')
+                        if self.settings_general_dev["enabled"]:
+                            driver.execute_script(f'document.title = "DEV - {name}"')
 
-                            if keyboard.is_pressed(self.simulate_test_key):
-                                driver.get(self.simulate_test_url)
+                            if keyboard.is_pressed(self.settings_general_dev["keys"]):
+                                driver.get(self.settings_general_dev["url"])
 
-                        time.sleep(1.5)
-        except Exception as err:
-            self.register.write(["WARNING", f"monitor {self.monitors[name]['name']} ({err})"])
+                        time.sleep(1)
 
-            self.restart()
+        except Exception:
+            self.logger.write_file(["WARNING", f"monitor {self.monitors[name]['NAME']} ({traceback.format_exc()})"])
+
+            self.controller.restart()
         
     def monitor_setup(self):
-        print("setup")
         try:
             for monitor in self.monitors.values():
                 if monitor["monitor-enabled"]: 
-                    driver = webdriver.ChromeOptions(executable_path="./driver/chromedriver.exe")
+                    driver = webdriver.ChromeOptions()
 
                     """SECTION-1"""
                     driver.add_experimental_option("useAutomationExtension", False)
@@ -228,14 +224,13 @@ class Application:
 
                     """SECTION-2"""
                     driver.add_argument(f"--user-data-dir={monitor['DIR']}")
-                    driver.add_argument(f"--window-position={monitor['monitor-position-x']},{monitor['monitor-position-y']}")
+                    driver.add_argument(f"--window-position={monitor['monitor-x']},{monitor['monitor-y']}")
 
                     """SECTION-3"""
-                    if monitor["monitor-size-enabled"]:
-                        driver.add_argument(f"--app={self.URL}")
-                        driver.add_argument(f"--window-size={monitor['monitor-size-x']},{monitor['monitor-size-y']}")
+                    if monitor["size-enabled"]:
+                        driver.add_argument(f"--app={self.settings_general_application['application']}")
+                        driver.add_argument(f"--window-size={monitor['size-x']},{monitor['size-y']}")
                     else:
-                        ### driver.add_argument("--start-fullscreen") ###
                         driver.add_argument("--kiosk")
                     
                     """SECTION-4"""
@@ -247,22 +242,21 @@ class Application:
                     driver.add_argument("--ignore-certificate-errors")
                     driver.add_argument("--autoplay-policy=no-user-gesture-required")
                 
-                    monitor["driver"] = webdriver.Chrome(options=driver)
-            
-                    thread = threading.Thread(target=self.manager, args=(monitor["name"]))
+                    monitor["DRIVER"] = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=driver)
+                   
+                    thread = threading.Thread(target=self.monitor_manager, args=(monitor["NAME"]))
                     
-                    monitor["thread"] = thread
+                    monitor["THREAD"] = thread
                     
-                    time.sleep(0.3)
+                    time.sleep(0.25)
 
                     thread.start()
                 else:
-                    self.register.write(["WARNING", f"monitor {monitor['name']} está desabilitado!"])
+                    self.logger.write_file(["WARNING", f"monitor {monitor['NAME']} está desabilitado!"])
         
-        except Exception as err:
-            self.register.write(["CRITICAL", f"{err}"])
+        except Exception:
+            self.logger.write_file(["CRITICAL", f"{traceback.format_exc()}"])
 
-            self.restart()
+            self.controller.end(onlychrome=False)
 
-if __name__ == "__main__":
-    application = Application()
+Application()

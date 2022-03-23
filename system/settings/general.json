@@ -2,33 +2,27 @@
 	"APPLICATION": "https://s2s.widedigital.com.br/S2S/Player.html",
 
 	"UPDATES": {
+		".CLIENT": "NEW",
 		".URL": "https://chromedriver.storage.googleapis.com",
 		".ENABLED": true
 	},
 
 	"BLOCK": {
-		".OPTIONS": true,
-
-		".FORCE": {
-			".ENABLED": true,
-			".URL":
-				[
-					"chrome://whats-new/?auto=true",
-					"chrome://whats-new/"
-				]
-		}		
+		".ENABLED": true,
+		".URL":
+			[
+				"chrome://whats-new/?auto=true",
+				"chrome://whats-new/"
+			]		
 	},
 
 	"SYSTEM": {
 		".SECURE-EXIT": {
 			".ENABLED": true,
-			".KEYS": "crtl+alt+p"
+			".KEYS": "ctrl+alt+p"
 		},
 		".SECURE-START": true,
-		".SECURE-RESTART": {
-			".ENABLED": true,
-			".ATTEMPTS": 3
-		},
+	
 		".DATETIME": {
 			".ENABLED": false,
 			".URL": "https://ds.widedigital.com.br/datetime.php",
@@ -40,7 +34,7 @@
 		".ENABLED": true,
 		".TIMER": {
 			".ENABLED": false,
-			".TIMER": 0.50
+			".TIME": 0.50
 		},
 		".SHOW": true,
 		".KEYS": [
