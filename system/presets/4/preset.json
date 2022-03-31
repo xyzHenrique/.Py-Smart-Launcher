@@ -1,82 +1,71 @@
 {
-	"properties": {
-		"monitors": {
-			"1": {
-				"monitor-enabled": true,
-				"monitor-position-xy": [0,0], 
-				
-				"monitor-size": {
-					"monitor-size-enabled": false, 
-					"monitor-size-xy": [0,0] 
-				},
-				
-				"DIR": "c:/WIDE/S2S/monitor1"
-			},
+    "MONITORS": {
+        "1": {
+            "PROPERTIES": {
+                ".DESCRIPTION": "monitor-1",
+                ".ENABLED": true,
+                ".X": 0,
+                ".Y": 0,
+            
+                "SIZE": {
+                    ".ENABLED": false, 
+                    ".X": 0,
+                    ".Y": 0 
+                },
 
-			"2": {
-				"monitor-enabled": true,
-				"monitor-position-xy": [1280,0], 
-				
-				"monitor-size": {
-					"monitor-size-enabled": false, 
-					"monitor-size-xy": [0,0]
-				},
-				
-				"DIR": "c:/WIDE/S2S/monitor2"
-			},
+                "DIR": "C:/WIDE/S2S/monitor1"
+            }
+        },
 
-			"3": {
-				"monitor-enabled": true,
-				"monitor-position-xy": [2560,0], 
-				
-				"monitor-size": {
-					"monitor-size-enabled": false, 
-					"monitor-size-xy": [0,0]
-				},
-				
-				"DIR": "c:/WIDE/S2S/monitor3"
-			},
+        "2": {
+            "PROPERTIES": {
+                ".DESCRIPTION": "monitor-2",
+                ".ENABLED": true,
+                ".X": 0,
+                ".Y": 0,
+            
+                "SIZE": {
+                    ".ENABLED": false, 
+                    ".X": 0,
+                    ".Y": 0 
+                },
 
-			"4": {
-				"monitor-enabled": true,
-				"monitor-position-xy": [3840,0], 
-				
-				"monitor-size": {
-					"monitor-size-enabled": false, 
-					"monitor-size-xy": [0,0]
-				},
-				
-				"DIR": "c:/WIDE/S2S/monitor4"
-			}
-		},
+                "DIR": "C:/WIDE/S2S/monitor2"
+            }
+        },
 
-		"application-URL": "https://s2s.widedigital.com.br/S2S/Player.html"	
-	},
-	
-	"system": {
-		"keys-combination": "alt+p",
-		"fix-attempts": 3,
-		"start-cleaning": true
-	},
+        "3": {
+            "PROPERTIES": {
+                ".DESCRIPTION": "monitor-3",
+                ".ENABLED": true,
+                ".X": 0,
+                ".Y": 0,
+            
+                "SIZE": {
+                    ".ENABLED": false, 
+                    ".X": 0,
+                    ".Y": 0 
+                },
 
-	"automation": {
-		"auto_click_enabled": true,
+                "DIR": "C:/WIDE/S2S/monitor3"
+            }
+        },
 
-		"auto_keyboard_enabled": true,
-		"auto_keyboard_keys": [
-			"f5",
-			"esc",
-			"enter"
-		]
-	},
-	
-	"blocked-URL": [
-		"chrome://whats-new/?auto=true"
-	],
+		"4": {
+            "PROPERTIES": {
+                ".DESCRIPTION": "monitor-4",
+                ".ENABLED": true,
+                ".X": 0,
+                ".Y": 0,
+            
+                "SIZE": {
+                    ".ENABLED": false, 
+                    ".X": 0,
+                    ".Y": 0 
+                },
 
-	"simulate-test": {
-		"enabled": false,
-		"key": "h",
-		"URL": ""
-	}
+                "DIR": "C:/WIDE/S2S/monitor4"
+            }
+        }
+    }
 }

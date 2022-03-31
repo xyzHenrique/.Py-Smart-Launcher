@@ -1,3 +1,9 @@
+"""
+created by: Henrique R. Pereira <https://github.com/RIick-013>
+
+modules > logger.py | v2 |
+"""
+
 import datetime, os
 
 class ApplicationLogger:

@@ -1,19 +1,15 @@
-# ----------------------------------------------------------------------------------------------
-# Created by: Henrique R. Pereira <https://github.com/RIick-013>
-# ----------------------------------------------------------------------------------------------
+"""
+created by: Henrique R. Pereira <https://github.com/RIick-013>
 
-from importlib.resources import path
-
-version = "3.6.5"
+application.py
+"""
 
 try:
-
-    import os, time, threading, pyautogui, keyboard, pathlib, traceback
+    import time, threading, traceback, pyautogui, keyboard
 
     from selenium import webdriver
     from selenium.webdriver.chrome.service import Service
     from webdriver_manager.chrome import ChromeDriverManager
-
     
     from modules.settings import ApplicationSettings
     from modules.logger import ApplicationLogger
@@ -22,13 +18,15 @@ try:
 except ImportError:
     print(traceback.format_exc())
 
+with open("version", "r") as file: version = file.readline()
+    
 class Application:
     def __init__(self):
-        self.logger = ApplicationLogger()
-        self.controller = ApplicationController()
+        self.application_logger = ApplicationLogger()
+        self.application_settings = ApplicationSettings()
+        self.application_controller = ApplicationController()
         
-        self.settings = ApplicationSettings()
-        self.settings_general, self.settings_monitors = self.settings[0], self.settings[1]
+        self.settings_general, self.settings_monitors = self.application_settings[0], self.application_settings[1]
 
         self.monitors = dict() 
         
@@ -116,21 +114,21 @@ class Application:
         threading.Thread(target=self.secure_exit).start()
 
         ### FUNCTIONS
-        #self.secure_start()
+        self.secure_start()
         self.monitor_setup()
     
     def secure_start(self):
         if self.settings_general_system["secure-start"]:
-            self.controller.end(onlychrome=True)
+            self.application_controller.end(onlychrome=True)
 
     def secure_exit(self):
         while self.settings_general_system["secure-exit"]["enabled"]:
             if keyboard.is_pressed(f"{self.settings_general_system['secure-exit']['keys']}"):
-                self.logger.write_file(["INFO", f"({self.settings_general_system['secure-exit']['keys']}) finalizando a aplicação..."])
+                self.application_logger.write_file(["INFO", f"({self.settings_general_system['secure-exit']['keys']}) finalizando a aplicação..."])
 
                 time.sleep(1)
 
-                self.controller.end(onlychrome=False)
+                self.application_controller.end(onlychrome=False)
                            
     def automation(self):
         enabled = self.settings_general_automation["automation"]["enabled"]
@@ -145,12 +143,12 @@ class Application:
                     pyautogui.press(key)
 
                     if show:
-                        self.logger.write_file(["DEBUG", f"{key} pressionado!"])
+                        self.application_logger.write_file(["DEBUG", f"{key} pressionado!"])
                     if timer_enabled:
                         time.sleep(timer_time)
 
             except Exception:
-                self.logger.write_file(["ERROR", f"{traceback.format_exc()}"])
+                self.application_logger.write_file(["ERROR", f"{traceback.format_exc()}"])
 
     def monitor_manager(self, name):
         try:
@@ -176,7 +174,7 @@ class Application:
 
                     driver.execute_script(f'document.title = "monitor {name}"')
 
-                    self.logger.write_file(["INFO", f"monitor {self.monitors[name]['NAME']} ({PID}) criado!"])
+                    self.application_logger.write_file(["INFO", f"monitor {self.monitors[name]['NAME']} ({PID}) criado!"])
 
                     i = 0
                     while True:
@@ -185,7 +183,7 @@ class Application:
                                 if driver.current_url == blocked or not driver.current_url == application_url:
                                     i += 1
 
-                                    self.logger.write_file(["WARNING", f"uma ULR inválida está sendo executada no monitor {name} - ({driver.current_url}), tentativas de correção: ({i})"])
+                                    self.application_logger.write_file(["WARNING", f"uma ULR inválida está sendo executada no monitor {name} - ({driver.current_url}), tentativas de correção: ({i})"])
                                     
                                     pyautogui.press("f5")
                                     
@@ -193,11 +191,11 @@ class Application:
                                     driver.execute_script(f'document.title = "monitor {name}"')
                                 
                                 if i >= 3:
-                                    self.logger.write_file(["WARNING", f"o número máximo de tentativas de correções foi atingido (3)"])
+                                    self.application_logger.write_file(["WARNING", f"o número máximo de tentativas de correções foi atingido (3)"])
                                         
                                     driver.quit()
 
-                                    self.controller.restart()
+                                    self.application_controller.restart()
 
                         if self.settings_general_dev["enabled"]:
                             driver.execute_script(f'document.title = "DEV - {name}"')
@@ -208,9 +206,9 @@ class Application:
                         time.sleep(1)
 
         except Exception:
-            self.logger.write_file(["WARNING", f"monitor {self.monitors[name]['NAME']} ({traceback.format_exc()})"])
+            self.application_logger.write_file(["WARNING", f"monitor {self.monitors[name]['NAME']} ({traceback.format_exc()})"])
 
-            self.controller.restart()
+            self.application_controller.restart()
         
     def monitor_setup(self):
         try:
@@ -252,11 +250,11 @@ class Application:
 
                     thread.start()
                 else:
-                    self.logger.write_file(["WARNING", f"monitor {monitor['NAME']} está desabilitado!"])
+                    self.application_logger.write_file(["WARNING", f"monitor {monitor['NAME']} está desabilitado!"])
         
         except Exception:
-            self.logger.write_file(["CRITICAL", f"{traceback.format_exc()}"])
+            self.application_logger.write_file(["CRITICAL", f"{traceback.format_exc()}"])
 
-            self.controller.end(onlychrome=False)
+            self.application_controller.end(onlychrome=False)
 
 Application()

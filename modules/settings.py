@@ -1,24 +1,16 @@
-# ----------------------------------------------------------------------------------------------
-# Created by: Henrique R. Pereira <https://github.com/RIick-013>
-#
-# ~ ----------------------------- LINKS ----------------------------- ~
-# https://chromedriver.chromium.org/downloads
-# https://selenium-python.readthedocs.io/api.html
-# https://pyautogui.readthedocs.io/en/latest/
-# ~ ----------------------------------------------------------------- ~
-#
-# settings.py > module script
-#
-# v3.6
-# ----------------------------------------------------------------------------------------------
+"""
+created by: Henrique R. Pereira <https://github.com/RIick-013>
+
+modules > settings.py | v2 |
+"""
 
 import json
 
 def ApplicationSettings():
     try:
-        data_settings_general = json.load(open("./system/settings/general.json"))
-        data_settings_monitors = json.load(open("./system/settings/monitors.json"))
+        data_settings = json.load(open("./system/settings.json"))
+        data_monitors = json.load(open(f"./system/presets/{data_settings['MONITORS']['.PRESET']}/preset.json"))
 
-        return data_settings_general, data_settings_monitors
+        return data_settings, data_monitors
     except Exception as err:
         print(err)
