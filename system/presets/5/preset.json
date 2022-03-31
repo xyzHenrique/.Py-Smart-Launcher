@@ -21,7 +21,7 @@
             "PROPERTIES": {
                 ".DESCRIPTION": "monitor-2",
                 ".ENABLED": true,
-                ".X": 0,
+                ".X": 1280,
                 ".Y": 0,
             
                 "SIZE": {
@@ -38,7 +38,7 @@
             "PROPERTIES": {
                 ".DESCRIPTION": "monitor-3",
                 ".ENABLED": true,
-                ".X": 0,
+                ".X": 2560,
                 ".Y": 0,
             
                 "SIZE": {
@@ -55,7 +55,7 @@
             "PROPERTIES": {
                 ".DESCRIPTION": "monitor-4",
                 ".ENABLED": true,
-                ".X": 0,
+                ".X": 3840,
                 ".Y": 0,
             
                 "SIZE": {
@@ -72,7 +72,7 @@
             "PROPERTIES": {
                 ".DESCRIPTION": "monitor-5",
                 ".ENABLED": true,
-                ".X": 0,
+                ".X": 5120,
                 ".Y": 0,
             
                 "SIZE": {

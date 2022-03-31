@@ -1,44 +1,44 @@
 {
     "MONITORS": {
-        "1": {
+        "1e2": {
             "PROPERTIES": {
-                ".DESCRIPTION": "monitor-1",
+                ".DESCRIPTION": "tela dupla 1e2",
                 ".ENABLED": true,
-                ".X": 0,
-                ".Y": 0,
+                ".X": -5,
+                ".Y": -25,
             
                 "SIZE": {
-                    ".ENABLED": false, 
-                    ".X": 0,
-                    ".Y": 0 
+                    ".ENABLED": true, 
+                    ".X": 2560,
+                    ".Y": 750 
                 },
 
                 "DIR": "C:/WIDE/S2S/monitor1"
             }
         },
 
-        "2": {
+        "3e4": {
             "PROPERTIES": {
-                ".DESCRIPTION": "monitor-2",
+                ".DESCRIPTION": "tela dupla 3e4",
                 ".ENABLED": true,
-                ".X": 1280,
-                ".Y": 0,
+                ".X": 2560,
+                ".Y": -25,
             
                 "SIZE": {
-                    ".ENABLED": false, 
-                    ".X": 0,
-                    ".Y": 0 
+                    ".ENABLED": true, 
+                    ".X": 2560,
+                    ".Y": 750 
                 },
 
                 "DIR": "C:/WIDE/S2S/monitor2"
             }
         },
 
-        "3": {
+        "5": {
             "PROPERTIES": {
-                ".DESCRIPTION": "monitor-3",
+                ".DESCRIPTION": "tela única",
                 ".ENABLED": true,
-                ".X": 2560,
+                ".X": 5120,
                 ".Y": 0,
             
                 "SIZE": {
@@ -47,7 +47,7 @@
                     ".Y": 0 
                 },
 
-                "DIR": "C:/WIDE/S2S/monitor3"
+                "DIR": "C:/WIDE/S2S/monitor5"
             }
         }
     }

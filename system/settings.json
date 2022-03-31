@@ -5,12 +5,6 @@
 
 	"APPLICATION": "https://s2s.widedigital.com.br/S2S/Player.html",
 
-	"UPDATES": {
-		".CLIENT": "NEW",
-		".URL": "https://chromedriver.storage.googleapis.com",
-		".ENABLED": true
-	},
-
 	"BLOCK": {
 		".ENABLED": true,
 		".URL":
@@ -40,7 +34,7 @@
 			".ENABLED": false,
 			".TIME": 0.50
 		},
-		".SHOW": true,
+		".SHOW": false,
 		".KEYS": [
 			"f5",
 			"esc",

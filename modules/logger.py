@@ -15,8 +15,6 @@ class ApplicationLogger:
 
         self.normal_datetime = [self.custom_date("%d/%m/%Y"), self.custom_time("%H:%M:%S")]
 
-        self.levels = ["INFO", "WARNING", "ERROR", "CRITICAL", "DEBUG"]
-
         self.create_folder()
 
     def custom_date(self, date_format):
@@ -31,24 +29,32 @@ class ApplicationLogger:
 
     def create_folder(self):
         if os.path.exists(f"{self.folderpath}{self.foldername}"):
-            self.create_file()
+            self.first_write()
         else:
             try:
                 os.mkdir(f"{self.folderpath}{self.foldername}")
 
-                self.create_file()
+                self.first_write()
 
             except Exception as err:
                 print(err)
 
-    def create_file(self):
-        self.file = open(f"{self.folderpath}{self.foldername}/{self.filename}.txt", "a")
+    def first_write(self):
+        self.file = open(f"{self.folderpath}{self.foldername}/{self.filename}.txt", "w")
 
         self.file.write(f"\n------------ LOG FILE | {self.normal_datetime[0]} - {self.normal_datetime[1]} ------------\n")
 
+        self.file.close()
+
     def write_file(self, content):
-        for level in self.levels:
-            if content[0] == level:
-                self.file.write(f"[{self.normal_datetime[1]}] - {level} - {content[1]}\n")
-                
-                print(f"[{self.normal_datetime[1]}] - {level} - {content[1]}\n")
+        if os.path.exists(f"{self.folderpath}{self.foldername}/{self.filename}.txt"):
+            self.file = open(f"{self.folderpath}{self.foldername}/{self.filename}.txt", "w")
+            
+            self.file.write(f"[{self.normal_datetime[1]}] - {content[0]} - {content[1]}\n")        
+            
+            print(f"[{self.normal_datetime[1]}] - {content[0]} - {content[1]}\n")
+
+            self.file.close()
+        else:
+            self.create_folder()            
+        

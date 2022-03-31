@@ -4,6 +4,9 @@ created by: Henrique R. Pereira <https://github.com/RIick-013>
 application.py
 """
 
+from re import T
+
+
 try:
     import time, threading, traceback, pyautogui, keyboard
 
@@ -16,10 +19,10 @@ try:
     from controller import ApplicationController
 
 except ImportError:
-    print(traceback.format_exc())
+    print(ImportError)
 
 with open("version", "r") as file: version = file.readline()
-    
+
 class Application:
     def __init__(self):
         self.application_logger = ApplicationLogger()
@@ -54,12 +57,6 @@ class Application:
             "application": self.settings_general["APPLICATION"]
             }
 
-        """UPDATES"""
-        self.settings_general_updates = {
-            "url": self.settings_general["UPDATES"][".URL"],
-            "enabled": self.settings_general["UPDATES"][".URL"]
-        }
-
         """BLOCK"""
         self.settings_general_block = {
             "enabled": self.settings_general["BLOCK"][".ENABLED"],
@@ -93,7 +90,7 @@ class Application:
                 "time": self.settings_general["AUTOMATION"][".TIMER"][".TIME"]
             },
 
-            "show": self.settings_general["AUTOMATION"][".TIMER"],
+            "show": self.settings_general["AUTOMATION"][".SHOW"],
             "keys": self.settings_general["AUTOMATION"][".KEYS"]
         }
 
@@ -110,10 +107,8 @@ class Application:
         ### VARIABLES
         self.threads = []
 
-        ### THREADS
-        threading.Thread(target=self.secure_exit).start()
-
         ### FUNCTIONS
+        threading.Thread(target=self.secure_exit).start()
         self.secure_start()
         self.monitor_setup()
     
@@ -128,7 +123,7 @@ class Application:
 
                 time.sleep(1)
 
-                self.application_controller.end(onlychrome=False)
+                self.application_controller.end(onlychrome=True)
                            
     def automation(self):
         enabled = self.settings_general_automation["automation"]["enabled"]
@@ -163,18 +158,21 @@ class Application:
                     PID = driver.service.process.pid
 
                     driver.get(application_url)
+
+                    self.application_logger.write_file(["INFO", f"monitor {self.monitors[name]['NAME']} ({PID}) criado!"])
                     
+                    ### ============== ###
                     ### FIX TASKBAR
                     pyautogui.keyDown('alt')
                     time.sleep(.2)
                     pyautogui.press('tab')
                     time.sleep(.2)
+                    pyautogui.keyUp('alt')
+                    ### ============== ###
 
                     self.automation()
 
                     driver.execute_script(f'document.title = "monitor {name}"')
-
-                    self.application_logger.write_file(["INFO", f"monitor {self.monitors[name]['NAME']} ({PID}) criado!"])
 
                     i = 0
                     while True:
@@ -207,7 +205,6 @@ class Application:
 
         except Exception:
             self.application_logger.write_file(["WARNING", f"monitor {self.monitors[name]['NAME']} ({traceback.format_exc()})"])
-
             self.application_controller.restart()
         
     def monitor_setup(self):
@@ -239,16 +236,14 @@ class Application:
                     driver.add_argument("--disable-notifications")
                     driver.add_argument("--ignore-certificate-errors")
                     driver.add_argument("--autoplay-policy=no-user-gesture-required")
-                
+                    
+                    """SECTION-5"""
                     monitor["DRIVER"] = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=driver)
-                   
+        
                     thread = threading.Thread(target=self.monitor_manager, args=(monitor["NAME"]))
-                    
-                    monitor["THREAD"] = thread
-                    
-                    time.sleep(0.25)
-
+                    monitor["THREAD"] = thread  
                     thread.start()
+                
                 else:
                     self.application_logger.write_file(["WARNING", f"monitor {monitor['NAME']} está desabilitado!"])
         
