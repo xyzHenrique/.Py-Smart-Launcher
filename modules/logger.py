@@ -40,7 +40,7 @@ class ApplicationLogger:
                 print(err)
 
     def first_write(self):
-        self.file = open(f"{self.folderpath}{self.foldername}/{self.filename}.txt", "w")
+        self.file = open(f"{self.folderpath}{self.foldername}/{self.filename}.txt", "a")
 
         self.file.write(f"\n------------ LOG FILE | {self.normal_datetime[0]} - {self.normal_datetime[1]} ------------\n")
 
@@ -48,7 +48,7 @@ class ApplicationLogger:
 
     def write_file(self, content):
         if os.path.exists(f"{self.folderpath}{self.foldername}/{self.filename}.txt"):
-            self.file = open(f"{self.folderpath}{self.foldername}/{self.filename}.txt", "w")
+            self.file = open(f"{self.folderpath}{self.foldername}/{self.filename}.txt", "a")
             
             self.file.write(f"[{self.normal_datetime[1]}] - {content[0]} - {content[1]}\n")        
             

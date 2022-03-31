@@ -4,9 +4,6 @@ created by: Henrique R. Pereira <https://github.com/RIick-013>
 application.py
 """
 
-from re import T
-
-
 try:
     import time, threading, traceback, pyautogui, keyboard
 
@@ -163,11 +160,8 @@ class Application:
                     
                     ### ============== ###
                     ### FIX TASKBAR
-                    pyautogui.keyDown('alt')
-                    time.sleep(.2)
-                    pyautogui.press('tab')
-                    time.sleep(.2)
-                    pyautogui.keyUp('alt')
+                    pyautogui.press("enter")
+                    time.sleep(.1)
                     ### ============== ###
 
                     self.automation()
@@ -236,10 +230,17 @@ class Application:
                     driver.add_argument("--disable-notifications")
                     driver.add_argument("--ignore-certificate-errors")
                     driver.add_argument("--autoplay-policy=no-user-gesture-required")
+                    driver.add_argument("--disable-features=ChromeWhatsNewUI")
                     
                     """SECTION-5"""
-                    monitor["DRIVER"] = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=driver)
-        
+                    try:
+                        monitor["DRIVER"] = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=driver)
+                    except Exception:
+                        self.application_logger.write_file(["CRITICAL", F"{traceback.format_exc()}"])
+
+                        self.application_controller.restart() 
+
+                    print("\n")
                     thread = threading.Thread(target=self.monitor_manager, args=(monitor["NAME"]))
                     monitor["THREAD"] = thread  
                     thread.start()

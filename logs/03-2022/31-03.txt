@@ -1,1 +1,316 @@
-[01:35:00] - INFO - monitor 2 (388) criado!
+
+------------ LOG FILE | 31/03/2022 - 02:31:50 ------------
+[02:31:50] - INFO - monitor 1 (3276) criado!
+[02:31:50] - INFO - monitor 2 (17220) criado!
+[02:31:50] - INFO - monitor 3 (16652) criado!
+[02:31:50] - INFO - monitor 4 (9584) criado!
+[02:31:50] - INFO - (ctrl+alt+p) finalizando a aplicação...
+[02:31:50] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000287F21BDB10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\application.py", line 175, in monitor_manager
+    if driver.current_url == blocked or not driver.current_url == application_url:
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 915, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 423, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 333, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 355, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\request.py", line 74, in request
+    return self.request_encode_url(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\poolmanager.py", line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=63901): Max retries exceeded with url: /session/3290fbc36abc211e29afb855a458b222/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000287F21BDB10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+)
+[02:31:50] - WARNING - monitor 3 (Traceback (most recent call last):
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000287F218B3A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\application.py", line 175, in monitor_manager
+    if driver.current_url == blocked or not driver.current_url == application_url:
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 915, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 423, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 333, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 355, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\request.py", line 74, in request
+    return self.request_encode_url(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\poolmanager.py", line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=63930): Max retries exceeded with url: /session/42628b7ba3d421247c494915b01232f0/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000287F218B3A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+)
+[02:31:50] - WARNING - monitor 2 (Traceback (most recent call last):
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000287F21BDE10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\application.py", line 175, in monitor_manager
+    if driver.current_url == blocked or not driver.current_url == application_url:
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 915, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 423, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 333, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 355, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\request.py", line 74, in request
+    return self.request_encode_url(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\poolmanager.py", line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=63915): Max retries exceeded with url: /session/2de73efe87ec5230bd9a3b481ba52dd8/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000287F21BDE10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+)
+[02:31:50] - WARNING - monitor 4 (Traceback (most recent call last):
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000287F21BDC90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\application.py", line 175, in monitor_manager
+    if driver.current_url == blocked or not driver.current_url == application_url:
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 915, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 423, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 333, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 355, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\request.py", line 74, in request
+    return self.request_encode_url(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\poolmanager.py", line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 813, in urlopen
+    return self.urlopen(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=63952): Max retries exceeded with url: /session/997d7ce704b729c92c8fe46012f91e74/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000287F21BDC90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+)
+
+------------ LOG FILE | 31/03/2022 - 02:32:50 ------------
+[02:32:50] - INFO - monitor 1 (9200) criado!
+
+------------ LOG FILE | 31/03/2022 - 02:33:12 ------------
+[02:33:12] - INFO - monitor 1 (15540) criado!
+[02:33:12] - INFO - monitor 2 (12160) criado!
+[02:33:12] - INFO - monitor 3 (9196) criado!
+[02:33:12] - INFO - monitor 4 (16088) criado!
+[02:33:12] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\application.py", line 169, in monitor_manager
+    driver.execute_script(f'document.title = "monitor {name}"')
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 879, in execute_script
+    return self.execute(command, {
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 425, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=100.0.4896.60)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x01057413+2389011]
+	Ordinal0 [0x00FE9F61+1941345]
+	Ordinal0 [0x00EDC520+836896]
+	Ordinal0 [0x00ED0682+788098]
+	Ordinal0 [0x00ED0EB8+790200]
+	Ordinal0 [0x00ED2752+796498]
+	Ordinal0 [0x00ECC0D9+770265]
+	Ordinal0 [0x00EDD9D0+842192]
+	Ordinal0 [0x00F33AE2+1194722]
+	Ordinal0 [0x00F23F66+1130342]
+	Ordinal0 [0x00EFE546+976198]
+	Ordinal0 [0x00EFF456+980054]
+	GetHandleVerifier [0x01209632+1727522]
+	GetHandleVerifier [0x012BBA4D+2457661]
+	GetHandleVerifier [0x010EEB81+569713]
+	GetHandleVerifier [0x010EDD76+566118]
+	Ordinal0 [0x00FF0B2B+1968939]
+	Ordinal0 [0x00FF5988+1989000]
+	Ordinal0 [0x00FF5A75+1989237]
+	Ordinal0 [0x00FFECB1+2026673]
+	BaseThreadInitThunk [0x7605FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77CD7A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77CD7A4E+238]
+
+)
+
+------------ LOG FILE | 31/03/2022 - 02:33:33 ------------
