@@ -1,7 +1,7 @@
 """
 created by: Henrique R. Pereira <https://github.com/RIick-013>
 
-modules > logger.py | v2 |
+modules > logger.py | v3 |
 """
 
 import datetime, os

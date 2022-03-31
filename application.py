@@ -12,6 +12,7 @@ try:
     from webdriver_manager.chrome import ChromeDriverManager
     
     from modules.settings import ApplicationSettings
+    ###from modules.plugins import ApplicationPlugins
     from modules.logger import ApplicationLogger
     from controller import ApplicationController
 
@@ -23,6 +24,7 @@ with open("version", "r") as file: version = file.readline()
 class Application:
     def __init__(self):
         self.application_logger = ApplicationLogger()
+        ###self.application_plugins = ApplicationPlugins()
         self.application_settings = ApplicationSettings()
         self.application_controller = ApplicationController()
         
@@ -67,13 +69,7 @@ class Application:
                 "keys": self.settings_general["SYSTEM"][".SECURE-EXIT"][".KEYS"]
             },
 
-            "secure-start": self.settings_general["SYSTEM"][".SECURE-START"],
-        
-            "datetime": {
-                "enabled": self.settings_general["SYSTEM"][".DATETIME"][".ENABLED"],
-                "url": self.settings_general["SYSTEM"][".DATETIME"][".URL"],
-                "ssl": self.settings_general["SYSTEM"][".DATETIME"][".SSL"]
-            }
+            "secure-start": self.settings_general["SYSTEM"][".SECURE-START"]
         }
         
         """AUTOMATION"""

@@ -1,6 +1,6 @@
 {
 	"MONITORS": {
-		".PRESET": "4"
+		".PRESET": "1"
 	},
 
 	"APPLICATION": "https://s2s.widedigital.com.br/S2S/Player.html",
@@ -19,13 +19,7 @@
 			".ENABLED": true,
 			".KEYS": "ctrl+alt+p"
 		},
-		".SECURE-START": true,
-	
-		".DATETIME": {
-			".ENABLED": false,
-			".URL": "https://ds.widedigital.com.br/datetime.php",
-			".SSL": true
-		}
+		".SECURE-START": true
 	},
 
 	"AUTOMATION": {
