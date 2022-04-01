@@ -1,1 +1,1 @@
-pyinstaller.exe --onefile --windowed --icon=app.ico application.py
+pyinstaller.exe --onefile --icon=app.ico S2SLauncher.py
