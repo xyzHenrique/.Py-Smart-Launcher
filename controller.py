@@ -8,11 +8,14 @@ class ApplicationController:
         if onlychrome == True:
             os.system("taskkill /F /IM chrome* /T >nul 2>&1")
         else:
-            os.system("taskkill /F /IM S2SLauncher* /T >nul 2>&1")
-            sys.exit()
+            os.system("taskkill /F /IM chrome* /T >nul 2>&1")
+            os.system("taskkill /F /IM py* /T >nul 2>&1")
+            os.system("takskill /F /IM S2SLauncher* /T >nul 2>&1")
 
+            sys.exit()
+        
     def restart(self):
-        time.sleep(1.5)
+        time.sleep(0.50)
         os.system("cls" if os.name == "nt" else "clear")
         os.execl(sys.executable, sys.executable, *sys.argv)    
 

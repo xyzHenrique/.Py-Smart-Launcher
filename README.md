@@ -1,6 +1,6 @@
 ## Created by: Henrique R. Pereira
 
-### REQUIREMENTS v3.6
+### REQUIREMENTS v3.7
 <hr>
 
 python: https://www.python.org/downloads/release/python-3101/

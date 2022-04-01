@@ -5,14 +5,14 @@ application.py
 """
 
 try:
-    import time, threading, traceback, pyautogui, keyboard
+    import sys, time, threading, traceback, pyautogui, keyboard
 
     from selenium import webdriver
     from selenium.webdriver.chrome.service import Service
     from webdriver_manager.chrome import ChromeDriverManager
     
     from modules.settings import ApplicationSettings
-    ###from modules.plugins import ApplicationPlugins
+    ### from modules.plugins import ApplicationPlugins
     from modules.logger import ApplicationLogger
     from controller import ApplicationController
 
@@ -24,7 +24,7 @@ with open("version", "r") as file: version = file.readline()
 class Application:
     def __init__(self):
         self.application_logger = ApplicationLogger()
-        ###self.application_plugins = ApplicationPlugins()
+        ### self.application_plugins = ApplicationPlugins()
         self.application_settings = ApplicationSettings()
         self.application_controller = ApplicationController()
         
@@ -95,7 +95,7 @@ class Application:
         }
 
         ### STARTUP MESSAGES
-        print(f"S2SLauncher {version} - criado por: Henrique Rodrigues Pereira\n\n\npressione: {self.settings_general_system['secure-exit']['keys']} para sair")
+        print(f"S2SLauncher {version} - criado por: Henrique Rodrigues Pereira")
         
         ### VARIABLES
         self.threads = []
@@ -112,11 +112,9 @@ class Application:
     def secure_exit(self):
         while self.settings_general_system["secure-exit"]["enabled"]:
             if keyboard.is_pressed(f"{self.settings_general_system['secure-exit']['keys']}"):
-                self.application_logger.write_file(["INFO", f"({self.settings_general_system['secure-exit']['keys']}) finalizando a aplicação..."])
+                self.application_logger.write_file(["INFO", f"({self.settings_general_system['secure-exit']['keys']}) finalizando a aplicação, aguarde..."])
 
-                time.sleep(1)
-
-                self.application_controller.end(onlychrome=True)
+                self.application_controller.end(onlychrome=False)
                            
     def automation(self):
         enabled = self.settings_general_automation["automation"]["enabled"]
@@ -157,7 +155,8 @@ class Application:
                     ### ============== ###
                     ### FIX TASKBAR
                     pyautogui.press("enter")
-                    time.sleep(.1)
+                    pyautogui.press("f5")
+                    time.sleep(0.30)
                     ### ============== ###
 
                     self.automation()
@@ -166,38 +165,41 @@ class Application:
 
                     i = 0
                     while True:
-                        if block_enabled:
-                            for blocked in block_url:
-                                if driver.current_url == blocked or not driver.current_url == application_url:
-                                    i += 1
-
-                                    self.application_logger.write_file(["WARNING", f"uma ULR inválida está sendo executada no monitor {name} - ({driver.current_url}), tentativas de correção: ({i})"])
-                                    
-                                    pyautogui.press("f5")
-                                    
-                                    driver.get(application_url)
-                                    driver.execute_script(f'document.title = "monitor {name}"')
-                                
-                                if i >= 3:
-                                    self.application_logger.write_file(["WARNING", f"o número máximo de tentativas de correções foi atingido (3)"])
-                                        
-                                    driver.quit()
-
-                                    self.application_controller.restart()
-
                         if self.settings_general_dev["enabled"]:
                             driver.execute_script(f'document.title = "DEV - {name}"')
 
                             if keyboard.is_pressed(self.settings_general_dev["keys"]):
                                 driver.get(self.settings_general_dev["url"])
+                        else:
+                            if block_enabled:
+                                for blocked in block_url:
+                                    if driver.current_url == blocked or not driver.current_url == application_url:
+                                        i += 1
 
-                        time.sleep(1)
+                                        self.application_logger.write_file(["WARNING", f"uma ULR inválida está sendo executada no monitor {name} - ({driver.current_url}), tentativas de correção: ({i})"])
+                                        
+                                        pyautogui.press("f5")
+                                        
+                                        driver.get(application_url)
+                                        driver.execute_script(f'document.title = "monitor {name}"')
+                                    
+                                    if i >= 3:
+                                        self.application_logger.write_file(["WARNING", f"o número máximo de tentativas de correções foi atingido (3)"])
+                                            
+                                        driver.quit()
+
+                                        self.application_controller.restart()
+
+                        time.sleep(1.5)
 
         except Exception:
+            driver.quit()
             self.application_logger.write_file(["WARNING", f"monitor {self.monitors[name]['NAME']} ({traceback.format_exc()})"])
             self.application_controller.restart()
         
     def monitor_setup(self):
+        print(f"pressione: ({self.settings_general_system['secure-exit']['keys']}) para sair")
+
         try:
             for monitor in self.monitors.values():
                 if monitor["monitor-enabled"]: 
