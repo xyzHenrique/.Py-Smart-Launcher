@@ -1,1 +1,1 @@
-pyinstaller.exe --onefile --icon=app.ico S2SLauncher.py
+pyinstaller.exe --onefile --icon=icon.ico FxWebLauncher.py

@@ -1,5 +1,5 @@
 """
-created by: Henrique R. Pereira <https://github.com/RIick-013>
+created by: Henrique Rodrigues Pereira <https://github.com/RIick-013>
 
 modules > logger.py | v3 |
 """
