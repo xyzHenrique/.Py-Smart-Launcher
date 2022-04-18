@@ -1,0 +1,20 @@
+{
+    "MONITORS": {
+        "1": {
+            "PROPERTIES": {
+                ".DESCRIPTION": "",
+                ".ENABLED": true,
+                ".X": 0,
+                ".Y": 0,
+            
+                "SIZE": {
+                    ".ENABLED": false, 
+                    ".X": 0,
+                    ".Y": 0 
+                },
+
+                "DIR": "C:/WIDE/S2S/monitor1"
+            }
+        }
+    }
+}
