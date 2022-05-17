@@ -1,18 +1,21 @@
 """
 created by: Henrique Rodrigues Pereira <https://github.com/RIick-013>
 
+--LINKS--
+ https://chromedriver.storage.googleapis.com/index.html 
+
 FxWebLauncher.py
 """
 
 try:
-    import sys, time, threading, traceback, pyautogui, keyboard
+    import os, pathlib, configparser, time, threading, traceback, pyautogui, keyboard, requests
 
     from selenium import webdriver
     from selenium.webdriver.chrome.service import Service
     from webdriver_manager.chrome import ChromeDriverManager
     
     from modules.settings import ApplicationSettings
-    ### from modules.plugins import ApplicationPlugins
+    ### from modules.plugins import ApplicationPlugins ###
     from modules.logger import ApplicationLogger
     from controller import ApplicationController
 
@@ -23,8 +26,9 @@ with open("version", "r") as file: version = file.readline()
 
 class Application:
     def __init__(self):
+        
         self.application_logger = ApplicationLogger()
-        ### self.application_plugins = ApplicationPlugins()
+        ### self.application_plugins = ApplicationPlugins() ###
         self.application_settings = ApplicationSettings()
         self.application_controller = ApplicationController()
         
@@ -53,7 +57,7 @@ class Application:
         
         """APPLICATION"""
         self.settings_general_application = {
-            "application": self.settings_general["APPLICATION"]
+            "URL": self.settings_general[".URL"]
             }
 
         """BLOCK"""
@@ -232,11 +236,30 @@ class Application:
                     
                     """SECTION-5"""
                     try:
-                        monitor["DRIVER"] = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=driver)
-                    except Exception:
-                        self.application_logger.write_file(["CRITICAL", F"{traceback.format_exc()}"])
+                        temp = f"{os.path.expanduser('~')}\AppData\Local\Temp\FxWebLauncherPath.wlpy"
+                        
+                        if pathlib.Path(temp):
+                            ### OFFLINE STARTUP ###
+                            with open(temp, "r") as f:
+                                f.readline()
 
-                        self.application_controller.restart() 
+                            monitor["DRIVER"] = webdriver.Chrome(f"{folder}/{r.content.decode('utf-8')}/chromedriver.exe")
+                        else:
+                            ### ONLINE STARTUP ###
+                            monitor["DRIVER"] = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=driver)
+                        
+                        
+
+                    except Exception:
+                        folder = f"{os.path.expanduser('~')}\.wdm\drivers\chromedriver\win32"
+                        if os.path.isdir(folder):
+                            r = requests.get("https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
+                            if f"{folder}/{r.content.decode('utf-8')}":
+                                
+                            else:
+                                self.application_logger.write_file(["CRITICAL", F"{traceback.format_exc()}"])
+
+                                self.application_controller.restart() 
 
                     print("\n")
                     thread = threading.Thread(target=self.monitor_manager, args=(monitor["NAME"]))

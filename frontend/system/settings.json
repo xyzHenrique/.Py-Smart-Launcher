@@ -3,7 +3,11 @@
 		".PRESET": "1"
 	},
 
-	"APPLICATION": "https://s2s.widedigital.com.br/S2S/Player.html",
+	"APPLICATION": {
+		".URL": "https://s2s.widedigital.com.br/S2S/Player.html",
+		".DRIVERPATH": "",
+		".USERPATH": ""
+	},
 
 	"BLOCK": {
 		".ENABLED": true,

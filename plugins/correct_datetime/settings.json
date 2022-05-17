@@ -1,0 +1,7 @@
+{
+	"DATETIME": {
+		".ENABLED": true,
+		".URL": "https://ds.widedigital.com.br/datetime.php",
+		".SSL": true
+	}
+}
