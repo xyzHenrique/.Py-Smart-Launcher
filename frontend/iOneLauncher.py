@@ -4,19 +4,22 @@ created by: Henrique Rodrigues Pereira <https://github.com/RIick-013>
 --LINKS--
  https://chromedriver.storage.googleapis.com/index.html 
 
-FxWebLauncher.py
+iOneWebLauncher
 """
 
 try:
-    import os, pathlib, configparser, time, threading, traceback, pyautogui, keyboard, requests
+    import os, pathlib, time, threading, traceback, pyautogui, keyboard, requests
 
     from selenium import webdriver
     from selenium.webdriver.chrome.service import Service
     from webdriver_manager.chrome import ChromeDriverManager
     
-    from modules.settings import ApplicationSettings
-    ### from modules.plugins import ApplicationPlugins ###
+    from informations import *
+
+    from modules.client import ApplicationClient
     from modules.logger import ApplicationLogger
+    from modules.settings import ApplicationSettings
+    
     from controller import ApplicationController
 
 except ImportError:
@@ -26,31 +29,35 @@ with open("version", "r") as file: version = file.readline()
 
 class Application:
     def __init__(self):
-        
-        self.application_logger = ApplicationLogger()
-        ### self.application_plugins = ApplicationPlugins() ###
-        self.application_settings = ApplicationSettings()
-        self.application_controller = ApplicationController()
-        
-        self.settings_general, self.settings_monitors = self.application_settings[0], self.application_settings[1]
 
-        self.monitors = dict() 
+        ### MODULES 
+        self.module_client = ApplicationClient()
+        self.module_logger = ApplicationLogger()
+        self.module_settings = ApplicationSettings()
+        self.module_controller = ApplicationController()
         
+        ### SETTINGS 
+        self.settings_general = self.module_settings[0]
+        self.settings_monitors = self.module_settings[1]
+
+        ### MONITOR and SETTINGS
+        self.monitors = dict()
+
         for key,item in self.settings_monitors["MONITORS"].items():
             self.monitors[key] = {
-                "PID": None,
-                "NAME": key,
-                "DRIVER": None,
-                "THREAD": None,
+                "monitor_PID": None,
+                "monitor_name": key,
+                "monitor_drive": None,
+                "monitor_thread": None,
 
-                "monitor-description": item["PROPERTIES"][".DESCRIPTION"],
-                "monitor-enabled": item["PROPERTIES"][".ENABLED"],
-                "monitor-x": item["PROPERTIES"][".X"],
-                "monitor-y": item["PROPERTIES"][".Y"],
+                "monitor_description": item["PROPERTIES"][".DESCRIPTION"],
+                "monitor_enabled": item["PROPERTIES"][".ENABLED"],
+                "monitor_x": item["PROPERTIES"][".X"],
+                "monitor_y": item["PROPERTIES"][".Y"],
                    
-                "size-enabled": item["PROPERTIES"]["SIZE"][".ENABLED"],
-                "size-x": item["PROPERTIES"]["SIZE"][".X"],
-                "size-y": item["PROPERTIES"]["SIZE"][".Y"],
+                "size_enabled": item["PROPERTIES"]["SIZE"][".ENABLED"],
+                "size_x": item["PROPERTIES"]["SIZE"][".X"],
+                "size_y": item["PROPERTIES"]["SIZE"][".Y"],
                 
                 "DIR": item["PROPERTIES"]["DIR"]
             }
@@ -99,13 +106,12 @@ class Application:
         }
 
         ### STARTUP MESSAGES
-        print(f"FxWebLauncher {version} - created by: Henrique Rodrigues Pereira")
+        print(f"{APP_INFORMATIONS['APP_NAME']} - ({APP_INFORMATIONS['APP_VERSION']}) - created by: {APP_INFORMATIONS['APP_OWNER']}")
         
         ### VARIABLES
         self.threads = []
 
         ### FUNCTIONS
-        threading.Thread(target=self.secure_exit).start()
         self.secure_start()
         self.monitor_setup()
     
@@ -116,7 +122,7 @@ class Application:
     def secure_exit(self):
         while self.settings_general_system["secure-exit"]["enabled"]:
             if keyboard.is_pressed(f"{self.settings_general_system['secure-exit']['keys']}"):
-                self.application_logger.write_file(["INFO", f"({self.settings_general_system['secure-exit']['keys']}) closing application, please wait..."])
+                self.module_logger.write_file(["INFO", f"({self.settings_general_system['secure-exit']['keys']}) closing application, please wait..."])
 
                 self.application_controller.end(onlychrome=False)
                            
@@ -128,17 +134,18 @@ class Application:
         keys = self.settings_general_automation["keys"]
         
         if enabled:
+            pyautogui.press("enter")
             try:
                 for key in keys:
                     pyautogui.press(key)
 
                     if show:
-                        self.application_logger.write_file(["DEBUG", f"{key} pressed!"])
+                        self.module_logger.write_file(["DEBUG", f"{key} pressed!"])
                     if timer_enabled:
                         time.sleep(timer_time)
 
             except Exception:
-                self.application_logger.write_file(["ERROR", f"{traceback.format_exc()}"])
+                self.module_logger.write_file(["ERROR", f"{traceback.format_exc()}"])
 
     def monitor_manager(self, name):
         try:
@@ -147,25 +154,17 @@ class Application:
                     application_url = self.settings_general_application["application"]
                     block_enabled = self.settings_general_block["enabled"]
                     block_url = self.settings_general_block["url"]
-                   
-                    driver = self.monitors[name]["DRIVER"]
-                  
-                    PID = driver.service.process.pid
 
+                    driver = self.monitors[name]["monitor_driver"]
                     driver.get(application_url)
+                    driver.execute_script("window.focus()")
+                    driver.execute_script(f'document.title = "monitor {name}"')
 
-                    self.application_logger.write_file(["INFO", f"monitor {self.monitors[name]['NAME']} ({PID}) initialized!"])
+                    self.monitors[name]["monitor_PID"] = driver.service.process.pid
                     
-                    ### ============== ###
-                    ### FIX TASKBAR
-                    pyautogui.press("enter")
-                    pyautogui.press("f5")
-                    time.sleep(0.30)
-                    ### ============== ###
+                    self.module_logger.write_file(["INFO", f"monitor {self.monitors[name]['NAME']} ({self.monitors[name]['monitor_PID']}) OK!"])
 
                     self.automation()
-
-                    driver.execute_script(f'document.title = "monitor {name}"')
 
                     i = 0
                     while True:
@@ -180,7 +179,7 @@ class Application:
                                     if driver.current_url == blocked or not driver.current_url == application_url:
                                         i += 1
 
-                                        self.application_logger.write_file(["WARNING", f"Invalid URL running on monitor: ({name}) - ({driver.current_url}), corrections: ({i})"])
+                                        self.module_logger.write_file(["WARNING", f"Invalid URL running on monitor: ({name}) - ({driver.current_url}), corrections: ({i})"])
                                         
                                         pyautogui.press("f5")
                                         
@@ -188,7 +187,7 @@ class Application:
                                         driver.execute_script(f'document.title = "monitor {name}"')
                                     
                                     if i >= 3:
-                                        self.application_logger.write_file(["WARNING", f"the maximum number of correction attempts has been reached!"])
+                                        self.module_logger.write_file(["WARNING", f"the maximum number of correction attempts has been reached!"])
                                             
                                         driver.quit()
 
@@ -198,7 +197,7 @@ class Application:
 
         except Exception:
             driver.quit()
-            self.application_logger.write_file(["WARNING", f"monitor {self.monitors[name]['NAME']} ({traceback.format_exc()})"])
+            self.module_logger.write_file(["WARNING", f"monitor {self.monitors[name]['NAME']} ({traceback.format_exc()})"])
             self.application_controller.restart()
         
     def monitor_setup(self):
@@ -248,16 +247,17 @@ class Application:
                             ### ONLINE STARTUP ###
                             monitor["DRIVER"] = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=driver)
                         
-                        
-
                     except Exception:
                         folder = f"{os.path.expanduser('~')}\.wdm\drivers\chromedriver\win32"
+                        
                         if os.path.isdir(folder):
                             r = requests.get("https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
                             if f"{folder}/{r.content.decode('utf-8')}":
-                                
+
+                        else:
+                            pass   
                             else:
-                                self.application_logger.write_file(["CRITICAL", F"{traceback.format_exc()}"])
+                                self.module_logger.write_file(["CRITICAL", F"{traceback.format_exc()}"])
 
                                 self.application_controller.restart() 
 
@@ -267,10 +267,10 @@ class Application:
                     thread.start()
                 
                 else:
-                    self.application_logger.write_file(["WARNING", f"monitor {monitor['NAME']} disabled!"])
+                    self.module_logger.write_file(["WARNING", f"monitor {monitor['NAME']} disabled!"])
         
         except Exception:
-            self.application_logger.write_file(["CRITICAL", f"{traceback.format_exc()}"])
+            self.module_logger.write_file(["CRITICAL", f"{traceback.format_exc()}"])
 
             self.application_controller.end(onlychrome=False)
 
