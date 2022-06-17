@@ -1,0 +1,1066 @@
+
+------------ LOG FILE | 07/06/2022 - 10:22:08 ------------
+
+------------ LOG FILE | 07/06/2022 - 10:22:28 ------------
+
+------------ LOG FILE | 07/06/2022 - 10:23:11 ------------
+[10:23:11] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 209, in monitor_setup
+    if monitor["monitor-enabled"]:
+KeyError: 'monitor-enabled'
+
+
+------------ LOG FILE | 07/06/2022 - 10:23:46 ------------
+[10:23:46] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 218, in monitor_setup
+    driver.add_argument(f"--window-position={monitor['monitor-x']},{monitor['monitor-y']}")
+KeyError: 'monitor-x'
+
+
+------------ LOG FILE | 07/06/2022 - 10:24:10 ------------
+
+------------ LOG FILE | 07/06/2022 - 10:24:42 ------------
+
+------------ LOG FILE | 07/06/2022 - 10:25:09 ------------
+[10:25:09] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 155, in monitor_manager
+    application_url = self.settings_general_application["application"]
+KeyError: 'application'
+)
+
+------------ LOG FILE | 07/06/2022 - 10:25:26 ------------
+[10:25:26] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 155, in monitor_manager
+    application_url = self.settings_general_application["application"]
+KeyError: 'application'
+)
+
+------------ LOG FILE | 07/06/2022 - 10:26:53 ------------
+[10:26:53] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 169, in monitor_manager
+    self.module_logger.write_file(["INFO", f"monitor {self.monitors[name]['NAME']} ({self.monitors[name]['monitor_PID']}) OK!"])
+KeyError: 'NAME'
+)
+
+------------ LOG FILE | 07/06/2022 - 10:27:24 ------------
+[10:27:24] - INFO - monitor 1 (9464) OK!
+[10:27:24] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 184, in monitor_manager
+    self.module_logger.write_file(["WARNING", f"Invalid URL running on monitor: ({name}) - ({driver.current_url}), corrections: ({i})"])
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.63)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011BD953+2414931]
+	Ordinal0 [0x0114F5E1+1963489]
+	Ordinal0 [0x0103C6B8+837304]
+	Ordinal0 [0x01024120+737568]
+	Ordinal0 [0x01086E29+1142313]
+	Ordinal0 [0x01093FB2+1195954]
+	Ordinal0 [0x010842B6+1131190]
+	Ordinal0 [0x0105E860+976992]
+	Ordinal0 [0x0105F756+980822]
+	GetHandleVerifier [0x0142CC62+2510274]
+	GetHandleVerifier [0x0141F760+2455744]
+	GetHandleVerifier [0x0124EABA+551962]
+	GetHandleVerifier [0x0124D916+547446]
+	Ordinal0 [0x01155F3B+1990459]
+	Ordinal0 [0x0115A898+2009240]
+	Ordinal0 [0x0115A985+2009477]
+	Ordinal0 [0x01163AD1+2046673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+)
+
+------------ LOG FILE | 07/06/2022 - 10:27:52 ------------
+[10:27:52] - INFO - monitor 1 (6628) OK!
+[10:27:52] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 181, in monitor_manager
+    if driver.current_url == blocked or not driver.current_url == application_url:
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=102.0.5005.63)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011BD953+2414931]
+	Ordinal0 [0x0114F5E1+1963489]
+	Ordinal0 [0x0103C580+836992]
+	Ordinal0 [0x010301E2+786914]
+	Ordinal0 [0x01030A18+789016]
+	Ordinal0 [0x010322F2+795378]
+	Ordinal0 [0x0102BCA9+769193]
+	Ordinal0 [0x0103DA30+842288]
+	Ordinal0 [0x01093FF2+1196018]
+	Ordinal0 [0x010842B6+1131190]
+	Ordinal0 [0x0105E860+976992]
+	Ordinal0 [0x0105F756+980822]
+	GetHandleVerifier [0x0142CC62+2510274]
+	GetHandleVerifier [0x0141F760+2455744]
+	GetHandleVerifier [0x0124EABA+551962]
+	GetHandleVerifier [0x0124D916+547446]
+	Ordinal0 [0x01155F3B+1990459]
+	Ordinal0 [0x0115A898+2009240]
+	Ordinal0 [0x0115A985+2009477]
+	Ordinal0 [0x01163AD1+2046673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+)
+
+------------ LOG FILE | 07/06/2022 - 10:28:02 ------------
+[10:28:02] - INFO - monitor 1 (6860) OK!
+[10:28:02] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 181, in monitor_manager
+    if driver.current_url == blocked or not driver.current_url == application_url:
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.63)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011BD953+2414931]
+	Ordinal0 [0x0114F5E1+1963489]
+	Ordinal0 [0x0103C6B8+837304]
+	Ordinal0 [0x01024120+737568]
+	Ordinal0 [0x01086E29+1142313]
+	Ordinal0 [0x01093FB2+1195954]
+	Ordinal0 [0x010842B6+1131190]
+	Ordinal0 [0x0105E860+976992]
+	Ordinal0 [0x0105F756+980822]
+	GetHandleVerifier [0x0142CC62+2510274]
+	GetHandleVerifier [0x0141F760+2455744]
+	GetHandleVerifier [0x0124EABA+551962]
+	GetHandleVerifier [0x0124D916+547446]
+	Ordinal0 [0x01155F3B+1990459]
+	Ordinal0 [0x0115A898+2009240]
+	Ordinal0 [0x0115A985+2009477]
+	Ordinal0 [0x01163AD1+2046673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+)
+
+------------ LOG FILE | 07/06/2022 - 10:28:07 ------------
+[10:28:07] - INFO - monitor 1 (6656) OK!
+[10:28:07] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 181, in monitor_manager
+    if driver.current_url == blocked or not driver.current_url == application_url:
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.63)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011BD953+2414931]
+	Ordinal0 [0x0114F5E1+1963489]
+	Ordinal0 [0x0103C6B8+837304]
+	Ordinal0 [0x01024120+737568]
+	Ordinal0 [0x01086E29+1142313]
+	Ordinal0 [0x01093FB2+1195954]
+	Ordinal0 [0x010842B6+1131190]
+	Ordinal0 [0x0105E860+976992]
+	Ordinal0 [0x0105F756+980822]
+	GetHandleVerifier [0x0142CC62+2510274]
+	GetHandleVerifier [0x0141F760+2455744]
+	GetHandleVerifier [0x0124EABA+551962]
+	GetHandleVerifier [0x0124D916+547446]
+	Ordinal0 [0x01155F3B+1990459]
+	Ordinal0 [0x0115A898+2009240]
+	Ordinal0 [0x0115A985+2009477]
+	Ordinal0 [0x01163AD1+2046673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+)
+
+------------ LOG FILE | 07/06/2022 - 10:35:06 ------------
+[10:35:06] - INFO - monitor 1 (11972) OK!
+
+------------ LOG FILE | 07/06/2022 - 10:43:36 ------------
+[10:43:36] - INFO - monitor 1 (5456) OK!
+[10:43:36] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 181, in monitor_manager
+    if driver.current_url == blocked or not driver.current_url == application_url:
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.63)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011BD953+2414931]
+	Ordinal0 [0x0114F5E1+1963489]
+	Ordinal0 [0x0103C6B8+837304]
+	Ordinal0 [0x01024120+737568]
+	Ordinal0 [0x01086E29+1142313]
+	Ordinal0 [0x01093FB2+1195954]
+	Ordinal0 [0x010842B6+1131190]
+	Ordinal0 [0x0105E860+976992]
+	Ordinal0 [0x0105F756+980822]
+	GetHandleVerifier [0x0142CC62+2510274]
+	GetHandleVerifier [0x0141F760+2455744]
+	GetHandleVerifier [0x0124EABA+551962]
+	GetHandleVerifier [0x0124D916+547446]
+	Ordinal0 [0x01155F3B+1990459]
+	Ordinal0 [0x0115A898+2009240]
+	Ordinal0 [0x0115A985+2009477]
+	Ordinal0 [0x01163AD1+2046673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+)
+
+------------ LOG FILE | 07/06/2022 - 10:44:21 ------------
+[10:44:21] - INFO - monitor 1 (11800) OK!
+[10:44:21] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 184, in monitor_manager
+    self.module_logger.write_file(["WARNING", f"Invalid URL running on monitor: ({name}) - ({driver.current_url}), corrections: ({i})"])
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.63)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011BD953+2414931]
+	Ordinal0 [0x0114F5E1+1963489]
+	Ordinal0 [0x0103C6B8+837304]
+	Ordinal0 [0x01024120+737568]
+	Ordinal0 [0x01086E29+1142313]
+	Ordinal0 [0x01093FB2+1195954]
+	Ordinal0 [0x010842B6+1131190]
+	Ordinal0 [0x0105E860+976992]
+	Ordinal0 [0x0105F756+980822]
+	GetHandleVerifier [0x0142CC62+2510274]
+	GetHandleVerifier [0x0141F760+2455744]
+	GetHandleVerifier [0x0124EABA+551962]
+	GetHandleVerifier [0x0124D916+547446]
+	Ordinal0 [0x01155F3B+1990459]
+	Ordinal0 [0x0115A898+2009240]
+	Ordinal0 [0x0115A985+2009477]
+	Ordinal0 [0x01163AD1+2046673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+)
+
+------------ LOG FILE | 07/06/2022 - 10:44:30 ------------
+[10:44:30] - INFO - monitor 1 (828) OK!
+
+------------ LOG FILE | 07/06/2022 - 10:45:01 ------------
+[10:45:01] - CRITICAL - Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 239, in monitor_setup
+    monitor["monitor_driver"] = webdriver.Charome(service=Service(ChromeDriverManager().install()), options=driver)
+AttributeError: module 'selenium.webdriver' has no attribute 'Charome'
+
+[10:45:01] - CRITICAL - Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 239, in monitor_setup
+    monitor["monitor_driver"] = webdriver.Charome(service=Service(ChromeDriverManager().install()), options=driver)
+AttributeError: module 'selenium.webdriver' has no attribute 'Charome'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 247, in monitor_setup
+    monitor["monitor_driver"] = webdriver.Chrome(file)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 70, in __init__
+    super(WebDriver, self).__init__(DesiredCapabilities.CHROME['browserName'], "goog",
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\chromium\webdriver.py", line 92, in __init__
+    RemoteWebDriver.__init__(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 275, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 365, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 100
+Current browser version is 102.0.5005.63 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00427413+2389011]
+	Ordinal0 [0x003B9F61+1941345]
+	Ordinal0 [0x002AC658+837208]
+	Ordinal0 [0x002CC773+968563]
+	Ordinal0 [0x002C837A+951162]
+	Ordinal0 [0x002C5C51+941137]
+	Ordinal0 [0x002F8C80+1150080]
+	Ordinal0 [0x002F88DA+1149146]
+	Ordinal0 [0x002F3F66+1130342]
+	Ordinal0 [0x002CE546+976198]
+	Ordinal0 [0x002CF456+980054]
+	GetHandleVerifier [0x005D9632+1727522]
+	GetHandleVerifier [0x0068BA4D+2457661]
+	GetHandleVerifier [0x004BEB81+569713]
+	GetHandleVerifier [0x004BDD76+566118]
+	Ordinal0 [0x003C0B2B+1968939]
+	Ordinal0 [0x003C5988+1989000]
+	Ordinal0 [0x003C5A75+1989237]
+	Ordinal0 [0x003CECB1+2026673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+
+
+------------ LOG FILE | 07/06/2022 - 10:45:08 ------------
+[10:45:08] - CRITICAL - Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 239, in monitor_setup
+    monitor["monitor_driver"] = webdriver.Charome(service=Service(ChromeDriverManager().install()), options=driver)
+AttributeError: module 'selenium.webdriver' has no attribute 'Charome'
+
+
+------------ LOG FILE | 07/06/2022 - 10:46:34 ------------
+
+------------ LOG FILE | 07/06/2022 - 10:47:20 ------------
+[10:47:20] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 243, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[10:47:20] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 243, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 251, in monitor_setup
+    monitor["monitor_driver"] = webdriver.Chrome(file)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 70, in __init__
+    super(WebDriver, self).__init__(DesiredCapabilities.CHROME['browserName'], "goog",
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\chromium\webdriver.py", line 92, in __init__
+    RemoteWebDriver.__init__(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 275, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 365, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 100
+Current browser version is 102.0.5005.63 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00427413+2389011]
+	Ordinal0 [0x003B9F61+1941345]
+	Ordinal0 [0x002AC658+837208]
+	Ordinal0 [0x002CC773+968563]
+	Ordinal0 [0x002C837A+951162]
+	Ordinal0 [0x002C5C51+941137]
+	Ordinal0 [0x002F8C80+1150080]
+	Ordinal0 [0x002F88DA+1149146]
+	Ordinal0 [0x002F3F66+1130342]
+	Ordinal0 [0x002CE546+976198]
+	Ordinal0 [0x002CF456+980054]
+	GetHandleVerifier [0x005D9632+1727522]
+	GetHandleVerifier [0x0068BA4D+2457661]
+	GetHandleVerifier [0x004BEB81+569713]
+	GetHandleVerifier [0x004BDD76+566118]
+	Ordinal0 [0x003C0B2B+1968939]
+	Ordinal0 [0x003C5988+1989000]
+	Ordinal0 [0x003C5A75+1989237]
+	Ordinal0 [0x003CECB1+2026673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+
+
+------------ LOG FILE | 07/06/2022 - 10:47:44 ------------
+[10:47:44] - CRITICAL - Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 243, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[10:47:44] - CRITICAL - Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 243, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 251, in monitor_setup
+    monitor["monitor_driver"] = webdriver.Chrome(file)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 70, in __init__
+    super(WebDriver, self).__init__(DesiredCapabilities.CHROME['browserName'], "goog",
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\chromium\webdriver.py", line 92, in __init__
+    RemoteWebDriver.__init__(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 275, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 365, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 100
+Current browser version is 102.0.5005.63 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00427413+2389011]
+	Ordinal0 [0x003B9F61+1941345]
+	Ordinal0 [0x002AC658+837208]
+	Ordinal0 [0x002CC773+968563]
+	Ordinal0 [0x002C837A+951162]
+	Ordinal0 [0x002C5C51+941137]
+	Ordinal0 [0x002F8C80+1150080]
+	Ordinal0 [0x002F88DA+1149146]
+	Ordinal0 [0x002F3F66+1130342]
+	Ordinal0 [0x002CE546+976198]
+	Ordinal0 [0x002CF456+980054]
+	GetHandleVerifier [0x005D9632+1727522]
+	GetHandleVerifier [0x0068BA4D+2457661]
+	GetHandleVerifier [0x004BEB81+569713]
+	GetHandleVerifier [0x004BDD76+566118]
+	Ordinal0 [0x003C0B2B+1968939]
+	Ordinal0 [0x003C5988+1989000]
+	Ordinal0 [0x003C5A75+1989237]
+	Ordinal0 [0x003CECB1+2026673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+
+
+------------ LOG FILE | 07/06/2022 - 10:49:00 ------------
+[10:49:00] - CRITICAL - Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[10:49:00] - CRITICAL - Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 250, in monitor_setup
+    monitor["monitor_driver"] = webdriver.Chrome(file)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 70, in __init__
+    super(WebDriver, self).__init__(DesiredCapabilities.CHROME['browserName'], "goog",
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\chromium\webdriver.py", line 92, in __init__
+    RemoteWebDriver.__init__(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 275, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 365, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 100
+Current browser version is 102.0.5005.63 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00427413+2389011]
+	Ordinal0 [0x003B9F61+1941345]
+	Ordinal0 [0x002AC658+837208]
+	Ordinal0 [0x002CC773+968563]
+	Ordinal0 [0x002C837A+951162]
+	Ordinal0 [0x002C5C51+941137]
+	Ordinal0 [0x002F8C80+1150080]
+	Ordinal0 [0x002F88DA+1149146]
+	Ordinal0 [0x002F3F66+1130342]
+	Ordinal0 [0x002CE546+976198]
+	Ordinal0 [0x002CF456+980054]
+	GetHandleVerifier [0x005D9632+1727522]
+	GetHandleVerifier [0x0068BA4D+2457661]
+	GetHandleVerifier [0x004BEB81+569713]
+	GetHandleVerifier [0x004BDD76+566118]
+	Ordinal0 [0x003C0B2B+1968939]
+	Ordinal0 [0x003C5988+1989000]
+	Ordinal0 [0x003C5A75+1989237]
+	Ordinal0 [0x003CECB1+2026673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+
+
+------------ LOG FILE | 07/06/2022 - 10:49:06 ------------
+[10:49:06] - CRITICAL - Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+
+------------ LOG FILE | 07/06/2022 - 10:50:28 ------------
+[10:50:28] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[10:50:28] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 250, in monitor_setup
+    monitor["monitor_driver"] = webdriver.Chrome(executable_path=file)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 70, in __init__
+    super(WebDriver, self).__init__(DesiredCapabilities.CHROME['browserName'], "goog",
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\chromium\webdriver.py", line 92, in __init__
+    RemoteWebDriver.__init__(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 275, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 365, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 100
+Current browser version is 102.0.5005.63 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00427413+2389011]
+	Ordinal0 [0x003B9F61+1941345]
+	Ordinal0 [0x002AC658+837208]
+	Ordinal0 [0x002CC773+968563]
+	Ordinal0 [0x002C837A+951162]
+	Ordinal0 [0x002C5C51+941137]
+	Ordinal0 [0x002F8C80+1150080]
+	Ordinal0 [0x002F88DA+1149146]
+	Ordinal0 [0x002F3F66+1130342]
+	Ordinal0 [0x002CE546+976198]
+	Ordinal0 [0x002CF456+980054]
+	GetHandleVerifier [0x005D9632+1727522]
+	GetHandleVerifier [0x0068BA4D+2457661]
+	GetHandleVerifier [0x004BEB81+569713]
+	GetHandleVerifier [0x004BDD76+566118]
+	Ordinal0 [0x003C0B2B+1968939]
+	Ordinal0 [0x003C5988+1989000]
+	Ordinal0 [0x003C5A75+1989237]
+	Ordinal0 [0x003CECB1+2026673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+
+
+------------ LOG FILE | 07/06/2022 - 10:53:36 ------------
+[10:53:36] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[10:53:36] - INFO - monitor 1 (11764) OK!
+[10:53:36] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 184, in monitor_manager
+    self.module_logger.write_file(["WARNING", f"Invalid URL running on monitor: ({name}) - ({driver.current_url}), corrections: ({i})"])
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.63)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011BD953+2414931]
+	Ordinal0 [0x0114F5E1+1963489]
+	Ordinal0 [0x0103C6B8+837304]
+	Ordinal0 [0x01024120+737568]
+	Ordinal0 [0x01086E29+1142313]
+	Ordinal0 [0x01093FB2+1195954]
+	Ordinal0 [0x010842B6+1131190]
+	Ordinal0 [0x0105E860+976992]
+	Ordinal0 [0x0105F756+980822]
+	GetHandleVerifier [0x0142CC62+2510274]
+	GetHandleVerifier [0x0141F760+2455744]
+	GetHandleVerifier [0x0124EABA+551962]
+	GetHandleVerifier [0x0124D916+547446]
+	Ordinal0 [0x01155F3B+1990459]
+	Ordinal0 [0x0115A898+2009240]
+	Ordinal0 [0x0115A985+2009477]
+	Ordinal0 [0x01163AD1+2046673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+)
+
+------------ LOG FILE | 07/06/2022 - 12:16:04 ------------
+[12:16:04] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:16:04] - INFO - monitor 1 (8524) OK!
+[12:16:04] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 181, in monitor_manager
+    if driver.current_url == blocked or not driver.current_url == application_url:
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.63)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011BD953+2414931]
+	Ordinal0 [0x0114F5E1+1963489]
+	Ordinal0 [0x0103C6B8+837304]
+	Ordinal0 [0x01024120+737568]
+	Ordinal0 [0x01086E29+1142313]
+	Ordinal0 [0x01093FB2+1195954]
+	Ordinal0 [0x010842B6+1131190]
+	Ordinal0 [0x0105E860+976992]
+	Ordinal0 [0x0105F756+980822]
+	GetHandleVerifier [0x0142CC62+2510274]
+	GetHandleVerifier [0x0141F760+2455744]
+	GetHandleVerifier [0x0124EABA+551962]
+	GetHandleVerifier [0x0124D916+547446]
+	Ordinal0 [0x01155F3B+1990459]
+	Ordinal0 [0x0115A898+2009240]
+	Ordinal0 [0x0115A985+2009477]
+	Ordinal0 [0x01163AD1+2046673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+)
+
+------------ LOG FILE | 07/06/2022 - 12:16:26 ------------
+[12:16:26] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:16:26] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:16:26] - INFO - monitor 1 (12616) OK!
+[12:16:26] - INFO - monitor 2 (13092) OK!
+[12:16:26] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 181, in monitor_manager
+    if driver.current_url == blocked or not driver.current_url == application_url:
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=102.0.5005.63)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011BD953+2414931]
+	Ordinal0 [0x0114F5E1+1963489]
+	Ordinal0 [0x0103C580+836992]
+	Ordinal0 [0x010301E2+786914]
+	Ordinal0 [0x01030A18+789016]
+	Ordinal0 [0x010322F2+795378]
+	Ordinal0 [0x0102BCA9+769193]
+	Ordinal0 [0x0103DA30+842288]
+	Ordinal0 [0x01093FF2+1196018]
+	Ordinal0 [0x010842B6+1131190]
+	Ordinal0 [0x0105E860+976992]
+	Ordinal0 [0x0105F756+980822]
+	GetHandleVerifier [0x0142CC62+2510274]
+	GetHandleVerifier [0x0141F760+2455744]
+	GetHandleVerifier [0x0124EABA+551962]
+	GetHandleVerifier [0x0124D916+547446]
+	Ordinal0 [0x01155F3B+1990459]
+	Ordinal0 [0x0115A898+2009240]
+	Ordinal0 [0x0115A985+2009477]
+	Ordinal0 [0x01163AD1+2046673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+)
+
+------------ LOG FILE | 07/06/2022 - 12:17:08 ------------
+[12:17:08] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:17:08] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:17:08] - INFO - monitor 1 (13240) OK!
+[12:17:08] - INFO - monitor 2 (2224) OK!
+[10:49:06] - CRITICAL - Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 250, in monitor_setup
+    monitor["monitor_driver"] = webdriver.Chrome(file)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 70, in __init__
+    super(WebDriver, self).__init__(DesiredCapabilities.CHROME['browserName'], "goog",
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\chromium\webdriver.py", line 92, in __init__
+    RemoteWebDriver.__init__(
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 275, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 365, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00427413+2389011]
+	Ordinal0 [0x003B9F61+1941345]
+	Ordinal0 [0x002AC658+837208]
+	Ordinal0 [0x002CBB62+965474]
+	Ordinal0 [0x002C819C+950684]
+	Ordinal0 [0x002C5C51+941137]
+	Ordinal0 [0x002F8C80+1150080]
+	Ordinal0 [0x002F88DA+1149146]
+	Ordinal0 [0x002F3F66+1130342]
+	Ordinal0 [0x002CE546+976198]
+	Ordinal0 [0x002CF456+980054]
+	GetHandleVerifier [0x005D9632+1727522]
+	GetHandleVerifier [0x0068BA4D+2457661]
+	GetHandleVerifier [0x004BEB81+569713]
+	GetHandleVerifier [0x004BDD76+566118]
+	Ordinal0 [0x003C0B2B+1968939]
+	Ordinal0 [0x003C5988+1989000]
+	Ordinal0 [0x003C5A75+1989237]
+	Ordinal0 [0x003CECB1+2026673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+
+
+------------ LOG FILE | 07/06/2022 - 12:17:33 ------------
+[12:17:33] - CRITICAL - Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:17:33] - CRITICAL - Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:17:33] - INFO - monitor 1 (732) OK!
+[12:17:33] - INFO - monitor 2 (12792) OK!
+[12:17:33] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 181, in monitor_manager
+    if driver.current_url == blocked or not driver.current_url == application_url:
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.63)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011BD953+2414931]
+	Ordinal0 [0x0114F5E1+1963489]
+	Ordinal0 [0x0103C6B8+837304]
+	Ordinal0 [0x01024120+737568]
+	Ordinal0 [0x01086E29+1142313]
+	Ordinal0 [0x01093FB2+1195954]
+	Ordinal0 [0x010842B6+1131190]
+	Ordinal0 [0x0105E860+976992]
+	Ordinal0 [0x0105F756+980822]
+	GetHandleVerifier [0x0142CC62+2510274]
+	GetHandleVerifier [0x0141F760+2455744]
+	GetHandleVerifier [0x0124EABA+551962]
+	GetHandleVerifier [0x0124D916+547446]
+	Ordinal0 [0x01155F3B+1990459]
+	Ordinal0 [0x0115A898+2009240]
+	Ordinal0 [0x0115A985+2009477]
+	Ordinal0 [0x01163AD1+2046673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+)
+
+------------ LOG FILE | 07/06/2022 - 12:18:59 ------------
+[12:18:59] - CRITICAL - Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:18:59] - CRITICAL - Traceback (most recent call last):
+  File "C:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 242, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:18:59] - INFO - monitor 1 (3828) OK!
+
+------------ LOG FILE | 07/06/2022 - 12:20:10 ------------
+[12:20:10] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 244, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:20:10] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 244, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:20:10] - INFO - monitor 1 (6256) OK!
+[12:20:10] - INFO - monitor 2 (10432) OK!
+[12:20:10] - WARNING - monitor 2 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 184, in monitor_manager
+    self.module_logger.write_file(["WARNING", f"Invalid URL running on monitor: ({name}) - ({driver.current_url}), corrections: ({i})"])
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.63)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011BD953+2414931]
+	Ordinal0 [0x0114F5E1+1963489]
+	Ordinal0 [0x0103C6B8+837304]
+	Ordinal0 [0x01024120+737568]
+	Ordinal0 [0x01086E29+1142313]
+	Ordinal0 [0x01093FB2+1195954]
+	Ordinal0 [0x010842B6+1131190]
+	Ordinal0 [0x0105E860+976992]
+	Ordinal0 [0x0105F756+980822]
+	GetHandleVerifier [0x0142CC62+2510274]
+	GetHandleVerifier [0x0141F760+2455744]
+	GetHandleVerifier [0x0124EABA+551962]
+	GetHandleVerifier [0x0124D916+547446]
+	Ordinal0 [0x01155F3B+1990459]
+	Ordinal0 [0x0115A898+2009240]
+	Ordinal0 [0x0115A985+2009477]
+	Ordinal0 [0x01163AD1+2046673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+)
+
+------------ LOG FILE | 07/06/2022 - 12:20:41 ------------
+[12:20:41] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 244, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:20:41] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 244, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:20:41] - INFO - monitor 1 (12284) OK!
+[12:20:41] - INFO - monitor 2 (12860) OK!
+[12:20:41] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 184, in monitor_manager
+    self.module_logger.write_file(["WARNING", f"Invalid URL running on monitor: ({name}) - ({driver.current_url}), corrections: ({i})"])
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.63)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011BD953+2414931]
+	Ordinal0 [0x0114F5E1+1963489]
+	Ordinal0 [0x0103C6B8+837304]
+	Ordinal0 [0x01024120+737568]
+	Ordinal0 [0x01086E29+1142313]
+	Ordinal0 [0x01093FB2+1195954]
+	Ordinal0 [0x010842B6+1131190]
+	Ordinal0 [0x0105E860+976992]
+	Ordinal0 [0x0105F756+980822]
+	GetHandleVerifier [0x0142CC62+2510274]
+	GetHandleVerifier [0x0141F760+2455744]
+	GetHandleVerifier [0x0124EABA+551962]
+	GetHandleVerifier [0x0124D916+547446]
+	Ordinal0 [0x01155F3B+1990459]
+	Ordinal0 [0x0115A898+2009240]
+	Ordinal0 [0x0115A985+2009477]
+	Ordinal0 [0x01163AD1+2046673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+)
+
+------------ LOG FILE | 07/06/2022 - 12:21:25 ------------
+[12:21:25] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 243, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:21:25] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 243, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:21:25] - INFO - monitor 1 (4628) OK!
+[12:21:25] - INFO - monitor 2 (13704) OK!
+[12:21:25] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 182, in monitor_manager
+    if driver.current_url == blocked or not driver.current_url == application_url:
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.63)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011BD953+2414931]
+	Ordinal0 [0x0114F5E1+1963489]
+	Ordinal0 [0x0103C6B8+837304]
+	Ordinal0 [0x01024120+737568]
+	Ordinal0 [0x01086E29+1142313]
+	Ordinal0 [0x01093FB2+1195954]
+	Ordinal0 [0x010842B6+1131190]
+	Ordinal0 [0x0105E860+976992]
+	Ordinal0 [0x0105F756+980822]
+	GetHandleVerifier [0x0142CC62+2510274]
+	GetHandleVerifier [0x0141F760+2455744]
+	GetHandleVerifier [0x0124EABA+551962]
+	GetHandleVerifier [0x0124D916+547446]
+	Ordinal0 [0x01155F3B+1990459]
+	Ordinal0 [0x0115A898+2009240]
+	Ordinal0 [0x0115A985+2009477]
+	Ordinal0 [0x01163AD1+2046673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+)
+
+------------ LOG FILE | 07/06/2022 - 12:23:03 ------------
+[12:23:03] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 244, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:23:03] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 244, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:23:03] - INFO - monitor 1 (8924) OK!
+[12:23:03] - INFO - monitor 2 (14064) OK!
+[12:23:03] - WARNING - monitor 2 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 184, in monitor_manager
+    self.module_logger.write_file(["WARNING", f"Invalid URL running on monitor: ({name}) - ({driver.current_url}), corrections: ({i})"])
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.63)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x011BD953+2414931]
+	Ordinal0 [0x0114F5E1+1963489]
+	Ordinal0 [0x0103C6B8+837304]
+	Ordinal0 [0x01024120+737568]
+	Ordinal0 [0x01086E29+1142313]
+	Ordinal0 [0x01093FB2+1195954]
+	Ordinal0 [0x010842B6+1131190]
+	Ordinal0 [0x0105E860+976992]
+	Ordinal0 [0x0105F756+980822]
+	GetHandleVerifier [0x0142CC62+2510274]
+	GetHandleVerifier [0x0141F760+2455744]
+	GetHandleVerifier [0x0124EABA+551962]
+	GetHandleVerifier [0x0124D916+547446]
+	Ordinal0 [0x01155F3B+1990459]
+	Ordinal0 [0x0115A898+2009240]
+	Ordinal0 [0x0115A985+2009477]
+	Ordinal0 [0x01163AD1+2046673]
+	BaseThreadInitThunk [0x756BFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77837A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77837A4E+238]
+
+)
+
+------------ LOG FILE | 07/06/2022 - 12:23:20 ------------
+[12:23:20] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 244, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:23:20] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 244, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[12:23:20] - INFO - monitor 1 (5400) OK!
+[12:23:20] - INFO - monitor 2 (1580) OK!

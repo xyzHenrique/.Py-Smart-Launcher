@@ -4,11 +4,11 @@ created by: Henrique Rodrigues Pereira <https://github.com/RIick-013>
 --LINKS--
  https://chromedriver.storage.googleapis.com/index.html 
 
-iOneWebLauncher
+SmartLauncher
 """
 
 try:
-    import os, pathlib, time, threading, traceback, pyautogui, keyboard, requests
+    import os, pathlib, time, threading, traceback, pyautogui, keyboard, unit_tests
 
     from selenium import webdriver
     from selenium.webdriver.chrome.service import Service
@@ -16,22 +16,20 @@ try:
     
     from informations import *
 
-    from modules.client import ApplicationClient
-    from modules.logger import ApplicationLogger
-    from modules.settings import ApplicationSettings
+    #### from modules.client import ApplicationClient ### 
+    from modules.Logger import ApplicationLogger
+    from modules.Settings import ApplicationSettings
     
-    from controller import ApplicationController
+    from Controller import ApplicationController
 
 except ImportError:
     print(ImportError)
-
-with open("version", "r") as file: version = file.readline()
 
 class Application:
     def __init__(self):
 
         ### MODULES 
-        self.module_client = ApplicationClient()
+        ### self.module_client = ApplicationClient() ###
         self.module_logger = ApplicationLogger()
         self.module_settings = ApplicationSettings()
         self.module_controller = ApplicationController()
@@ -39,6 +37,9 @@ class Application:
         ### SETTINGS 
         self.settings_general = self.module_settings[0]
         self.settings_monitors = self.module_settings[1]
+        
+        self.software_version = self.module_settings[2] 
+        self.driver_version = self.module_settings[3]
 
         ### MONITOR and SETTINGS
         self.monitors = dict()
@@ -64,7 +65,7 @@ class Application:
         
         """APPLICATION"""
         self.settings_general_application = {
-            "URL": self.settings_general[".URL"]
+            "URL": self.settings_general["APPLICATION"][".URL"]
             }
 
         """BLOCK"""
@@ -115,16 +116,21 @@ class Application:
         self.secure_start()
         self.monitor_setup()
     
+    def create_thread(self, target, args, daemon):
+        thread = threading.Thread(target=target, args=args, daemon=daemon).start()
+
+        self.threads.append[thread]
+        
     def secure_start(self):
         if self.settings_general_system["secure-start"]:
-            self.application_controller.end(onlychrome=True)
+            self.module_controller.end(onlychrome=True)
 
     def secure_exit(self):
         while self.settings_general_system["secure-exit"]["enabled"]:
             if keyboard.is_pressed(f"{self.settings_general_system['secure-exit']['keys']}"):
                 self.module_logger.write_file(["INFO", f"({self.settings_general_system['secure-exit']['keys']}) closing application, please wait..."])
 
-                self.application_controller.end(onlychrome=False)
+                self.module_controller.end(onlychrome=False)
                            
     def automation(self):
         enabled = self.settings_general_automation["automation"]["enabled"]
@@ -151,25 +157,26 @@ class Application:
         try:
             for monitor in self.monitors.keys():
                 if name == monitor:
-                    application_url = self.settings_general_application["application"]
+                    application_url = self.settings_general_application["URL"]
                     block_enabled = self.settings_general_block["enabled"]
                     block_url = self.settings_general_block["url"]
 
                     driver = self.monitors[name]["monitor_driver"]
                     driver.get(application_url)
-                    driver.execute_script("window.focus()")
-                    driver.execute_script(f'document.title = "monitor {name}"')
 
                     self.monitors[name]["monitor_PID"] = driver.service.process.pid
                     
-                    self.module_logger.write_file(["INFO", f"monitor {self.monitors[name]['NAME']} ({self.monitors[name]['monitor_PID']}) OK!"])
-
                     self.automation()
+
+                    driver.execute_script("window.focus()")
+                    driver.execute_script(f'document.title = "monitor {name} - ({driver.service.process.pid})"')
+
+                    self.module_logger.write_file(["INFO", f"monitor {self.monitors[name]['monitor_name']} ({self.monitors[name]['monitor_PID']}) OK!"])
 
                     i = 0
                     while True:
                         if self.settings_general_dev["enabled"]:
-                            driver.execute_script(f'document.title = "DEV - {name}"')
+                            driver.execute_script(f'document.title = "DEV - {name} - ({driver.service.process.pid})"')
 
                             if keyboard.is_pressed(self.settings_general_dev["keys"]):
                                 driver.get(self.settings_general_dev["url"])
@@ -184,28 +191,27 @@ class Application:
                                         pyautogui.press("f5")
                                         
                                         driver.get(application_url)
-                                        driver.execute_script(f'document.title = "monitor {name}"')
+                                        driver.execute_script(f'document.title = "monitor {name} - ({driver.service.process.pid})"')
+                                    
+                                        print(i)
                                     
                                     if i >= 3:
                                         self.module_logger.write_file(["WARNING", f"the maximum number of correction attempts has been reached!"])
                                             
                                         driver.quit()
 
-                                        self.application_controller.restart()
-
-                    driver.quit()
+                                        self.module_controller.restart()
 
         except Exception:
-            driver.quit()
-            self.module_logger.write_file(["WARNING", f"monitor {self.monitors[name]['NAME']} ({traceback.format_exc()})"])
-            self.application_controller.restart()
+            self.module_logger.write_file(["WARNING", f"monitor {self.monitors[name]['monitor_name']} ({traceback.format_exc()})"])
+            self.module_controller.restart()
         
     def monitor_setup(self):
         ### print(f"press: ({self.settings_general_system['secure-exit']['keys']}) to exit") ###
 
         try:
             for monitor in self.monitors.values():
-                if monitor["monitor-enabled"]: 
+                if monitor["monitor_enabled"]: 
                     driver = webdriver.ChromeOptions()
 
                     """SECTION-1"""
@@ -214,12 +220,12 @@ class Application:
 
                     """SECTION-2"""
                     driver.add_argument(f"--user-data-dir={monitor['DIR']}")
-                    driver.add_argument(f"--window-position={monitor['monitor-x']},{monitor['monitor-y']}")
+                    driver.add_argument(f"--window-position={monitor['monitor_x']},{monitor['monitor_y']}")
 
                     """SECTION-3"""
-                    if monitor["size-enabled"]:
+                    if monitor["size_enabled"]:
                         driver.add_argument(f"--app={self.settings_general_application['application']}")
-                        driver.add_argument(f"--window-size={monitor['size-x']},{monitor['size-y']}")
+                        driver.add_argument(f"--window-size={monitor['size_x']},{monitor['size_y']}")
                     else:
                         driver.add_argument("--kiosk")
                     
@@ -235,43 +241,34 @@ class Application:
                     
                     """SECTION-5"""
                     try:
-                        temp = f"{os.path.expanduser('~')}\AppData\Local\Temp\FxWebLauncherPath.wlpy"
-                        
-                        if pathlib.Path(temp):
-                            ### OFFLINE STARTUP ###
-                            with open(temp, "r") as f:
-                                f.readline()
+                        """ONLINE STARTUP"""
+                        monitor["monitor_driver"] = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=driver)
+                       
+                    except:
+                        self.module_logger.write_file(["CRITICAL", F"{traceback.format_exc()}"])
 
-                            monitor["DRIVER"] = webdriver.Chrome(f"{folder}/{r.content.decode('utf-8')}/chromedriver.exe")
+                        """OFFLINE STARTUP"""
+                        file = f"{os.path.expanduser('~')}\.wdm\drivers\chromedriver\win32\{self.driver_version}\chromedriver.exe"
+
+                        if pathlib.Path(file):
+                            monitor["monitor_driver"] = webdriver.Chrome(executable_path=file, options=driver)
                         else:
-                            ### ONLINE STARTUP ###
-                            monitor["DRIVER"] = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=driver)
-                        
-                    except Exception:
-                        folder = f"{os.path.expanduser('~')}\.wdm\drivers\chromedriver\win32"
-                        
-                        if os.path.isdir(folder):
-                            r = requests.get("https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
-                            if f"{folder}/{r.content.decode('utf-8')}":
+                            self.module_logger.write_file(["CRITICAL", F"{traceback.format_exc()}"])
 
-                        else:
-                            pass   
-                            else:
-                                self.module_logger.write_file(["CRITICAL", F"{traceback.format_exc()}"])
-
-                                self.application_controller.restart() 
+                            self.module_controller.restart() 
 
                     print("\n")
-                    thread = threading.Thread(target=self.monitor_manager, args=(monitor["NAME"]))
-                    monitor["THREAD"] = thread  
+
+                    thread = threading.Thread(target=self.monitor_manager, args=(monitor["monitor_name"]))
+                    monitor["monitor_thread"] = thread  
                     thread.start()
                 
                 else:
-                    self.module_logger.write_file(["WARNING", f"monitor {monitor['NAME']} disabled!"])
+                    self.module_logger.write_file(["WARNING", f"monitor {monitor['monitors_name']} disabled!"])
         
         except Exception:
             self.module_logger.write_file(["CRITICAL", f"{traceback.format_exc()}"])
 
-            self.application_controller.end(onlychrome=False)
+            self.module_controller.end(onlychrome=False)
 
 Application()

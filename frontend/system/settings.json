@@ -1,12 +1,10 @@
 {
 	"MONITORS": {
-		".PRESET": "1"
+		".PRESET": "2"
 	},
 
 	"APPLICATION": {
-		".URL": "https://s2s.widedigital.com.br/S2S/Player.html",
-		".DRIVERPATH": "",
-		".USERPATH": ""
+		".URL": "https://s2s.widedigital.com.br/S2S/Player.html"
 	},
 
 	"BLOCK": {

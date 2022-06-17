@@ -42,7 +42,7 @@ class ApplicationLogger:
     def first_write(self):
         self.file = open(f"{self.folderpath}{self.foldername}/{self.filename}.txt", "a")
 
-        self.file.write(f"\n------------ LOG FILE | {self.normal_datetime[0]} - {self.normal_datetime[1]} ------------\n")
+        self.file.write(f"\n------------ LOG | {self.normal_datetime[0]} - {self.normal_datetime[1]} ------------\n")
 
         self.file.close()
 

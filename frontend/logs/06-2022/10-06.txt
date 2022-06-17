@@ -1,0 +1,170 @@
+
+------------ LOG FILE | 10/06/2022 - 10:51:06 ------------
+[10:51:06] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 244, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[10:51:06] - CRITICAL - Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 244, in monitor_setup
+    raise
+RuntimeError: No active exception to reraise
+
+[10:51:06] - INFO - monitor 1 (13152) OK!
+[10:51:06] - INFO - monitor 2 (13692) OK!
+[10:51:06] - WARNING - monitor 2 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 181, in monitor_manager
+    if driver.current_url == blocked or not driver.current_url == application_url:
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.115)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x009ED953+2414931]
+	Ordinal0 [0x0097F5E1+1963489]
+	Ordinal0 [0x0086C6B8+837304]
+	Ordinal0 [0x00854120+737568]
+	Ordinal0 [0x008B6E29+1142313]
+	Ordinal0 [0x008C3FB2+1195954]
+	Ordinal0 [0x008B42B6+1131190]
+	Ordinal0 [0x0088E860+976992]
+	Ordinal0 [0x0088F756+980822]
+	GetHandleVerifier [0x00C5CC62+2510274]
+	GetHandleVerifier [0x00C4F760+2455744]
+	GetHandleVerifier [0x00A7EABA+551962]
+	GetHandleVerifier [0x00A7D916+547446]
+	Ordinal0 [0x00985F3B+1990459]
+	Ordinal0 [0x0098A898+2009240]
+	Ordinal0 [0x0098A985+2009477]
+	Ordinal0 [0x00993AD1+2046673]
+	BaseThreadInitThunk [0x7632FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x778E7A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x778E7A4E+238]
+
+)
+
+------------ LOG FILE | 10/06/2022 - 10:52:00 ------------
+[10:52:00] - INFO - monitor 1 (15284) OK!
+[10:52:00] - INFO - monitor 2 (12752) OK!
+[10:52:00] - WARNING - monitor 2 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 184, in monitor_manager
+    self.module_logger.write_file(["WARNING", f"Invalid URL running on monitor: ({name}) - ({driver.current_url}), corrections: ({i})"])
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.115)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00D8D953+2414931]
+	Ordinal0 [0x00D1F5E1+1963489]
+	Ordinal0 [0x00C0C6B8+837304]
+	Ordinal0 [0x00BF4120+737568]
+	Ordinal0 [0x00C56E29+1142313]
+	Ordinal0 [0x00C63FB2+1195954]
+	Ordinal0 [0x00C542B6+1131190]
+	Ordinal0 [0x00C2E860+976992]
+	Ordinal0 [0x00C2F756+980822]
+	GetHandleVerifier [0x00FFCC62+2510274]
+	GetHandleVerifier [0x00FEF760+2455744]
+	GetHandleVerifier [0x00E1EABA+551962]
+	GetHandleVerifier [0x00E1D916+547446]
+	Ordinal0 [0x00D25F3B+1990459]
+	Ordinal0 [0x00D2A898+2009240]
+	Ordinal0 [0x00D2A985+2009477]
+	Ordinal0 [0x00D33AD1+2046673]
+	BaseThreadInitThunk [0x7632FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x778E7A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x778E7A4E+238]
+
+)
+
+------------ LOG FILE | 10/06/2022 - 15:46:56 ------------
+[15:46:56] - INFO - monitor 1 (2068) OK!
+[15:46:56] - INFO - monitor 2 (3744) OK!
+[15:46:56] - WARNING - monitor 1 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 184, in monitor_manager
+    self.module_logger.write_file(["WARNING", f"Invalid URL running on monitor: ({name}) - ({driver.current_url}), corrections: ({i})"])
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.115)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x008AD953+2414931]
+	Ordinal0 [0x0083F5E1+1963489]
+	Ordinal0 [0x0072C6B8+837304]
+	Ordinal0 [0x00714120+737568]
+	Ordinal0 [0x00776E29+1142313]
+	Ordinal0 [0x00783FB2+1195954]
+	Ordinal0 [0x007742B6+1131190]
+	Ordinal0 [0x0074E860+976992]
+	Ordinal0 [0x0074F756+980822]
+	GetHandleVerifier [0x00B1CC62+2510274]
+	GetHandleVerifier [0x00B0F760+2455744]
+	GetHandleVerifier [0x0093EABA+551962]
+	GetHandleVerifier [0x0093D916+547446]
+	Ordinal0 [0x00845F3B+1990459]
+	Ordinal0 [0x0084A898+2009240]
+	Ordinal0 [0x0084A985+2009477]
+	Ordinal0 [0x00853AD1+2046673]
+	BaseThreadInitThunk [0x7632FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x778E7A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x778E7A4E+238]
+
+)
+
+------------ LOG FILE | 10/06/2022 - 18:05:36 ------------
+[18:05:36] - INFO - monitor 1 (9056) OK!
+[18:05:36] - INFO - monitor 2 (6828) OK!
+[18:05:36] - WARNING - monitor 2 (Traceback (most recent call last):
+  File "c:\Users\henri\Documents\GitHub\S2SLauncher\frontend\iOneLauncher.py", line 184, in monitor_manager
+    self.module_logger.write_file(["WARNING", f"Invalid URL running on monitor: ({name}) - ({driver.current_url}), corrections: ({i})"])
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\henri\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=102.0.5005.115)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00F9D953+2414931]
+	Ordinal0 [0x00F2F5E1+1963489]
+	Ordinal0 [0x00E1C6B8+837304]
+	Ordinal0 [0x00E04120+737568]
+	Ordinal0 [0x00E66E29+1142313]
+	Ordinal0 [0x00E73FB2+1195954]
+	Ordinal0 [0x00E642B6+1131190]
+	Ordinal0 [0x00E3E860+976992]
+	Ordinal0 [0x00E3F756+980822]
+	GetHandleVerifier [0x0120CC62+2510274]
+	GetHandleVerifier [0x011FF760+2455744]
+	GetHandleVerifier [0x0102EABA+551962]
+	GetHandleVerifier [0x0102D916+547446]
+	Ordinal0 [0x00F35F3B+1990459]
+	Ordinal0 [0x00F3A898+2009240]
+	Ordinal0 [0x00F3A985+2009477]
+	Ordinal0 [0x00F43AD1+2046673]
+	BaseThreadInitThunk [0x7632FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x778E7A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x778E7A4E+238]
+
+)

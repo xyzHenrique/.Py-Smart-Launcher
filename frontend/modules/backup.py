@@ -4,7 +4,7 @@ class ApplicationClient:
     def __init__(self):
         """SOCKET"""
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.address = ("localhost", 8182)
+        self.address = ("127.0.0.1", 8086)
         
         """FUNCTIONS"""
         self.connect()
