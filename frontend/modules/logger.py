@@ -46,13 +46,13 @@ class ApplicationLogger:
 
         self.file.close()
 
-    def write_file(self, content):
+    def write_file(self, level, content):
         if os.path.exists(f"{self.folderpath}{self.foldername}/{self.filename}.txt"):
             self.file = open(f"{self.folderpath}{self.foldername}/{self.filename}.txt", "a")
             
-            self.file.write(f"[{self.normal_datetime[1]}] - {content[0]} - {content[1]}\n")        
+            self.file.write(f"[{self.normal_datetime[1]}] - {level} - {content}\n")        
             
-            print(f"[{self.normal_datetime[1]}] - {content[0]} - {content[1]}\n")
+            print(f"[{self.normal_datetime[1]}] - {level} - {content}\n")
 
             self.file.close()
         else:

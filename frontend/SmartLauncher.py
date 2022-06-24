@@ -7,20 +7,26 @@ created by: Henrique Rodrigues Pereira <https://github.com/RIick-013>
 SmartLauncher
 """
 
+import sys
+
+
 try:
-    import os, pathlib, time, threading, traceback, pyautogui, keyboard, unit_tests
+    ### NATIVE MODULES
+    import os, time, threading, traceback, pathlib
+    
+    ### THIRD MODULES
+    import pyautogui, keyboard
 
     from selenium import webdriver
     from selenium.webdriver.chrome.service import Service
     from webdriver_manager.chrome import ChromeDriverManager
     
-    from informations import *
-
-    #### from modules.client import ApplicationClient ### 
+    ### LOCAL MODULES
+    from Informations import *
     from modules.Logger import ApplicationLogger
     from modules.Settings import ApplicationSettings
     
-    from Controller import ApplicationController
+    from Controllers import ChromeController, MonitorsController
 
 except ImportError:
     print(ImportError)
@@ -29,10 +35,10 @@ class Application:
     def __init__(self):
 
         ### MODULES 
-        ### self.module_client = ApplicationClient() ###
         self.module_logger = ApplicationLogger()
         self.module_settings = ApplicationSettings()
-        self.module_controller = ApplicationController()
+        self.module_chrome_controller = ChromeController()
+        self.module_monitors_controller = MonitorsController()
         
         ### SETTINGS 
         self.settings_general = self.module_settings[0]
@@ -48,7 +54,7 @@ class Application:
             self.monitors[key] = {
                 "monitor_PID": None,
                 "monitor_name": key,
-                "monitor_drive": None,
+                "monitor_driver": None,
                 "monitor_thread": None,
 
                 "monitor_description": item["PROPERTIES"][".DESCRIPTION"],
@@ -63,48 +69,7 @@ class Application:
                 "DIR": item["PROPERTIES"]["DIR"]
             }
         
-        """APPLICATION"""
-        self.settings_general_application = {
-            "URL": self.settings_general["APPLICATION"][".URL"]
-            }
-
-        """BLOCK"""
-        self.settings_general_block = {
-            "enabled": self.settings_general["BLOCK"][".ENABLED"],
-            "url": self.settings_general["BLOCK"][".URL"]
-        }
-        
-        """SYSTEM"""
-        self.settings_general_system = {
-            "secure-exit": {
-                "enabled": self.settings_general["SYSTEM"][".SECURE-EXIT"][".ENABLED"],
-                "keys": self.settings_general["SYSTEM"][".SECURE-EXIT"][".KEYS"]
-            },
-
-            "secure-start": self.settings_general["SYSTEM"][".SECURE-START"]
-        }
-        
-        """AUTOMATION"""
-        self.settings_general_automation = {
-            "automation": {
-                "enabled": self.settings_general["AUTOMATION"][".ENABLED"],
-            },
-
-            "timer": {
-                "enabled": self.settings_general["AUTOMATION"][".TIMER"][".ENABLED"],
-                "time": self.settings_general["AUTOMATION"][".TIMER"][".TIME"]
-            },
-
-            "show": self.settings_general["AUTOMATION"][".SHOW"],
-            "keys": self.settings_general["AUTOMATION"][".KEYS"]
-        }
-
-        """DEV"""
-        self.settings_general_dev = {
-            "enabled": self.settings_general["DEV"][".ENABLED"],
-            "keys": self.settings_general["DEV"][".KEYS"],
-            "url": self.settings_general["DEV"][".URL"]
-        }
+        ### .... ####
 
         ### STARTUP MESSAGES
         print(f"{APP_INFORMATIONS['APP_NAME']} - ({APP_INFORMATIONS['APP_VERSION']}) - created by: {APP_INFORMATIONS['APP_OWNER']}")
@@ -123,14 +88,14 @@ class Application:
         
     def secure_start(self):
         if self.settings_general_system["secure-start"]:
-            self.module_controller.end(onlychrome=True)
+            self.module_chrome_controller.end(onlychrome=True)
 
     def secure_exit(self):
         while self.settings_general_system["secure-exit"]["enabled"]:
             if keyboard.is_pressed(f"{self.settings_general_system['secure-exit']['keys']}"):
                 self.module_logger.write_file(["INFO", f"({self.settings_general_system['secure-exit']['keys']}) closing application, please wait..."])
 
-                self.module_controller.end(onlychrome=False)
+                self.module_chrome_controller.end(onlychrome=False)
                            
     def automation(self):
         enabled = self.settings_general_automation["automation"]["enabled"]
@@ -188,8 +153,6 @@ class Application:
 
                                         self.module_logger.write_file(["WARNING", f"Invalid URL running on monitor: ({name}) - ({driver.current_url}), corrections: ({i})"])
                                         
-                                        pyautogui.press("f5")
-                                        
                                         driver.get(application_url)
                                         driver.execute_script(f'document.title = "monitor {name} - ({driver.service.process.pid})"')
                                     
@@ -200,11 +163,11 @@ class Application:
                                             
                                         driver.quit()
 
-                                        self.module_controller.restart()
+                                        self.module_chrome_controller.restart()
 
         except Exception:
             self.module_logger.write_file(["WARNING", f"monitor {self.monitors[name]['monitor_name']} ({traceback.format_exc()})"])
-            self.module_controller.restart()
+            self.module_chrome_controller.restart()
         
     def monitor_setup(self):
         ### print(f"press: ({self.settings_general_system['secure-exit']['keys']}) to exit") ###
@@ -255,7 +218,7 @@ class Application:
                         else:
                             self.module_logger.write_file(["CRITICAL", F"{traceback.format_exc()}"])
 
-                            self.module_controller.restart() 
+                            self.module_chrome_controller.restart() 
 
                     print("\n")
 
@@ -269,6 +232,6 @@ class Application:
         except Exception:
             self.module_logger.write_file(["CRITICAL", f"{traceback.format_exc()}"])
 
-            self.module_controller.end(onlychrome=False)
+            self.module_chrome_controller.end(onlychrome=False)
 
 Application()

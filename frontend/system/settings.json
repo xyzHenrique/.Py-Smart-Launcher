@@ -1,10 +1,23 @@
 {
 	"MONITORS": {
-		".PRESET": "2"
+		".PRESET": "2",
+		".MANAGER": true
 	},
 
 	"APPLICATION": {
-		".URL": "https://s2s.widedigital.com.br/S2S/Player.html"
+		".URL": "https://s2s.widedigital.com.br/S2S/Player.html",
+		".APPLICATION-AUTOMATIC-UPDATE": true,
+		".DRIVER-AUTOMATIC-UPDATE": true,
+		".DRIVER-MANUAL": {
+			".ENABLED": false,
+			".PATH": ""
+		},
+		".LOGS": {
+			".ENABLED": true,
+			".COMPACT": true
+		},
+		".CHECK-STRUCTURE": true,
+		".FIX-SERVICE-WORKER": false
 	},
 
 	"BLOCK": {
