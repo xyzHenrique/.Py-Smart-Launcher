@@ -6,7 +6,7 @@ modules > settings.py | v2 |
 
 import json
 
-from Structure import 
+from ApplicationStructure import 
 
 def ApplicationSettings():
     def __init__(self):

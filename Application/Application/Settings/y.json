@@ -17,7 +17,6 @@
 			".COMPACT": true
 		},
 		".CHECK-STRUCTURE": true,
-		".FIX-SERVICE-WORKER": false
 	},
 
 	"BLOCK": {
@@ -49,6 +48,10 @@
 			"esc",
 			"enter"
 		]
+	},
+
+	"FIX": {
+		".CHROME-SERVICE-WORKER": true
 	},
 
 	"DEV": {

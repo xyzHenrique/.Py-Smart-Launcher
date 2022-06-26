@@ -11,20 +11,20 @@ import sys
 
 
 try:
-    ### NATIVE MODULES
+    ### NATIVE
     import os, time, threading, traceback, pathlib
     
-    ### THIRD MODULES
+    ### THIRD
     import pyautogui, keyboard
 
     from selenium import webdriver
     from selenium.webdriver.chrome.service import Service
     from webdriver_manager.chrome import ChromeDriverManager
     
-    ### LOCAL MODULES
-    from Informations import *
-    from modules.Logger import ApplicationLogger
-    from modules.Settings import ApplicationSettings
+    ### LOCAL
+    from ApplicationInformation import *
+    from Modules.Logger import ApplicationLogger
+    from Modules.Settings import ApplicationSettings
     
     from Controllers import ChromeController, MonitorsController
 

@@ -1,7 +1,8 @@
 """
 created by: Henrique Rodrigues Pereira <https://github.com/RIick-013>
 
-modules > settings.py | v2 |
+path: Modules.Settings.py
+version: 3.0.0
 """
 
 import json

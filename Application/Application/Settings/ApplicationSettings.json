@@ -1,0 +1,29 @@
+{
+	"ApplicationSettings": {
+		"GetURL": "https://s2s.widedigital.com.br/S2S/Player.html",
+		
+		"StructureManager": {
+			"Enabled": true
+		},	
+		
+		"ApplicationUpdateManager": {
+			"Enabled": true,
+		},
+		
+		"DriverUpdateManager": {
+			"Enabled": true,
+			"Path": ""
+		},
+		
+		"LoggerManager": {
+			"Enabled": true,
+			"CompactFile": true,
+			"CompactFolder": true
+		},
+		
+		"Engine": {
+			"Enabled": true,
+			"Path": "Aplication/Engine/x64/SmartLauncher.exe"
+		}
+	}
+}
