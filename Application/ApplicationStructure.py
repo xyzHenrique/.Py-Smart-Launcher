@@ -6,66 +6,54 @@ version: 1.0.0
 """
 
 ### NATIVE
-import os
+import os, time, json
 
-### LOCAL
-#from ApplicationLogger import ApplicationLogger
+### THIRD
+import colorama
+
+from ApplicationLogger import Logger
 
 class Structure:
     def __init__(self):
-        self.structure = {
-            "Application.Data": {
-                "dir": "Application/Data",
-                "files": [
-                    "data.dat"
-                    ]
-            },
+        ### CALL and INITIALIZE THIRD PACKAGE
+        colorama.init()
 
-            "Application.Engine": {
-                "dir": "Application/Engine",
-                "files": []
-            },
+        ### CALL and INITIALIZE LOCAL PACKAGE
+        self.structure = json.load(open("Structure"))
 
-            "Application.Logs": {
-                "dir": "Application/Logs",
-                "files": []
-            },
+        self.logger = Logger()
+        self.logger.InitializeLogger()
 
-            "Application.Plugins": {
-                "dir": "Application/Plugins",
-                "files": []
-            },
+    def CheckFolderStructure(self):
+        self.logger.WriteFile("Checking folder structure...", "INFO")
 
-            "Application.Presets": {
-                "dir": "Application/Presets",
-                "files": []
-            },
+        err = list()
 
-            "Application.Settings": {
-                "dir": "Application/Settings",
-                "files": [
-                    "ApplicationSettings.json",
-                    "AutomationSettings.json",
-                ]
-            },
-        }
-    
-    def CheckStructure(self):
-        ### CHECK for PRIMARY FOLDERS
-        for folder in self.structure["primary-folders"]:
-            if os.path.exists(f"{folder}"):
-                self.module_logger.write_file("INFO", f"folder ('{folder}') OK!")
+        for key in self.structure.keys():
+            time.sleep(0.3)
+            if not os.path.exists(self.structure[key]["dir"]):
+                self.logger.WriteFile(f"{self.structure[key]['dir']}') doesn't exist! Closing application...", "CRITICAL")
             else:
-                self.module_logger.write_file("WARNING", f"folder ('{folder}') does not exist!")
-                
-                if not folder == self.structure["important-folders"]:
-                    self.module_logger.write_file("CRITICAL", f"a critical folder ({folder}) is not available!")
-                else:
-                    create = os.getcwd()+"/"+f"{folder}"
+                self.logger.WriteFile(f"('{self.structure[key]['dir']}') OK!", "DEBUG")
 
-                    if not os.path.exists(create):
-                        os.makedirs(create)
+        return err
 
-                        self.module_logger.write_file("INFO", f"folder ('{create}') successfully created!")
-                    else:
-                        self.module_logger.write_file("WARNING", f"could not create folder ('{create}') ")
+    def CheckFileStructure(self):
+        self.logger.WriteFile("Checking file structure...", "INFO")
+
+        err = list()
+
+        for key in self.structure.keys():
+            time.sleep(0.3)
+            for file in self.structure[key]["files"]:
+                if not os.path.exists(f"{self.structure[key]['dir']}/{file}"):
+                    err.append(f"{self.structure[key]['dir']}/{file}")
+
+                    self.logger.WriteFile(f"File ('{self.structure[key]['dir']}/{file}') doesn't exist!", "CRITICAL")
+                else:   
+                    self.logger.WriteFile(f"File ('{self.structure[key]['dir']}/{file}') OK!", "DEBUG")
+        
+        return err
+
+x = Structure().CheckFileStructure()
+        

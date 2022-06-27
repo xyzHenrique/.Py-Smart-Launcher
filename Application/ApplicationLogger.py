@@ -1,27 +1,26 @@
 """
 created by: Henrique Rodrigues Pereira <https://github.com/RIick-013>
 
-path: modules.logger.py
-version: 4.0.0
+path: ApplicationLogger.py
+version: 5.0.0
 """
 
 ### NATIVE
-import os, datetime, platform, re, uuid, shutil, zipfile
+import os, json, time, datetime, platform, re, uuid, shutil, zipfile
 
 ### THIRD
 import colorama
 
 ### LOCAL 
-from ApplicationInformation import APP_INFORMATIONS
-from ApplicationStructure import Structure
+from ApplicationInformation import Informations
 
-class ApplicationLogger:
+class Logger:
     def __init__(self):
-        ### INITIALIZE THIRD PACKAGE
+        ### CALL and INITIALIZE THIRD PACKAGE
         colorama.init()
 
-        ### INITIALIZE LOCAL PACKAGE
-        self.structure = Structure()
+        ### CALL and INITIALIZE LOCAL PACKAGE
+        self.structure = json.load(open("Structure"))
 
         ### ... ###
         self.filename_format = "%d-%m"
@@ -35,7 +34,7 @@ class ApplicationLogger:
 
         self.folder = {
             "foldername": self.GetDate(self.foldername_format),
-            "folderpath": self.structure.structure["Application.Logs"]["dir"]
+            "folderpath": self.structure["Application.Logs"]["dir"]
         }
 
         self.current_datetime = {
@@ -56,17 +55,30 @@ class ApplicationLogger:
         return self.time
 
     def InitializeLogger(self):
-        def CallFunctions():
-            self.HeaderWrite()
-            self.CompactFolder()
-
+        def Header():
+            self.file["file"] = open(self.fullpath, "w")
+            self.file["file"].write(f"""------------------------------------------------------------------------
+Logging started at {self.current_datetime['date']} - {self.current_datetime['time']}
+File                 : {self.file['filename']}
+Version              : {Informations['APP_VERSION']}
+Computer             : Name: {platform.node()} || Mac: {':'.join(re.findall('..', '%012x' % uuid.getnode()))}
+------------------------------------------------------------------------\n""")
+            self.file["file"].close()  
+        
         if os.path.exists(f"{self.folder['folderpath']}/{self.folder['foldername']}"):
-            CallFunctions()
+            if os.path.exists(self.fullpath):
+                self.CompactFolder()
+            else:
+                Header()
+            
+                self.CompactFolder()
         else:
             try:
                 os.mkdir(f"{self.folder['folderpath']}/{self.folder['foldername']}")
 
-                CallFunctions()
+                Header()
+
+                self.CompactFolder()
 
             except Exception as err:
                 print(err)
@@ -83,21 +95,6 @@ class ApplicationLogger:
 
                 shutil.rmtree(f"{self.folder['folderpath']}/{dir}")
         
-    def HeaderWrite(self):
-        self.file["file"] = open(self.fullpath, "a")
-
-        self.file["file"].write(f"""
-------------------------------------------------------------------------
-Logging started at {self.current_datetime['date']} - {self.current_datetime['time']}
-File                 : {self.file['filename']}
-Version              : {APP_INFORMATIONS['APP_VERSION']}
-Computer             : Name: {platform.node()} || Mac: {':'.join(re.findall('..', '%012x' % uuid.getnode()))}
-------------------------------------------------------------------------\n""")
-
-        self.file["file"].close()
-
-        print()
-
     def WriteFile(self, message: str, level=list(["INFO", "WARNING", "CRITICAL", "DEBUG"])):
         if os.path.exists(self.fullpath):
             self.file["file"] = open(self.fullpath, "a")
@@ -110,7 +107,7 @@ Computer             : Name: {platform.node()} || Mac: {':'.join(re.findall('..'
                 
                 self.file['file'].close()
 
-            if level == "WARNING":
+            elif level == "WARNING":
                 self.file["file"].write(f"[{self.current_datetime['time']}]: {level} - {message}\n")
                 
                 print(colorama.Fore.YELLOW + f"[{self.current_datetime['time']}]: {level} - {message}\n")
@@ -118,7 +115,7 @@ Computer             : Name: {platform.node()} || Mac: {':'.join(re.findall('..'
                 
                 self.file["file"].close()
             
-            if level == "CRITICAL":
+            elif level == "CRITICAL":
                 self.file["file"].write(f"[{self.current_datetime['time']}]: {level} - {message}\n")
                 
                 print(colorama.Fore.RED + f"[{self.current_datetime['time']}]: {level} - {message}\n")
@@ -126,7 +123,7 @@ Computer             : Name: {platform.node()} || Mac: {':'.join(re.findall('..'
                 
                 self.file["file"].close()
 
-            if level == "DEBUG":
+            elif level == "DEBUG":
                 self.file["file"].write(f"[{self.current_datetime['time']}]: {level} - {message}\n")
                 
                 print(colorama.Fore.MAGENTA + f"[{self.current_datetime['time']}]: {level} - {message}\n")

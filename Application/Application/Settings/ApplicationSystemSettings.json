@@ -1,0 +1,86 @@
+{
+	"Settings": {
+		"Preset": {
+			"Set": "2",
+			"Description": {
+				"SetDescription": "IMPORTANT: Defines which preset the application will start."
+			}
+		},
+
+		"URL": {
+			"Get": "https://s2s.widedigital.com.br/S2S/Player.html",
+			"Block": [
+				"chrome://whats-new/?auto=true",
+				"chrome://whats-new/"
+			],
+			"Description": {
+				"GetDescription": "IMPORTANT: Indicates which system will be used.",
+				"BlockDescription": "If there is something on the block list, if the software identifies any of the URLs being executed, it will block the process of playing that URL."
+			}
+		},
+		
+		"Structure": {
+			"Enabled": true,
+			"Description": {
+				"EnabledOption": "If enabled, checks the integrity of the structure of folders and files."
+			}
+		},
+		
+		"Logger": {
+			"Enabled": true,
+			"CompactFolder": true,
+			"Description": {
+				"EnabledDescription": "If enabled, start the log system.",
+				"CompactFolderDescription": "If enabled next to the Logger.Enabled option, the log system will compress the folders that will no longer be used."
+			}
+		},
+		
+		"Engine": {
+			"Enabled": true,
+			"Path": "Aplication/Engine/x64/Chromium.exe",
+			"DevMode": {
+				"Enabled": true,
+				"Keys": "f12"
+			},
+
+			"Description": {
+				"EnabledDescription": "If enabled, the software's internal engine will be used, it is recommended to use any browser based on Chromium.",
+				"PathDescription": "The path to the engine.",
+				"DevModeDescription": "If enabled and a key is configured, this key will launch the engine's developer mode."
+			}
+		},
+		
+		"Update": {
+			"Application": {
+				"Enabled": true,
+				"Description": {
+					"EnabledDescription": "If enabled, the software will automatically check for updates at startup."
+				}
+			},
+			"Driver": {
+				"Enabled": true,
+				"Path": "",
+				"Description": {
+					"EnabledDescription": "If enabled, the software will automatically check for driver updates at startup.",
+					"PathDescription": "The path to driver"
+				}
+			}
+		},
+
+		"StartupAndShutdown": {
+			"CleanStartup": {
+				"Enabled": true,
+				"Description": {
+					"EnabledDescription": "If enabled, the software will clean all processes not terminated at startup."
+				}
+			},
+			"CleanShutdown": {
+				"Enabled": true,
+				"Key": "crtl+alt+p",
+				"Description": {
+					"EnabledDescription": "If enabled and a key is configured, that key will terminate the software correctly."
+				}
+			}
+		}
+	}
+}

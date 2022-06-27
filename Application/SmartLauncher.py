@@ -26,7 +26,7 @@ try:
     from Modules.Logger import ApplicationLogger
     from Modules.Settings import ApplicationSettings
     
-    from Controllers import ChromeController, MonitorsController
+    from ApplicationSystemController import ChromeController, MonitorsController
 
 except ImportError:
     print(ImportError)

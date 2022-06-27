@@ -1,5 +1,0 @@
-[03:57:48]: INFO - teste
-[03:58:55]: INFO - teste
-[03:58:55]: WARNING - teste
-[03:58:55]: CRITICAL - teste
-[03:58:55]: DEBUG - teste
