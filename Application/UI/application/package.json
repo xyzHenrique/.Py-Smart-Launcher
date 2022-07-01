@@ -1,0 +1,16 @@
+{
+  "name": "application.qrk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "autocomplete.js": "^0.38.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "author": "Quarkjs",
+  "homepage": "https://quarkjs.io",
+  "description": "A Quark project"
+}

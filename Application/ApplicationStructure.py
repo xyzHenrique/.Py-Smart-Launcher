@@ -54,6 +54,4 @@ class Structure:
                     self.logger.WriteFile(f"File ('{self.structure[key]['dir']}/{file}') OK!", "DEBUG")
         
         return err
-
-x = Structure().CheckFileStructure()
         
