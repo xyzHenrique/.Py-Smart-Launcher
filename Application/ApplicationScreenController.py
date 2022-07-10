@@ -6,7 +6,7 @@ version: 1.0.0
 """
 
 ### NATIVE
-import os, json
+import os, json, time, threading
 
 ### THIRD
 import screeninfo
@@ -32,18 +32,20 @@ class ScreenController:
         for screen in screeninfo.get_monitors():
             self.screens["connected"].append(screen)
 
-        self.logger.WriteFile(f"Connected screens: ({self.screens['connected']})", "INFO")
+            self.logger.WriteFile(f"Screen: ({self.screens['connected']}) registred!", "INFO")
 
-        with open(f"{self.structure.structure['Application.Data']['dir']/self.structure.structure['Application.Data']['files']['data.dat']}", "w+") as outfile:
-            outfile.write(self.screens["connected"])
+        with open(f"{self.structure['Application.Data']['dir']}/{self.structure['Application.Data']['files'][0]}", "w+") as outfile:
+            outfile.write(str(self.screens["connected"]))
+        
+        threading.Thread(target=self.ScreenThreading, args=()).start()
 
     def ScreenThreading(self):
-        for monitor in screeninfo.get_monitors():
-            if monitor in self.connected_screens:
-                pass
-            else:
-                self.module_logger.write_file("WARNING", f"monitor: {monitor} disconnected!")
-        
-            print(monitor)
+        while True:
+            
+            time.sleep(15)
 
-x = ScreenController().ScreenRegister()
+            for monitor in screeninfo.get_monitors():
+                if monitor != self.screens["connected"]:
+                    self.logger.WriteFile(f"monitor: {monitor} connected!", "INFO")
+                else:
+                    self.logger.WriteFile(f"monitor: {monitor} disconnected!", "WARNING")

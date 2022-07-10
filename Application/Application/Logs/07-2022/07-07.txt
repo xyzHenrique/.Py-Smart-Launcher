@@ -1,0 +1,22 @@
+------------------------------------------------------------------------
+Logging started at 07/07/2022 - 09:36:08
+File                 : 07-07
+Version              : 3.8.0
+Computer             : Name: DESKTOP-BQCMI69 || Mac: 00:e0:51:42:17:b3
+------------------------------------------------------------------------
+[09:36:08]: INFO - Screen: ([Monitor(x=0, y=0, width=1360, height=768, width_mm=410, height_mm=256, name='\\\\.\\DISPLAY1', is_primary=True)]) registred!
+[09:36:08]: INFO - Screen: ([Monitor(x=0, y=0, width=1360, height=768, width_mm=410, height_mm=256, name='\\\\.\\DISPLAY1', is_primary=True), Monitor(x=1360, y=0, width=1366, height=768, width_mm=344, height_mm=194, name='\\\\.\\DISPLAY2', is_primary=False)]) registred!
+[09:36:08]: INFO - monitor: Monitor(x=0, y=0, width=1360, height=768, width_mm=410, height_mm=256, name='\\\\.\\DISPLAY1', is_primary=True) connected!
+[09:36:08]: INFO - monitor: Monitor(x=1360, y=0, width=1366, height=768, width_mm=344, height_mm=194, name='\\\\.\\DISPLAY2', is_primary=False) connected!
+[09:36:08]: INFO - monitor: Monitor(x=0, y=0, width=1360, height=768, width_mm=410, height_mm=256, name='\\\\.\\DISPLAY1', is_primary=True) connected!
+[09:36:08]: INFO - monitor: Monitor(x=1360, y=0, width=1366, height=768, width_mm=344, height_mm=194, name='\\\\.\\DISPLAY2', is_primary=False) connected!
+[09:36:08]: INFO - monitor: Monitor(x=0, y=0, width=1360, height=768, width_mm=410, height_mm=256, name='\\\\.\\DISPLAY1', is_primary=True) connected!
+[09:36:08]: INFO - monitor: Monitor(x=1360, y=0, width=1366, height=768, width_mm=344, height_mm=194, name='\\\\.\\DISPLAY2', is_primary=False) connected!
+[09:36:08]: INFO - monitor: Monitor(x=0, y=0, width=1360, height=768, width_mm=410, height_mm=256, name='\\\\.\\DISPLAY1', is_primary=True) connected!
+[09:36:08]: INFO - monitor: Monitor(x=1360, y=0, width=1366, height=768, width_mm=344, height_mm=194, name='\\\\.\\DISPLAY2', is_primary=False) connected!
+[09:36:08]: INFO - monitor: Monitor(x=0, y=0, width=1360, height=768, width_mm=410, height_mm=256, name='\\\\.\\DISPLAY1', is_primary=True) connected!
+[09:36:08]: INFO - monitor: Monitor(x=1360, y=0, width=1366, height=768, width_mm=344, height_mm=194, name='\\\\.\\DISPLAY2', is_primary=False) connected!
+[09:36:08]: INFO - monitor: Monitor(x=0, y=0, width=1360, height=768, width_mm=410, height_mm=256, name='\\\\.\\DISPLAY1', is_primary=True) connected!
+[09:36:08]: INFO - monitor: Monitor(x=1360, y=0, width=1366, height=768, width_mm=344, height_mm=194, name='\\\\.\\DISPLAY2', is_primary=False) connected!
+[09:36:08]: INFO - monitor: Monitor(x=0, y=0, width=1360, height=768, width_mm=410, height_mm=256, name='\\\\.\\DISPLAY1', is_primary=True) connected!
+[09:36:08]: INFO - monitor: Monitor(x=1360, y=0, width=1366, height=768, width_mm=344, height_mm=194, name='\\\\.\\DISPLAY2', is_primary=False) connected!

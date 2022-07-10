@@ -1,89 +1,91 @@
 {
-	"Settings": {
-		"Preset": {
-			"Set": "2",
-			"Description": {
-				"SetDescription": "IMPORTANT: Defines which preset the application will start."
-			}
-		},
+	"Preset": {
+		"Set": "2",
+		"Description": {
+			"SetDescription": "IMPORTANT: Defines which preset the application will start."
+		}
+	},
 
-		"URL": {
-			"Get": "https://s2s.widedigital.com.br/S2S/Player.html",
-			"Block": [
-				"chrome://whats-new/?auto=true",
-				"chrome://whats-new/"
-			],
-			"Description": {
-				"GetDescription": "IMPORTANT: Indicates which system will be used.",
-				"BlockDescription": "If there is something on the block list, if the software identifies any of the URLs being executed, it will block the process of playing that URL."
-			}
+	"URL": {
+		"Block": [
+			"chrome://whats-new/?auto=true",
+			"chrome://whats-new/"
+		],
+		"Description": {
+			"BlockDescription": "If there is something on the block list, if the software identifies any of the URLs being executed, it will block the process of playing that URL."
+		}
+	},
+	
+	"Structure": {
+		"Enabled": true,
+		"Description": {
+			"EnabledOption": "If enabled, checks the integrity of the structure of folders and files."
+		}
+	},
+	
+	"Logger": {
+		"Enabled": true,
+		"CompactFolder": true,
+		"Description": {
+			"EnabledDescription": "If enabled, start the log system.",
+			"CompactFolderDescription": "If enabled next to the Logger.Enabled option, the log system will compress the folders that will no longer be used."
+		}
+	},
+	
+	"Engine": {
+		"Enabled": true,
+		"Path": "Aplication/Engine/x64/Chromium.exe",
+		"DevMode": {
+			"Enabled": true,
+			"Keys": "f12"
 		},
-		
-		"Structure": {
+		"BasicArguments": [
+			"--test-type",
+			"--new-window",
+			"--unlimited-storage",
+			"--disable-extensions",
+			"--disable-notifications",
+			"--ignore-certificate-errors",
+			"--autoplay-policy=no-user-gesture-required",
+			"--disable-features=ChromeWhatsNewUI"
+		],
+		"Description": {
+			"EnabledDescription": "If enabled, the software's internal engine will be used, it is recommended to use any browser based on Chromium.",
+			"PathDescription": "The path to the engine.",
+			"DevModeDescription": "If enabled and a key is configured, this key will launch the engine's developer mode.",
+			"ArgumentsDescription": "The arguments that will be passed to the engine."
+		}
+	},
+	
+	"Update": {
+		"Application": {
 			"Enabled": true,
 			"Description": {
-				"EnabledOption": "If enabled, checks the integrity of the structure of folders and files."
+				"EnabledDescription": "If enabled, the software will automatically check for updates at startup."
 			}
 		},
-		
-		"Logger": {
+		"Driver": {
 			"Enabled": true,
-			"CompactFolder": true,
+			"Path": "",
 			"Description": {
-				"EnabledDescription": "If enabled, start the log system.",
-				"CompactFolderDescription": "If enabled next to the Logger.Enabled option, the log system will compress the folders that will no longer be used."
+				"EnabledDescription": "If enabled, the software will automatically check for driver updates at startup.",
+				"PathDescription": "The path to driver"
 			}
-		},
-		
-		"Engine": {
+		}
+	},
+
+	"StartupAndShutdown": {
+		"CleanStartup": {
 			"Enabled": true,
-			"Path": "Aplication/Engine/x64/Chromium.exe",
-			"DevMode": {
-				"Enabled": true,
-				"Keys": "f12"
-			},
-			"Arguments": [
-				""
-			],
-
 			"Description": {
-				"EnabledDescription": "If enabled, the software's internal engine will be used, it is recommended to use any browser based on Chromium.",
-				"PathDescription": "The path to the engine.",
-				"DevModeDescription": "If enabled and a key is configured, this key will launch the engine's developer mode.",
-				"ArgumentsDescription": "The arguments that will be passed to the engine."
+				"EnabledDescription": "If enabled, the software will clean all processes not terminated at startup."
 			}
 		},
-		
-		"Update": {
-			"Application": {
-				"Enabled": true,
-				"Description": {
-					"EnabledDescription": "If enabled, the software will automatically check for updates at startup."
-				}
-			},
-			"Driver": {
-				"Enabled": true,
-				"Path": "",
-				"Description": {
-					"EnabledDescription": "If enabled, the software will automatically check for driver updates at startup.",
-					"PathDescription": "The path to driver"
-				}
-			}
-		},
-
-		"StartupAndShutdown": {
-			"CleanStartup": {
-				"Enabled": true,
-				"Description": {
-					"EnabledDescription": "If enabled, the software will clean all processes not terminated at startup."
-				}
-			},
-			"CleanShutdown": {
-				"Enabled": true,
-				"Key": "crtl+alt+p",
-				"Description": {
-					"EnabledDescription": "If enabled and a key is configured, that key will terminate the software correctly."
-				}
+		"CleanShutdown": {
+			"Enabled": true,
+			"Key": "crtl+alt+p",
+			"Description": {
+				"EnabledDescription": "If enabled and a key is configured, that key will terminate the software correctly."
 			}
 		}
 	}
