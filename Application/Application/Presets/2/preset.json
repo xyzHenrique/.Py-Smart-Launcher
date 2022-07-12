@@ -3,7 +3,7 @@
     "Monitor1": {
         "Enabled": true,
         "URL": "https://s2s.widedigital.com.br/S2S/Player.html",
-        "Path": "~*local/Monitors/monitor1",
+        "Path": "*~local/Monitors/monitor1",
         "Width": 0,
         "Height": 0,
         "CustomSize": {
@@ -30,7 +30,7 @@
     "Monitor2": {
         "Enabled": true,
         "URL": "https://s2s.widedigital.com.br/S2S/Player.html",
-        "Path": "~*local/Monitors/monitor2",
+        "Path": "*~local/Monitors/monitor2",
         "Width": 1280,
         "Height": 0,
         "CustomSize": {

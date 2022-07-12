@@ -33,8 +33,8 @@
 	},
 	
 	"Engine": {
-		"Enabled": true,
-		"Path": "Aplication/Engine/x64/Chromium.exe",
+		"ChromeBinaryPath": "*~local/Engine/Chromium/chrome.exe",
+		"ChromedriverBinaryPath": "*~local/Engine/Chromedriver/chromedriver.exe",
 		"DevMode": {
 			"Enabled": true,
 			"Keys": "f12"
@@ -43,7 +43,6 @@
 			"--test-type",
 			"--new-window",
 			"--unlimited-storage",
-			"--disable-extensions",
 			"--disable-notifications",
 			"--ignore-certificate-errors",
 			"--autoplay-policy=no-user-gesture-required",
@@ -51,7 +50,7 @@
 		],
 		"Description": {
 			"EnabledDescription": "If enabled, the software's internal engine will be used, it is recommended to use any browser based on Chromium.",
-			"PathDescription": "The path to the engine.",
+			"PathDescription": "The path to the binary engine.",
 			"DevModeDescription": "If enabled and a key is configured, this key will launch the engine's developer mode.",
 			"ArgumentsDescription": "The arguments that will be passed to the engine."
 		}

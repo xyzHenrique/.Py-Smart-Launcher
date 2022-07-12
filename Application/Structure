@@ -6,11 +6,6 @@
             ]
     },
 
-    "Application.Engine": {
-        "dir": "Application/Engine",
-        "files": []
-    },
-
     "Application.Logs": {
         "dir": "Application/Logs",
         "files": []

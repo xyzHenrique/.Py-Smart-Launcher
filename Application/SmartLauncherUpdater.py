@@ -1,7 +1,5 @@
 import urllib, os, traceback
 
-from modules import Logger
-
 from github import Github
 from cryptography.fernet import Fernet
 
