@@ -1,0 +1,31 @@
+{
+    "Application.Data": {
+        "dir": "Application/Data",
+        "files": [
+            "data.dat"
+            ]
+    },
+
+    "Application.Logs": {
+        "dir": "Application/Logs",
+        "files": []
+    },
+
+    "Application.Plugins": {
+        "dir": "Application/Plugins",
+        "files": []
+    },
+
+    "Application.Presets": {
+        "dir": "Application/Presets",
+        "files": []
+    },
+
+    "Application.Settings": {
+        "dir": "Application/Settings",
+        "files": [
+            "ApplicationAutomationSettings.json",
+            "ApplicationSystemSettings.json"
+        ]
+    }
+}

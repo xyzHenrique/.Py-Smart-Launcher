@@ -1,0 +1,254 @@
+------------------------------------------------------------------------
+Logging started at 11/07/2022 - 02:03:08
+File                 : 11-07
+Version              : 3.8.0
+Computer             : Name: DESKTOP-BQCMI69 || Mac: 00:e0:51:42:17:b3
+------------------------------------------------------------------------
+[02:03:08]: INFO - Checking file structure...
+[02:03:08]: DEBUG - File ('Application/Data/data.dat') OK!
+[02:03:08]: DEBUG - File ('Application/Settings/ApplicationAutomationSettings.json') OK!
+[02:03:08]: DEBUG - File ('Application/Settings/ApplicationSystemSettings.json') OK!
+[02:03:08]: INFO - Checking folder structure...
+[02:03:08]: DEBUG - ('Application/Data') OK!
+[02:03:08]: DEBUG - ('Application/Logs') OK!
+[02:03:08]: DEBUG - ('Application/Plugins') OK!
+[02:03:08]: DEBUG - ('Application/Presets') OK!
+[02:03:08]: DEBUG - ('Application/Settings') OK!
+[02:03:08]: INFO - Monitor (Monitor1) || PID: (12496) || OK!
+[02:04:09]: INFO - Checking file structure...
+[02:04:09]: DEBUG - File ('Application/Data/data.dat') OK!
+[02:04:09]: DEBUG - File ('Application/Settings/ApplicationAutomationSettings.json') OK!
+[02:04:09]: DEBUG - File ('Application/Settings/ApplicationSystemSettings.json') OK!
+[02:04:09]: INFO - Checking folder structure...
+[02:04:09]: DEBUG - ('Application/Data') OK!
+[02:04:09]: DEBUG - ('Application/Logs') OK!
+[02:04:09]: DEBUG - ('Application/Plugins') OK!
+[02:04:09]: DEBUG - ('Application/Presets') OK!
+[02:04:09]: DEBUG - ('Application/Settings') OK!
+[02:04:09]: INFO - Monitor (Monitor1) || PID: (12432) || OK!
+[02:19:33]: INFO - Checking file structure...
+[02:19:33]: DEBUG - File ('Application/Data/data.dat') OK!
+[02:19:33]: DEBUG - File ('Application/Settings/ApplicationAutomationSettings.json') OK!
+[02:19:33]: DEBUG - File ('Application/Settings/ApplicationSystemSettings.json') OK!
+[02:19:33]: INFO - Checking folder structure...
+[02:19:33]: DEBUG - ('Application/Data') OK!
+[02:19:33]: DEBUG - ('Application/Logs') OK!
+[02:19:33]: DEBUG - ('Application/Plugins') OK!
+[02:19:41]: INFO - Checking file structure...
+[02:19:41]: DEBUG - File ('Application/Data/data.dat') OK!
+[02:19:41]: DEBUG - File ('Application/Settings/ApplicationAutomationSettings.json') OK!
+[02:19:41]: DEBUG - File ('Application/Settings/ApplicationSystemSettings.json') OK!
+[02:19:41]: INFO - Checking folder structure...
+[02:19:41]: DEBUG - ('Application/Data') OK!
+[02:19:41]: DEBUG - ('Application/Logs') OK!
+[02:19:41]: DEBUG - ('Application/Plugins') OK!
+[02:19:41]: DEBUG - ('Application/Presets') OK!
+[02:19:41]: DEBUG - ('Application/Settings') OK!
+[02:19:41]: INFO - Monitor (Monitor1) || PID: (16748) || OK!
+[02:19:59]: INFO - Checking file structure...
+[02:19:59]: DEBUG - File ('Application/Data/data.dat') OK!
+[02:19:59]: DEBUG - File ('Application/Settings/ApplicationAutomationSettings.json') OK!
+[02:19:59]: DEBUG - File ('Application/Settings/ApplicationSystemSettings.json') OK!
+[02:19:59]: INFO - Checking folder structure...
+[02:19:59]: DEBUG - ('Application/Data') OK!
+[02:19:59]: DEBUG - ('Application/Logs') OK!
+[02:19:59]: DEBUG - ('Application/Plugins') OK!
+[02:19:59]: DEBUG - ('Application/Presets') OK!
+[02:19:59]: DEBUG - ('Application/Settings') OK!
+[02:19:59]: INFO - Monitor (Monitor1) || PID: (4548) || OK!
+[02:20:42]: INFO - Checking file structure...
+[02:20:42]: DEBUG - File ('Application/Data/data.dat') OK!
+[02:20:42]: DEBUG - File ('Application/Settings/ApplicationAutomationSettings.json') OK!
+[02:20:42]: DEBUG - File ('Application/Settings/ApplicationSystemSettings.json') OK!
+[02:20:42]: INFO - Checking folder structure...
+[02:20:42]: DEBUG - ('Application/Data') OK!
+[02:20:42]: DEBUG - ('Application/Logs') OK!
+[02:20:42]: DEBUG - ('Application/Plugins') OK!
+[02:20:42]: DEBUG - ('Application/Presets') OK!
+[02:20:42]: DEBUG - ('Application/Settings') OK!
+[02:20:42]: INFO - Monitor (Monitor1) || PID: (10964) || OK!
+[02:20:42]: INFO - Monitor (Monitor2) || PID: (14540) || OK!
+[10:49:18]: INFO - Checking file structure...
+[10:49:18]: DEBUG - File ('Application/Data/data.dat') OK!
+[10:49:18]: DEBUG - File ('Application/Settings/ApplicationAutomationSettings.json') OK!
+[10:49:18]: DEBUG - File ('Application/Settings/ApplicationSystemSettings.json') OK!
+[10:49:18]: INFO - Checking folder structure...
+[10:49:18]: DEBUG - ('Application/Data') OK!
+[10:49:18]: DEBUG - ('Application/Logs') OK!
+[10:49:18]: DEBUG - ('Application/Plugins') OK!
+[10:49:18]: DEBUG - ('Application/Presets') OK!
+[10:49:18]: DEBUG - ('Application/Settings') OK!
+[10:49:18]: INFO - Monitor (Monitor1) || PID: (13240) || OK!
+[10:49:18]: INFO - Monitor (Monitor2) || PID: (13068) || OK!
+[10:49:18]: CRITICAL - Monitor ({'MonitorName': 'Monitor1', 'MonitorDriver': <selenium.webdriver.chrome.webdriver.WebDriver (session="a587211cc554981a27dde31b036c2cbe")>, 'MonitorPID': 13240, 'MonitorEnabled': True, 'MonitorURL': 'https://s2s.widedigital.com.br/S2S/Player.html', 'MonitorPath': '*~local/Monitors/monitor1', 'MonitorWidth': 0, 'MonitorHeight': 0, 'MonitorCustomSizeEnabled': False, 'MonitorCustomSizeWidth': 0, 'MonitorCustomSizeHeight': 0, 'Description': 'Monitor 1'}) || PID: (13240) || (Traceback (most recent call last):
+  File "c:\Users\Henrique\Documents\GitHub\SmartLauncher\Application\SmartLauncher.py", line 103, in Session
+    Monitoring()
+  File "c:\Users\Henrique\Documents\GitHub\SmartLauncher\Application\SmartLauncher.py", line 92, in Monitoring
+    if driver.current_url == URL:
+  File "C:\Users\Henrique\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 529, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\Henrique\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 435, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Henrique\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=102.0.4973.0)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00A0D953+2414931]
+	Ordinal0 [0x0099F5E1+1963489]
+	Ordinal0 [0x0088C580+836992]
+	Ordinal0 [0x008801E2+786914]
+	Ordinal0 [0x00880A18+789016]
+	Ordinal0 [0x008822F2+795378]
+	Ordinal0 [0x0087BCA9+769193]
+	Ordinal0 [0x0088DA30+842288]
+	Ordinal0 [0x008E3FF2+1196018]
+	Ordinal0 [0x008D42B6+1131190]
+	Ordinal0 [0x008AE860+976992]
+	Ordinal0 [0x008AF756+980822]
+	GetHandleVerifier [0x00C7CC62+2510274]
+	GetHandleVerifier [0x00C6F760+2455744]
+	GetHandleVerifier [0x00A9EABA+551962]
+	GetHandleVerifier [0x00A9D916+547446]
+	Ordinal0 [0x009A5F3B+1990459]
+	Ordinal0 [0x009AA898+2009240]
+	Ordinal0 [0x009AA985+2009477]
+	Ordinal0 [0x009B3AD1+2046673]
+	BaseThreadInitThunk [0x76926739+25]
+	RtlGetFullPathName_UEx [0x77678FEF+1215]
+	RtlGetFullPathName_UEx [0x77678FBD+1165]
+
+)
+[10:49:18]: CRITICAL - Monitor ({'MonitorName': 'Monitor2', 'MonitorDriver': <selenium.webdriver.chrome.webdriver.WebDriver (session="99057363582080a3ea3b3385f0d1f1e4")>, 'MonitorPID': 13068, 'MonitorEnabled': True, 'MonitorURL': 'https://s2s.widedigital.com.br/S2S/Player.html', 'MonitorPath': '*~local/Monitors/monitor2', 'MonitorWidth': 1280, 'MonitorHeight': 0, 'MonitorCustomSizeEnabled': False, 'MonitorCustomSizeWidth': 0, 'MonitorCustomSizeHeight': 0, 'Description': 'Monitor 2'}) || PID: (13068) || (Traceback (most recent call last):
+  File "c:\Users\Henrique\Documents\GitHub\SmartLauncher\Application\SmartLauncher.py", line 103, in Session
+    Monitoring()
+  File "c:\Users\Henrique\Documents\GitHub\SmartLauncher\Application\SmartLauncher.py", line 92, in Monitoring
+    if driver.current_url == URL:
+  File "C:\Users\Henrique\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 529, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\Henrique\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 435, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Henrique\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=102.0.4973.0)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00A0D953+2414931]
+	Ordinal0 [0x0099F5E1+1963489]
+	Ordinal0 [0x0088C580+836992]
+	Ordinal0 [0x008801E2+786914]
+	Ordinal0 [0x00880A18+789016]
+	Ordinal0 [0x008822F2+795378]
+	Ordinal0 [0x0087BCA9+769193]
+	Ordinal0 [0x0088DA30+842288]
+	Ordinal0 [0x008E3FF2+1196018]
+	Ordinal0 [0x008D42B6+1131190]
+	Ordinal0 [0x008AE860+976992]
+	Ordinal0 [0x008AF756+980822]
+	GetHandleVerifier [0x00C7CC62+2510274]
+	GetHandleVerifier [0x00C6F760+2455744]
+	GetHandleVerifier [0x00A9EABA+551962]
+	GetHandleVerifier [0x00A9D916+547446]
+	Ordinal0 [0x009A5F3B+1990459]
+	Ordinal0 [0x009AA898+2009240]
+	Ordinal0 [0x009AA985+2009477]
+	Ordinal0 [0x009B3AD1+2046673]
+	BaseThreadInitThunk [0x76926739+25]
+	RtlGetFullPathName_UEx [0x77678FEF+1215]
+	RtlGetFullPathName_UEx [0x77678FBD+1165]
+
+)
+[10:51:55]: INFO - Checking file structure...
+[10:51:55]: DEBUG - File ('Application/Data/data.dat') OK!
+[10:51:55]: DEBUG - File ('Application/Settings/ApplicationAutomationSettings.json') OK!
+[10:51:55]: DEBUG - File ('Application/Settings/ApplicationSystemSettings.json') OK!
+[10:51:55]: INFO - Checking folder structure...
+[10:51:55]: DEBUG - ('Application/Data') OK!
+[10:51:55]: DEBUG - ('Application/Logs') OK!
+[10:51:55]: DEBUG - ('Application/Plugins') OK!
+[10:51:55]: DEBUG - ('Application/Presets') OK!
+[10:51:55]: DEBUG - ('Application/Settings') OK!
+[10:51:55]: INFO - Monitor (Monitor1) || PID: (14248) || OK!
+[10:51:55]: INFO - Monitor (Monitor2) || PID: (7808) || OK!
+[10:51:55]: CRITICAL - Monitor ({'MonitorName': 'Monitor1', 'MonitorDriver': <selenium.webdriver.chrome.webdriver.WebDriver (session="86dafa9fb3c4af046440e551494f4d0f")>, 'MonitorPID': 14248, 'MonitorEnabled': True, 'MonitorURL': 'https://s2s.widedigital.com.br/S2S/Player.html', 'MonitorPath': '*~local/Monitors/monitor1', 'MonitorWidth': 0, 'MonitorHeight': 0, 'MonitorCustomSizeEnabled': False, 'MonitorCustomSizeWidth': 0, 'MonitorCustomSizeHeight': 0, 'Description': 'Monitor 1'}) || PID: (14248) || (Traceback (most recent call last):
+  File "c:\Users\Henrique\Documents\GitHub\SmartLauncher\Application\SmartLauncher.py", line 167, in Session
+    Monitoring()
+  File "c:\Users\Henrique\Documents\GitHub\SmartLauncher\Application\SmartLauncher.py", line 156, in Monitoring
+    if driver.current_url == URL:
+  File "C:\Users\Henrique\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 529, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\Henrique\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 435, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Henrique\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=102.0.4973.0)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00A0D953+2414931]
+	Ordinal0 [0x0099F5E1+1963489]
+	Ordinal0 [0x0088C580+836992]
+	Ordinal0 [0x008801E2+786914]
+	Ordinal0 [0x00880A18+789016]
+	Ordinal0 [0x008822F2+795378]
+	Ordinal0 [0x0087BCA9+769193]
+	Ordinal0 [0x0088DA30+842288]
+	Ordinal0 [0x008E3FF2+1196018]
+	Ordinal0 [0x008D42B6+1131190]
+	Ordinal0 [0x008AE860+976992]
+	Ordinal0 [0x008AF756+980822]
+	GetHandleVerifier [0x00C7CC62+2510274]
+	GetHandleVerifier [0x00C6F760+2455744]
+	GetHandleVerifier [0x00A9EABA+551962]
+	GetHandleVerifier [0x00A9D916+547446]
+	Ordinal0 [0x009A5F3B+1990459]
+	Ordinal0 [0x009AA898+2009240]
+	Ordinal0 [0x009AA985+2009477]
+	Ordinal0 [0x009B3AD1+2046673]
+	BaseThreadInitThunk [0x76926739+25]
+	RtlGetFullPathName_UEx [0x77678FEF+1215]
+	RtlGetFullPathName_UEx [0x77678FBD+1165]
+
+)
+[10:51:55]: CRITICAL - Monitor ({'MonitorName': 'Monitor2', 'MonitorDriver': <selenium.webdriver.chrome.webdriver.WebDriver (session="efc1d6f187e8e611b3c6fa2ea5e1af55")>, 'MonitorPID': 7808, 'MonitorEnabled': True, 'MonitorURL': 'https://s2s.widedigital.com.br/S2S/Player.html', 'MonitorPath': '*~local/Monitors/monitor2', 'MonitorWidth': 1280, 'MonitorHeight': 0, 'MonitorCustomSizeEnabled': False, 'MonitorCustomSizeWidth': 0, 'MonitorCustomSizeHeight': 0, 'Description': 'Monitor 2'}) || PID: (7808) || (Traceback (most recent call last):
+  File "c:\Users\Henrique\Documents\GitHub\SmartLauncher\Application\SmartLauncher.py", line 167, in Session
+    Monitoring()
+  File "c:\Users\Henrique\Documents\GitHub\SmartLauncher\Application\SmartLauncher.py", line 156, in Monitoring
+    if driver.current_url == URL:
+  File "C:\Users\Henrique\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 529, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+  File "C:\Users\Henrique\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 435, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Henrique\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=102.0.4973.0)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00A0D953+2414931]
+	Ordinal0 [0x0099F5E1+1963489]
+	Ordinal0 [0x0088C580+836992]
+	Ordinal0 [0x008801E2+786914]
+	Ordinal0 [0x00880A18+789016]
+	Ordinal0 [0x008822F2+795378]
+	Ordinal0 [0x0087BCA9+769193]
+	Ordinal0 [0x0088DA30+842288]
+	Ordinal0 [0x008E3FF2+1196018]
+	Ordinal0 [0x008D42B6+1131190]
+	Ordinal0 [0x008AE860+976992]
+	Ordinal0 [0x008AF756+980822]
+	GetHandleVerifier [0x00C7CC62+2510274]
+	GetHandleVerifier [0x00C6F760+2455744]
+	GetHandleVerifier [0x00A9EABA+551962]
+	GetHandleVerifier [0x00A9D916+547446]
+	Ordinal0 [0x009A5F3B+1990459]
+	Ordinal0 [0x009AA898+2009240]
+	Ordinal0 [0x009AA985+2009477]
+	Ordinal0 [0x009B3AD1+2046673]
+	BaseThreadInitThunk [0x76926739+25]
+	RtlGetFullPathName_UEx [0x77678FEF+1215]
+	RtlGetFullPathName_UEx [0x77678FBD+1165]
+
+)

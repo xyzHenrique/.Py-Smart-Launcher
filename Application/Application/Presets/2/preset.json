@@ -1,0 +1,43 @@
+{
+    
+    "Monitor1": {
+        "Enabled": true,
+        "URL": "https://s2s.widedigital.com.br/S2S/Player.html",
+        "Path": "*~local/Monitors/monitor1",
+        "Width": 0,
+        "Height": 0,
+        "CustomSize": {
+            "Enabled": false, 
+            "Width": 0,
+            "Height": 0 
+            },
+        "DevMode": {
+            "Enabled": false,
+            "Key": "f12"
+        },
+        "DebugMode": {
+            "Enabled": false,
+            "Key": "f11",
+            "Logs": true,
+            "CustomUrl": {
+                "Enabled": false,
+                "URL": ""
+            }
+        },
+        "Description": "Monitor 1"
+    },
+
+    "Monitor2": {
+        "Enabled": true,
+        "URL": "https://s2s.widedigital.com.br/S2S/Player.html",
+        "Path": "*~local/Monitors/monitor2",
+        "Width": 1280,
+        "Height": 0,
+        "CustomSize": {
+            "Enabled": false, 
+            "Width": 0,
+            "Height": 0 
+            },
+        "Description": "Monitor 2"
+    }
+}

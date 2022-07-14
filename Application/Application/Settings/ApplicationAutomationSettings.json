@@ -1,0 +1,14 @@
+{
+    "Automation": {
+        "Enabled": true,
+        "Delay": 0.25,
+        "Keyboard": {
+            "ShowPressedKeys": true,
+            "Keys": [
+                "f5",
+                "esc",
+                "enter"
+            ]
+        }
+    }
+}
